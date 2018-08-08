@@ -1,5 +1,5 @@
 django==2.1.0
 whitenoise
 gunicorn==19.7.0
-dj_database_url
+django-heroku
 social-auth-app-django
