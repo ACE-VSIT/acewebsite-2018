@@ -9,5 +9,6 @@ def magazine(request):
     return redirect('https://bit.ly/ACEMag2018')
 
 
-def view_404(request):
+def page_not_found(request):
     return redirect('/')
+

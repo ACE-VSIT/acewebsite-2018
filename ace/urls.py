@@ -13,4 +13,4 @@ urlpatterns = [
 ]
 admin.site.site_header = 'ACE'
 
-handler404 = 'website.views.view_404'
+# handler404 = 'website.views.view_404'
