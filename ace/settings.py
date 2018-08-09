@@ -1,5 +1,6 @@
 import os
 import datetime
+import raven
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +22,7 @@ INSTALLED_APPS = [
     'website',
     's3direct',
     'portalapp',
+    'raven.contrib.django.raven_compat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,6 +37,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
+    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -225,3 +229,13 @@ if not DEBUG:
 
 SELECTION_START_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y").date()
 SELECTION_END_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y").date()
+
+# Sentry
+if not DEBUG:
+    RAVEN_CONFIG = {
+        'dsn': 'https://16419383ac1243679009b0087c4eb652:c8cb0ea06f3f42e8848bc6908b313964@sentry.io/1259354',
+        # If you are using git, you can also automatically configure the
+        # release based on the git info.
+        # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+    }
+
