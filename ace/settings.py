@@ -114,13 +114,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'portal'
+LOGIN_REDIRECT_URL = '/portal'
 
 # SOCIAL_AUTH_FACEBOOK_KEY = '331164980660704'  # key for production
 # SOCIAL_AUTH_FACEBOOK_SECRET = '5ab463efe87199548fe9dbb53ddb3ccf'  # secret for production
 
-SOCIAL_AUTH_FACEBOOK_KEY = '821175371384514'  # key for testing
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e400c5893591b5dbcc8b68476b70dd26'  # secret for testing
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')  # key for testing
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')  # secret for testing
 
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['username', 'first_name', 'last_name', 'email']
 

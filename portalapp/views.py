@@ -10,18 +10,6 @@ from .models import Tasks, ACEUserProfile
 from ace.settings import SELECTION_START_DATE, SELECTION_END_DATE
 
 
-def ace_magazine(request):
-    return redirect('https://bit.ly/VipsACE')
-
-
-def ace_video(request):
-    return redirect('http://bit.ly/DontBlinkACE')
-
-
-def ace_website(request):
-    return render(request, 'acewebsite/index.html')
-
-
 def login(request):
     if request.user.is_authenticated:
 
