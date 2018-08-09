@@ -117,7 +117,7 @@ def form_data(request):
 
 @login_required(login_url='/')
 def form_input(request):
-    phone = request.POST['phone']
+    phone = str(request.POST['phone']).strip()[-10:]
     enroll_number = request.POST['roll']
     course = request.POST['course']
     email_id = request.POST['email']
