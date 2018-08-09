@@ -60,6 +60,7 @@ TEMPLATES = [
 
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'social_django.middleware.SocialAuthExceptionMiddleware',
             ],
         },
     },
@@ -129,7 +130,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')  # s
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['username', 'first_name', 'last_name', 'email']
 
 # SOCIAL_AUTH_BACKEND_ERROR_URL = '/portal/'
-SOCIAL_AUTH_LOGIN_ERROR_URL = '/portal/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/portal'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
