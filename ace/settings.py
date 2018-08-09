@@ -128,6 +128,9 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')  # s
 
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['username', 'first_name', 'last_name', 'email']
 
+SOCIAL_AUTH_BACKEND_ERROR_URL = '/portal/'
+SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/portal/'
+
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
