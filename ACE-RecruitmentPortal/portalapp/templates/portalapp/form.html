@@ -1,0 +1,91 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACE - Selection 2017</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ACE">
+
+    <meta property="og:title" content="ACE &middot; The Technical Society of Vivekananda Institute of Professional Studies"/>
+    <meta property="og:description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing."/>
+
+    <meta property="og:image" content="http://vipsace.org/img/fg.PNG"/>
+    <meta property="og:site_name" content="ACE &middot; The Technical Society of Vivekananda Institute of Professional Studies"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://vipsace.org/"/>
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ACE &middot; The Technical Society of Vivekananda Institute of Professional Studies">
+    <meta name="twitter:description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
+    <meta name="twitter:image" content="http://vipsace.org/img/fg.PNG">
+
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    
+    <meta name="description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
+    <meta name="keywords" content="ACE, Association of Computer Enthusiasts,  Technical society of VIPS, ACE - The Technical society of VIPS, ACE - The Technical Society of VSIT, society, VIPS society, VSIT society, Tech, enterprenuer, bussines, UX/UI, python, php, go, Ashish, Gaurav, Srijit, Sameer, Khushi, Rohan, prateek, anukriti, Mukesh, shreyans, aditya dhawan, ACE Rocks, We love ACE,  Technical society of VSIT, Vivekananda Institute of Professional Studies, Vivekananda school of information technology, hackathon, SSC 2017, hackathon, coding, designing, events, we won, programming, VIPS programmimg, ACE69, ogz, ace vipsi, State Student Convention 2017, SSC, facebook.com/vipsace, vipsace, facebook">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#378f89">
+</head>
+<body>
+	<div id="wrap">	
+		<div id="container">
+			<span class="bg"><img src="{% static 'img/ace.png' %}" align="top" height="100%"></span>
+			<span class="top_text">Your Details
+					<div id="login" class="login">
+                        <form action="/success/" method="get">
+                        {% csrf_token %}
+                            <input type="text" name="roll" placeholder="Enrollment no.(Leave blank if not alloted)" class="form-text">
+                            <input type="text" name="phone" placeholder="Phone Number" class="form-text" required>
+                            <input type="email" required name="email" placeholder="Email" class="form-text">
+                            <select name="course" class="form-text white-o" required>
+                                <option>Course</option>
+                                <option>BCA</option>
+                                <option>MCA</option>
+                                <option>BA LLB</option>
+                                <option>BBA LLB</option>
+                                <option>BA(JMC)</option>
+                                <option>BBA</option>
+                                <option>B.Com(H)</option>
+                                <option>Economics(H)</option>
+                            </select>
+                            <select name="year" class="form-text white-o" required>
+                                <option>Year</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                            </select>
+                            <select name="section" class="form-text white-o" required>
+                                <option>Section</option>
+                                <option>MA</option>
+                                <option>MB</option>
+                                <option>MC</option>
+                                <option>EA</option>
+                                <option>EB</option>
+                            </select>
+                            <button type= "submit">SUBMIT</button></a>
+                        </form>
+						
+					</div>
+			</span>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99222640-1', 'auto');
+  ga('send', 'pageview');
+</script>
+	
+</body>
+</html>	
