@@ -121,7 +121,7 @@ def form_input(request):
     enroll_number = request.POST['roll']
     course = request.POST['course']
     email_id = request.POST['email']
-    section = request.POST['section']
+    section = str(request.POST['section'])[:-3]
 
     github = request.POST.get('github', None)
     linkedin = request.POST.get('linkedin', None)
