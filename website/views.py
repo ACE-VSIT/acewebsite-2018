@@ -7,3 +7,7 @@ def index(request):
 
 def magazine(request):
     return redirect('https://bit.ly/ACEMag2018')
+
+
+def view_404(request):
+    return redirect('https://vipsace.org')
