@@ -10,4 +10,4 @@ def magazine(request):
 
 
 def view_404(request):
-    return redirect('https://vipsace.org')
+    return redirect('/')
