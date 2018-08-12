@@ -233,7 +233,7 @@ if not DEBUG:
 
 SELECTION_START_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y").date()
 SELECTION_END_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y").date()
-
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 # Sentry
 if not DEBUG:
     RAVEN_CONFIG = {
