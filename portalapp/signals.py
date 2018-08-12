@@ -27,7 +27,7 @@ def join_wa_group(sender, instance, created, **kwargs):
 Hey there!
 We really appreciate your interest in ACE and would like to invite you to join our WhatsApp group.
 If you have any questions, just leave a message here!
-http://bit.ly/ACESelection2018-WhatsappGroup 
+http://bit.ly/ACE-Selections-2018
             
 Best,
 Team ACE
@@ -37,5 +37,3 @@ Team ACE
 
     except Exception as ex:
         pass
-        # logger.log(ex)
-
