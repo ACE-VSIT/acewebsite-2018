@@ -4,3 +4,4 @@ gunicorn==19.7.0
 django-heroku
 social-auth-app-django
 raven
+sendgrid
