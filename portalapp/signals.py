@@ -33,7 +33,9 @@ Best,
 Team ACE
 '''
             }
-            send_sd_email(name, from_email, to_email, subject, email_content)
+            # send_sd_email(name, from_email, to_email, subject, email_content)
 
     except Exception as ex:
-        logger.log(ex)
+        pass
+        # logger.log(ex)
+
