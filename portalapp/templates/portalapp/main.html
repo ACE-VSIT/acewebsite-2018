@@ -22,17 +22,11 @@
     <meta name="twitter:image" content="http://vipsace.org/img/fg.PNG">
 
     <!--Horizontal Scroll Disable-->
-    <style>
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-    </style>
 
 
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
     
     <meta name="description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
@@ -43,7 +37,7 @@
 <body>
 	<ul class="nav">
 		<li><a><img src="{% static 'img/logo.png' %}"></a></li>
-		<li style="float: right"><a href="/portal/logout" class="fb-logout"><i class="fa fa-sign-out fa-2x"></i></a></li>
+		<li style="float: right"><a href="/portal/logout" class="fb-logout"><i class="fas fa-sign-out-alt fa-2x"></i></a></li>
 		<li style="float: right"><a href="#" class="fb-name">{{ user.get_full_name|default:user.username }}</a></li>
 		<li style="float: right"><img class="fb-img" src={{fb_image_url}}></li>
 	</ul>
@@ -88,7 +82,7 @@
 					<div class="detail">
 					<div class="detail-main">
 						<div style="display: flex;">
-							<div class="detail-icon"> <i class="fa fa-calendar fa-2x"></i> </div>
+							<div class="detail-icon"> <i class="fas fa-calendar-alt fa-2x"></i> </div>
 							<div class="detail-right">
 								<p>Submission Date</p>
 								<h1>{{task.submission_deadline}}</h1>
@@ -98,7 +92,7 @@
 						
 					<div class="detail-main">
 						<div style="display: flex;">
-							<div class="detail-icon"> <i class="fa fa-users fa-2x"></i> </div>
+							<div class="detail-icon"> <i class="fas fa-users fa-2x"></i> </div>
 							<div class="detail-right">
 								<p>Total Submissions</p>
 								<h1>{{task.total_submissions}}</h1>
@@ -109,7 +103,7 @@
 
 					<div class="detail-main">
 						<div style="display: flex;">
-							<div class="detail-icon"> <i class="fa {{task.difficulty_level}} fa-2x"></i> </div>
+							<div class="detail-icon"> <i class="fas {{task.difficulty_level}} fa-2x"></i> </div>
 							<div class="detail-right">
 								<p class="diff">Difficulty Level</p>
 								<h1 class="diff">{{task.difficulty_value}}</h1>
@@ -119,8 +113,8 @@
 					</div>
 
 					<div class="button">
-						<button onclick="description('{{task.task_id}}')"><i class="fa fa-list-ul fa-2x"></i></button>
-						<button onclick="submit('{{task.task_id}}')" class="rgt"><i class="fa fa-check-square fa-2x"></i></button>
+						<button onclick="description('{{task.task_id}}')"><i class="fas fa-list-ul fa-2x"></i></button>
+						<button onclick="submit('{{task.task_id}}')" class="rgt"><i class="fas fa-check-square fa-2x"></i></button>
 					</div>
 
 					<div style="position: relative;">

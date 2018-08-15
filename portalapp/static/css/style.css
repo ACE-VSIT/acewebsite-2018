@@ -56,6 +56,11 @@ body{
 	font-family: "Roboto";
 }
 
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
 /*nav {
 	width: 100%;
 	padding: 20px 30px 20px 150px;
