@@ -41,11 +41,18 @@ def home(request):
         if (today < SELECTION_START_DATE) or (today > SELECTION_END_DATE):
             return render(request, template_name='portalapp/timer.html')
         else:
-            social = request.user.social_auth.get(provider='facebook')
-            userid = social.uid
-            first_name = social.extra_data['first_name']
+            social = request.user.social_auth.filter(provider='facebook')
+            if social:
+                userid = social[0].uid
+                first_name = social[0].extra_data['first_name']
 
-            src = "https://graph.facebook.com/" + str(userid) + "/picture?width=80&height=80"
+                src = "https://graph.facebook.com/" + str(userid) + "/picture?width=80&height=80"
+            else:
+                social = request.user.social_auth.get(provider='google-oauth2')
+                userid = social.uid
+                first_name = User.objects.get(email=userid).first_name
+
+                src = "https://pikmail.herokuapp.com/" + str(userid) + "?size=80"
 
             tasks = Tasks.objects.order_by('task_id')
             submissions = Submissions.objects.filter(user=ACEUserProfile.objects.get(name=request.user)).\
