@@ -24,11 +24,21 @@ def login(request):
 
 @login_required(login_url='/')
 def home(request):
-    if not request.user.is_superuser and ACEUserProfile.objects.filter(name=request.user).exists():
+    if ACEUserProfile.objects.filter(name=request.user).exists():
+        if request.user.is_superuser:
+            tasks = Tasks.objects.order_by('task_id')
+            submissions = Submissions.objects.filter(user=ACEUserProfile.objects.get(name=request.user)).values_list(
+                'task__task_id', flat=True)
+
+            active_tasks = len(tasks)
+
+            return render(request, 'portalapp/main.html',
+                          {'fb_image_url': '', 'first_name': 'ACE', 'tasks': tasks,
+                           'submissions': submissions, 'active_tasks': active_tasks})
 
         today = localtime(now())
 
-        if today < SELECTION_START_DATE or today > SELECTION_END_DATE:
+        if (today < SELECTION_START_DATE) or (today > SELECTION_END_DATE):
             return render(request, template_name='portalapp/timer.html')
         else:
             social = request.user.social_auth.get(provider='facebook')
@@ -38,13 +48,15 @@ def home(request):
             src = "https://graph.facebook.com/" + str(userid) + "/picture?width=80&height=80"
 
             tasks = Tasks.objects.order_by('task_id')
-            submissions = Submissions.objects.filter(user=ACEUserProfile.objects.get(name=request.user)).values_list('task__task_id', flat=True)
+            submissions = Submissions.objects.filter(user=ACEUserProfile.objects.get(name=request.user)).\
+                values_list('task__task_id', flat=True)
 
             active_tasks = len(tasks)
 
             return render(request, 'portalapp/main.html',
                           {'fb_image_url': src, 'first_name': first_name, 'tasks': tasks,
                            'submissions': submissions, 'active_tasks': active_tasks})
+
     return redirect('/portal/form')
 
 
