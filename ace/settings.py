@@ -243,9 +243,11 @@ if not DEBUG:
     SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 
 # Portal Start Date
+from django.utils.timezone import get_current_timezone
 
-SELECTION_START_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y").date()
-SELECTION_END_DATE = datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y").date()
+tz = get_current_timezone()
+SELECTION_START_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y"))
+SELECTION_END_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y"))
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 # Sentry
 if not DEBUG:

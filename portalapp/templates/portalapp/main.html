@@ -1,5 +1,4 @@
 {% load static from staticfiles %}
-{% load tag_library %}
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +21,14 @@
     <meta name="twitter:description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
     <meta name="twitter:image" content="http://vipsace.org/img/fg.PNG">
 
+    <!--Horizontal Scroll Disable-->
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+
 
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -29,14 +36,14 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
     
     <meta name="description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
-    <meta name="keywords" content="ACE, Association of Computer Enthusiasts,  Technical society of VIPS, ACE - The Technical society of VIPS, ACE - The Technical Society of VSIT, society, VIPS society, VSIT society, Tech, enterprenuer, bussines, UX/UI, python, php, go, Ashish, Gaurav, Srijit, Sameer, Khushi, Rohan, prateek, anukriti, Mukesh, shreyans, aditya dhawan, ACE Rocks, We love ACE,  Technical society of VSIT, Vivekananda Institute of Professional Studies, Vivekananda school of information technology, hackathon, SSC 2017, hackathon, coding, designing, events, we won, programming, VIPS programmimg, ACE69, ogz, ace vipsi, State Student Convention 2017, SSC, facebook.com/vipsace, vipsace, facebook">
+    <meta name="keywords" content="ACE, Association of Computer Enthusiasts, Technical society of VIPS, ACE - The Technical society of VIPS, ACE - The Technical Society of VSIT, society, VIPS society, VSIT society, Tech, enterprenuer, bussines, UX/UI, python, php, go, Ashish, Gaurav, Srijit, Sameer, Khushi, Rohan, prateek, anukriti, Mukesh, shreyans, aditya dhawan, ACE Rocks, We love ACE,  Technical society of VSIT, Vivekananda Institute of Professional Studies, Vivekananda school of information technology, hackathon, SSC 2017, hackathon, coding, designing, events, we won, programming, VIPS programmimg, ACE69, ogz, ace vipsi, State Student Convention 2017, SSC, facebook.com/vipsace, vipsace, facebook">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#378f89">
 </head>
 <body>
 	<ul class="nav">
 		<li><a><img src="{% static 'img/logo.png' %}"></a></li>
-		<li style="float: right"><a href="/logout" class="fb-logout"><i class="fa fa-sign-out fa-2x"></i></a></li>
+		<li style="float: right"><a href="/portal/logout" class="fb-logout"><i class="fa fa-sign-out fa-2x"></i></a></li>
 		<li style="float: right"><a href="#" class="fb-name">{{ user.get_full_name|default:user.username }}</a></li>
 		<li style="float: right"><img class="fb-img" src={{fb_image_url}}></li>
 	</ul>
@@ -72,12 +79,11 @@
 				<div class="wrap" id="{{task.task_id}}">
 					<div class="title">
 						<h1>{{task.task_name}}</h1>
-						
-						{% if task.did_by|is_true:user %}
-						<span class="comp">{{task.did_by|test_function:user}}</span>
-						{% else %}	
-						<span class="">{{task.did_by|test_function:user}}</span>
-						{% endif %}
+                            {% if task.task_id in submissions %}
+                                <span class="comp">Complete</span>
+                            {% else %}
+                                <span class="">Incomplete</span>
+                            {% endif %}
 					</div>
 					<div class="detail">
 					<div class="detail-main">
@@ -95,7 +101,7 @@
 							<div class="detail-icon"> <i class="fa fa-users fa-2x"></i> </div>
 							<div class="detail-right">
 								<p>Total Submissions</p>
-								<h1>{{task.did_by.count}}</h1>
+								<h1>{{task.total_submissions}}</h1>
 							</div>
 						</div>
 					</div>
@@ -138,12 +144,17 @@
 									<h1>Submit Task</h1>
 									<p style="height: 70px;">Please upload your task files in GitHub or Google Drive and submit its URL. </p>
 									<center>
-									<form action="/submission/" method= "POST">
+									<form action="/portal/submission/" method= "POST">
 										{% csrf_token %}
 										<br>
-										<input type="text" disabled required name="task" class="url" placeholder="Task URL (GitHub/Drive)"><br><br>
-										<input type="submit" disabled name="submit" value="SUBMIT TASK" class="submit" placeholder="Task URL (GitHub/Drive)">
-										<input name="task_id" value={{task.task_id}} type="hidden" >
+										<input type="url" required name="task" class="url" placeholder="Task URL (GitHub/Drive)"><br><br>
+                                        {% if task.task_id in submissions %}
+                                            <p style="height: 70px;">
+                                                You have already submitted this task. You can submit multiple times. Only the last submission will be considered for evaluation.
+                                            </p>
+                                        {% endif %}
+										<input type="submit" name="submit" value="SUBMIT TASK" class="submit" placeholder="Task URL (GitHub/Drive)">
+										<input name="task_id" value={{task.task_id}} type="hidden">
 									</form>
 									</center>
 									<div id="close"><div onclick="closeb('{{task.task_id}}')" id="x">X</div></div>

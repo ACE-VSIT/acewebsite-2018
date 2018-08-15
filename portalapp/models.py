@@ -1,16 +1,8 @@
 from __future__ import unicode_literals
-from django.core.validators import MaxValueValidator
 from django.db import models
-from django.utils import timezone
-
-
-# Create your models here.
 
 
 class ACEUserProfile(models.Model):
-    class Meta:
-        unique_together = (('name', 'enroll_number', 'email_id', 'task_id'),)
-
     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     enroll_number = models.CharField(max_length=11, blank=False, null=False)
     course = models.CharField(max_length=30, default=None, null=True, blank=True)
@@ -18,10 +10,7 @@ class ACEUserProfile(models.Model):
     phone_number = models.CharField(max_length=10)  # validators should be a list
     is_member = models.BooleanField(default=False)
     is_core = models.BooleanField(default=False)
-    task_submitted = models.BooleanField(default=False)
-    submission_url = models.TextField(blank=True)
     section = models.CharField(max_length=3, blank=True, null=True)
-    task_id = models.ForeignKey("Tasks", blank=True, null=True, on_delete=models.CASCADE)
 
     github = models.URLField(null=True, blank=True)
     linkedin = models.URLField(null=True, blank=True)
@@ -45,7 +34,21 @@ class Tasks(models.Model):
     task_description = models.TextField()
     total_submissions = models.IntegerField(default=0)
 
-    did_by = models.ManyToManyField(ACEUserProfile, null=True, blank=True)
-
     def __str__(self):
         return self.task_name
+
+
+class Submissions(models.Model):
+    class Meta:
+        unique_together = (('user', 'task'),)
+
+    user = models.ForeignKey(ACEUserProfile, on_delete=models.CASCADE)
+    task = models.ForeignKey(Tasks, on_delete=models.CASCADE)
+    task_submitted = models.BooleanField(default=False)
+    submission_url = models.TextField(blank=True)
+
+    dateCreated = models.DateTimeField(auto_now_add=True)
+    dateUpdated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.task.task_name
