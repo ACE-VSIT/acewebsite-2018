@@ -36,7 +36,7 @@
 </head>
 <body>
 	<ul class="nav">
-		<li><a><img src="{% static 'img/logo.png' %}"></a></li>
+		<li><a href="/"><img src="{% static 'img/logo.png' %}"></a></li>
 		<li style="float: right"><a href="/portal/logout" class="fb-logout"><i class="fas fa-sign-out-alt fa-2x"></i></a></li>
 		<li style="float: right"><a href="#" class="fb-name">{{ user.get_full_name|default:user.username }}</a></li>
 		<li style="float: right"><img class="fb-img" src={{fb_image_url}}></li>
@@ -49,7 +49,7 @@
 		<p>
 			General Guidelines:<br><br>
 		1. There is no limit to the number of tasks you can attempt.<br>
-		2. You are allowed to submit a task only once and subsequent submissions will not be recorded.<br>
+		2. You can submit a task multiple times. Only the last submission will be considered for evaluation.<br>
 		3. Plagiarism and use of unfair means to complete the task are strictly prohibited.<br>
 		4. We recommend you to attempt as many tasks as you can however we believe in 	quality over quantity.<br>
 		5. Kindly submit the URL of your code/solution before the submission deadline.<br><br>

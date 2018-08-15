@@ -69,7 +69,6 @@ def logout(request):
 def submit_task(request):
     submission_url = request.POST['task']
     task_id = request.POST['task_id']
-    print(submission_url, task_id)
     # get current user instance
     user = User.objects.get(username=request.user)
 
@@ -116,7 +115,6 @@ def form_input(request):
     behance = request.POST.get('behance', None)
     website = request.POST.get('website', None)
     twitter = request.POST.get('twitter', None)
-    print(phone, enroll_number, course, email_id, section)
 
     user = User.objects.get(username=request.user)
     ace_user = ACEUserProfile(name=user, enroll_number=enroll_number, course=course, email_id=email_id,
@@ -124,8 +122,6 @@ def form_input(request):
                               behance=behance, website=website,
                               twitter=twitter)
     ace_user.save()
-
-    print("Success")
 
     return redirect('/portal/home')
 

@@ -35,7 +35,7 @@ class Tasks(models.Model):
     total_submissions = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.task_name
+        return '{0} ({1})'.format(self.task_name, self.difficulty_value)
 
 
 class Submissions(models.Model):
