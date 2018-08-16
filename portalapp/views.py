@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
 from django.db.models import F
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import Tasks, ACEUserProfile, Submissions
 from ace.settings import SELECTION_START_DATE, SELECTION_END_DATE
@@ -111,19 +112,21 @@ def form_data(request):
 
 @login_required(login_url='/')
 def form_input(request):
+    user = User.objects.get(username=request.user)
+    if ACEUserProfile.objects.filter(name=user).exists():
+        return redirect('/portal/home')
+
     phone = str(request.POST['phone']).strip()[-10:]
     enroll_number = request.POST['roll']
     course = request.POST['course']
     email_id = request.POST['email']
     section = str(request.POST['section'])[:-5]
-
     github = request.POST.get('github', None)
     linkedin = request.POST.get('linkedin', None)
     behance = request.POST.get('behance', None)
     website = request.POST.get('website', None)
     twitter = request.POST.get('twitter', None)
 
-    user = User.objects.get(username=request.user)
     ace_user = ACEUserProfile(name=user, enroll_number=enroll_number, course=course, email_id=email_id,
                               section=section, phone_number=phone, github=github, linkedin=linkedin,
                               behance=behance, website=website,
