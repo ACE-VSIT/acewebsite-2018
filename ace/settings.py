@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vipsace.org', 'localhost']
 
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'admin_email_sender',
 ]
 
 MIDDLEWARE = [
@@ -258,3 +259,16 @@ if not DEBUG:
         # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
     }
 
+# Email
+
+EMAIL_USE_TLS = True
+EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
+EMAIL_HOST_USER = os.environ.get('EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+
+if 'sendgrid' in os.environ.get('EMAIL_CLIENT'):
+    EMAIL_HOST = 'smtp.sendgrid.net'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'

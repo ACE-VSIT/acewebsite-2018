@@ -109,3 +109,6 @@ dump.rdb
 
 # Ignore the pdf directory
 pdf/
+
+db.sqlite3
+.idea/workspace.xml
