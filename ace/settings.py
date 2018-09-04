@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'admin_email_sender',
 ]
 
 MIDDLEWARE = [
@@ -258,3 +259,16 @@ if not DEBUG:
         # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
     }
 
+# Email
+
+EMAIL_USE_TLS = True
+EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+
+if 'sendgrid' in os.environ.get('EMAIL_CLIENT'):
+    EMAIL_HOST = 'smtp.sendgrid.net'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
