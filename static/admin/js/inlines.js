@@ -58,7 +58,11 @@
                     addButton = $this.filter(":last").next().find("a");
                 }
             }
+<<<<<<< HEAD
             addButton.click(function(e) {
+=======
+            addButton.on('click', function(e) {
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
                 e.preventDefault();
                 var template = $("#" + options.prefix + "-empty");
                 var row = template.clone(true);
@@ -91,7 +95,11 @@
                     addButton.parent().hide();
                 }
                 // The delete button of each row triggers a bunch of other things
+<<<<<<< HEAD
                 row.find("a." + options.deleteCssClass).click(function(e1) {
+=======
+                row.find("a." + options.deleteCssClass).on('click', function(e1) {
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
                     e1.preventDefault();
                     // Remove the parent form containing this button:
                     row.remove();
@@ -145,10 +153,17 @@
 
 
     // Tabular inlines ---------------------------------------------------------
+<<<<<<< HEAD
     $.fn.tabularFormset = function(options) {
         var $rows = $(this);
         var alternatingRows = function(row) {
             $($rows.selector).not(".add-row").removeClass("row1 row2")
+=======
+    $.fn.tabularFormset = function(selector, options) {
+        var $rows = $(this);
+        var alternatingRows = function(row) {
+            $(selector).not(".add-row").removeClass("row1 row2")
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
             .filter(":even").addClass("row1").end()
             .filter(":odd").addClass("row2");
         };
@@ -212,10 +227,17 @@
     };
 
     // Stacked inlines ---------------------------------------------------------
+<<<<<<< HEAD
     $.fn.stackedFormset = function(options) {
         var $rows = $(this);
         var updateInlineLabel = function(row) {
             $($rows.selector).find(".inline_label").each(function(i) {
+=======
+    $.fn.stackedFormset = function(selector, options) {
+        var $rows = $(this);
+        var updateInlineLabel = function(row) {
+            $(selector).find(".inline_label").each(function(i) {
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
                 var count = i + 1;
                 $(this).html($(this).html().replace(/(#\d+)/g, "#" + count));
             });
@@ -281,6 +303,7 @@
     $(document).ready(function() {
         $(".js-inline-admin-formset").each(function() {
             var data = $(this).data(),
+<<<<<<< HEAD
                 inlineOptions = data.inlineFormset;
             switch(data.inlineType) {
             case "stacked":
@@ -288,6 +311,18 @@
                 break;
             case "tabular":
                 $(inlineOptions.name + "-group .tabular.inline-related tbody:first > tr").tabularFormset(inlineOptions.options);
+=======
+                inlineOptions = data.inlineFormset,
+                selector;
+            switch(data.inlineType) {
+            case "stacked":
+                selector = inlineOptions.name + "-group .inline-related";
+                $(selector).stackedFormset(selector, inlineOptions.options);
+                break;
+            case "tabular":
+                selector = inlineOptions.name + "-group .tabular.inline-related tbody:first > tr";
+                $(selector).tabularFormset(selector, inlineOptions.options);
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
                 break;
             }
         });

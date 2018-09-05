@@ -1,0 +1,224 @@
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Roboto-Slab';
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Montserrat", sans-serif;
+}
+
+body{
+	background: #f9f9f9;
+}
+
+::selection{
+	background: #111;
+	color:white;
+}
+
+
+#wrap{
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 10%;
+}
+
+#wrapper{
+	width: 70%;
+	margin: 0 auto;
+}
+
+footer{
+	color:#999;
+	text-align: center;
+	margin-top: 50px;
+		font-size: 14px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+}
+
+.bg{
+	margin-left: -2px;
+}
+.task_btn{
+	margin:10px;
+	width:200px;
+}
+#container{
+	box-shadow: 0px 0px 20px #eee;
+	margin: 0 auto;
+	background: white;
+	width: 860px;
+	height: 540px;
+	border-radius: 7px;
+	transition: all .5s ease-in-out;
+}
+input[type="text"]:disabled{
+	background: #eee;
+}
+header a{
+	color:#378f89;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+.expand {cursor: pointer;}
+#task{
+	width:90%;
+	padding: 15px;
+	background: #fff;
+	border:1px solid #eee;
+	border-bottom: 3px solid #eee;
+	color:#999;
+	margin: 0 auto;
+	line-height: 150%;
+	font-size: 15px;
+	margin-top: 20px;
+}
+#task p{
+	margin-left: 10px;
+}
+.red{
+	color:#378f89;
+}
+#task h3{
+	display: inline-block;
+}
+#task .yolo{
+	float: right;
+	font-size: 16px;
+	color: #777;
+}
+
+.lower{
+	display: none;
+}
+form{
+	padding: 20px;
+}
+.logo{
+	margin-top: 10px;
+}
+.image{
+	border-radius: 100%;
+	width:50px;
+}
+
+.right{
+	margin-top: 15px;
+	display: inline-block;
+	float: right;
+}
+
+.white-o {
+	background-color: white;
+}
+
+h3{color:#378f89;}
+.top_text{
+	display: inline-block;
+	color: #378f89;
+	font-size: 1.5em;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+.auto{
+	height: auto !important;
+}
+#login{
+	width: 400px;
+	margin-top: 0px;
+}
+
+input, select{
+	padding: 0px 0px 0px 10px;
+	display: inline-block;
+	outline: 0;
+	border:0;
+	color:#353535;
+	width: 80%;
+	height: 40px;
+	margin-top: 15px;
+	border-bottom: 3px solid #eee;
+	transition: all .4s linear;
+}
+
+input:focus{
+	border-bottom: 3px solid #378f89;
+}
+
+hr{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background: #eee;
+	outline: 0;
+	border:0;
+	height: 1px;
+}
+
+.login {
+	height: 450px;
+	overflow-y: scroll;
+}
+@media screen and (max-width: 789px)
+{
+
+	#wrap{width:100%;}
+	button,span{margin:0 auto; margin-top:20px !important;padding:0;text-align: center;}
+	.bg{display: none;}
+	#container{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	width: 90%;
+	height: auto;
+	}
+	#login, .top_text{
+		padding: 0;
+		width: 100%;
+		margin: 0 auto !important;
+	}
+	#wrapper{width: 100%;}
+	.login {
+		height: auto;
+		overflow-y: hidden;
+	}
+}
+
+button, input[type="submit"]{
+	width: 80%;
+	margin-top: 30px;
+	display: block;
+	outline: 0;
+	padding: 10px;
+	color:#378f89;
+	border:3px solid #378f89;
+	border-radius: 5px;
+	background: none;
+	transition: all .4s linear;
+}
+
+button:hover,input[type="submit"]:hover{
+	border:3px solid #111;
+	color:#111;
+}
+
+#login a{
+	font-size: 10px;
+	text-decoration: none;
+	color:#111;
+	border-bottom: 1px dashed #ffc13a;
+	transition: .5s ease;
+}
+
+#login a:hover{
+	border-bottom: 0;
+	color:#ffc13a;
+}
+
+
+header{
+	height: 5em;
+	width: 100%;
+	border-bottom: 2px solid #eee;
+	background: #fff;
+}

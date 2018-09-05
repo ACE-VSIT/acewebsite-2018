@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #42e5d9;
+}​ 
+
+
+
+
+html{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body{ 
+	color: #333;
+	overflow-x:hidden;
+	font-family: "Didact Gothic";
+}
+
+#hero{
+	/* background: url('../img/hero-bg.jpg'); */
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	overflow-x: hidden;
+}
+
+.row{   
+    display: -webkit-flex;
+    display: flex;
+}
+
+.numbers{
+	display: inline-block;
+	border-right: 2px solid #eee;
+	width: 20%;
+	min-width: 100px;
+	margin-right:10px;
+	margin-top: 50px;
+}
+
+.numbers span{
+	width: 30px;
+	display: inline-block;
+	height: 30px;
+	background: #66fcf1;
+	position: absolute;
+	margin-left: -0px;
+	z-index: -1;
+
+}
+.numbers h2{
+	display: block;
+	font-family: "Pathway Gothic One";
+	font-size: 4rem;
+	display: inline-block;
+	font-weight: 900;
+}
+ .numbers span:after{
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: #38c3b9;
+	position: relative;
+	top:20px;
+	right: -30px;
+	z-index: -1;
+} 
+ 
+.numbers:nth-child(4){
+	border: 0;
+}
+.numbers strong{
+	text-align: center;
+	font-size: 1rem;
+}
+
+.hero_left{
+	width:47%;
+	display: inline-block;
+	margin-left: -50px;
+}
+
+.logo_hero{
+	display: inline-block;
+	float: right;
+	position: relative;
+	top:0;
+	right: 100px;
+}
+
+#text{
+	display: inline-block;
+	align-self:center;
+	text-align: left;
+	opacity: 1 !important;
+	width: 47%;
+}
+
+.portal {
+	width: 250px;
+	margin-top: 30px;
+	display: block;
+	outline: 0;
+	padding: 15px;
+	color:#66fcf1;
+	font-size: 18px;
+	font-weight: bold;
+	border:3px solid #66fcf1;
+	border-radius: 5px;
+	background: none;
+	cursor: pointer;
+	transition: all .4s linear;
+}
+
+a {
+	text-decoration: none;
+}
+
+ .hero_video {
+    min-width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero_video video{
+
+	min-width: 100vw;
+    min-height: 560px;
+    height: 150%;
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+    transform: translate3d(-50%,0,0);
+}
+header{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 3em;
+}
+
+header img{
+	display: inline-block;
+	position: relative;
+	left: 80px;
+	top: 30px;
+}
+
+.line{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 50px;
+	height: 1px;
+	display: block;
+	border-bottom:3px solid #66fcf1;
+}
+
+h2{
+	font-family: "Pathway Gothic One";
+}
+
+#hero h2{
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 3px;
+	font-size: 130px;
+	line-height: 100%;
+}
+
+#hero p{
+	color: white;
+	font-size: 22px;
+	font-weight: 300;
+}
+
+#wrap{
+	width: 70%;
+	margin: 0 auto;
+}
+
+#team #wrap {
+	width: 75%;
+}
+
+.sec-white{
+	padding-top:80px;
+	padding-bottom: 80px;
+}
+
+.sec-white h1{
+	font-family: "Pathway Gothic One";
+	font-weight: 900;
+	text-align: center;
+	font-size: 55px;
+}
+
+.sec-white h1:after{
+	content: attr(title);
+	display: block;
+	color: #f7f7f7;
+	position: relative;
+	top:-60px;
+	z-index: -1;
+	right: ;
+	font-size: 72px;
+}
+
+.sec-grey h2{
+	font-family: "Pathway Gothic One";
+	font-weight: 900;
+	text-align: center;
+	font-size: 72px;
+	color:#f7f7f7;
+}
+
+.sec-grey h2:after{
+	content: attr(title);
+	display: block;
+	color: #000;
+	position: relative;
+	top:-85px;
+	z-index: 0;
+	right: ;
+	font-size: 55px;
+}
+
+.sec-white p{
+	margin: 0 auto;
+	max-width: 780px;
+	line-height: 3rem;
+	font-family: "Playfair Display";
+	text-align: center;
+	font-size: 30px;
+}
+
+.button{
+	display: inline-block;
+	width:200px;
+	text-align: center;
+	padding: 20px;
+	border-radius: 5px;
+	background: #42e5d9;
+	color: #fff;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
+.hvr-shutter-out-vertical:hover{
+
+}
+.hvr-shutter-out-vertical:before{
+	background: #111 !important;
+	border-radius: 5px;
+}
+
+.join{
+	cursor: pointer;
+	font-family: "Playfair Display";
+	color:white;
+	text-align: center;
+	font-size: 29px;
+	border:0;
+	padding-top:80px;
+	padding-bottom:80px;
+}
+
+.join h2{
+	font-size: 70px;
+}
+
+.hvr-bounce-to-left:before
+{
+	background: #42e5d9 !important;
+
+}
+
+footer{
+	color: white;
+	background: #10131a;
+	width: 100%;
+	padding-top:80px;
+	padding-bottom:80px;
+	border-top:1px solid #282b31;
+}
+.sec-grey{
+	background: #eee;
+}
+
+.team {
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	margin:40px 50px;
+}
+
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: none;
+}
+
+a i {
+	margin: 0px 5px;
+	color: white;
+	transition: 0.1s all linear;
+}
+
+a i:hover {
+	color: #42e5d9;
+	transition: 0.1s all linear;
+}
+
+main div.cent {
+  color: white;
+  text-align: center;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  overflow: none;
+}
+
+.bg {
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	padding: 100px;
+	text-align: center;
+	font-size: 20px;
+	color: #10131a;
+
+}
+
+.blog {
+	width:300px;
+	text-align: center;
+	padding: 20px;
+	border:2px solid white;
+	border-radius: 5px;
+	background: transparent;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	transition: 0.3s all linear;
+}
+
+button.blog.hvr-shutter-out-vertical:before {
+	background: white !important;
+	color: black !important;
+}
+
+button.blog.hvr-shutter-out-vertical:hover {
+	color: black !important;
+}
+
+.blog:hover {
+	background: white;
+	color:#10131a;
+	transition: 0.3s all linear;
+}
+
+footer.join:hover {
+	color: #10131a;
+}
+
+.team:hover .overlay {
+	display: inline-block;
+	transition: 0.3s all linear;
+}
+
+.overlay {
+	background: rgba(16, 19, 26, 0.62);
+	border-radius: 100%;
+	width: 210px;
+	height: 210px;
+	position: absolute;
+	top:0px;
+	display: none;
+	transition: 0.3s all linear;
+	color:black;
+}
+
+.team img {
+	width: 210px;
+	border-radius: 100%;
+}
+
+.team span{
+	width: 30px;
+	display: inline-block;
+	height: 30px;
+	background: #66fcf1;
+	position: absolute;
+	margin-left: 55px;
+	z-index: -1;
+
+}
+
+.team span:after{
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: #38c3b9;
+	position: relative;
+	top:20px;
+	right: -30px;
+	z-index: -1;
+}
+
+.team h3{
+	display: block;
+	font-family: "Pathway Gothic One";
+	font-size: 2.2rem;
+	display: inline-block;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.team strong{
+	text-align: center;
+	font-size: 1rem;
+}
+
+@media screen and (max-width:760px)
+{
+	#about .center {
+		width: 80%;
+    	margin: 0 auto;
+    	margin-top: -70px;
+	}	
+	#wrap{
+		width:90%;
+	}
+	.sec-white p{
+		font-size: 18px;
+		line-height: 160%;
+	}
+	#text h2{
+	font-size: 64px;
+	}
+	#text p{
+		margin: 0 auto;
+		font-size: 15px;
+		width: 70%;
+	}
+	#text{
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	.line{
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.hero_left img{
+		max-width: 100px;
+		opacity: 1 !important;
+	}
+	.hero_left{
+		display: none;
+		margin: 0px;
+		width: 100%;
+		opacity: 1 !important;
+	}
+	.logo_hero {
+		right: 0px;
+		margin: 0 auto;
+		float: center !important;
+	}
+	header img{
+		position: relative;
+		left: 20px;
+		top: 20px;
+	}
+	.team {
+		margin: 35px 0px;
+	}
+	.bg {
+		padding: 100px 0px;
+	}
+	.hero_video {
+	    background: url('../img/hero-bg2.jpg');
+	    background-size: cover;
+	}
+	.copy {
+		font-size: 13px;
+	}
+
+	.portal {
+		margin: 0 auto;
+		margin-top: 25px;
+		font-size: 15px;
+		padding: 12px;
+		width: 230px;
+	}
+}
