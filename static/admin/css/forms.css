@@ -177,7 +177,11 @@ form .aligned table p {
     padding-left: 0;
 }
 
+<<<<<<< HEAD
+fieldset .field-box {
+=======
 fieldset .fieldBox {
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
     float: left;
     margin-right: 20px;
 }
@@ -291,6 +295,8 @@ body.popup .submit-row {
     color: #fff;
 }
 
+<<<<<<< HEAD
+=======
 .submit-row a.closelink {
     display: inline-block;
     background: #bbbbbb;
@@ -302,18 +308,22 @@ body.popup .submit-row {
     color: #fff;
 }
 
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
 .submit-row a.deletelink:focus,
 .submit-row a.deletelink:hover,
 .submit-row a.deletelink:active {
     background: #a41515;
 }
 
+<<<<<<< HEAD
+=======
 .submit-row a.closelink:focus,
 .submit-row a.closelink:hover,
 .submit-row a.closelink:active {
     background: #aaaaaa;
 }
 
+>>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
 /* CUSTOM FORM FIELDS */
 
 .vSelectMultipleField {

@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--
+       Template Name: Lester - Creative HTML5 Portfolio Template
+       Author: JD-Themes
+       Version: 1.0.0
+    -->
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ee3158"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ee3158"/>
+    <meta name=msapplication-TileColor content=#FFFFFF>
+    <meta name=msapplication-TileImage content=favicon.ico>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transcluent"/>
+    <title>Lester - Creative HTML5 Portfolio Template</title>
+    <!-- IE-Support -->
+    <script src="js/ie-support.js" defer></script>
+    <!-- css-files -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<!--
+[Elements (Blockquotes)]
+[1] Page Loader
+[2] Navigation-Menu
+[3] Page-Header
+[4] Elements
+[5] Footer
+-->
+<body>
+<!-- [1] Page Loader -->
+<div class="loader">
+    <div class="loading-center">
+        <div class="loading-center-absolute">
+            <div class="object object_one"></div>
+            <div class="object object_two"></div>
+            <div class="object object_three"></div>
+            <div class="object object_four"></div>
+            <div class="object object_five"></div>
+            <div class="object object_six"></div>
+            <div class="object object_seven"></div>
+            <div class="object object_eight"></div>
+            <div class="object object_nine"></div>
+        </div>
+    </div>
+</div>
+<div id="main-wrapper" class="wrapper-hidden z-index-100">
+    <!-- [Optional] Toolbar -->
+    <div class="toolbar-wrapper">
+        <div class="toolbar-toggle">
+            <i class="fa fa-cog"></i>
+        </div>
+        <div class="toolbar">
+            <div class="toolbar-main">
+                <h6 class="toolbar-title">Color Scheme</h6>
+                <div class="toolbar-option color_scheme d-flex justify-content-between flex-wrap">
+                    <div data-color-scheme="#e30c0c"></div>
+                    <div data-color-scheme="#ee3158"></div>
+                    <div data-color-scheme="#c73ede"></div>
+                    <div data-color-scheme="#996ce9"></div>
+                    <div data-color-scheme="#5f75ed"></div>
+                    <div data-color-scheme="#2196f3"></div>
+                    <div data-color-scheme="#03a9f4"></div>
+                    <div data-color-scheme="#00bcd4"></div>
+                    <div data-color-scheme="#00a999"></div>
+                    <div data-color-scheme="#4caf50"></div>
+                    <div data-color-scheme="#8bc34a"></div>
+                    <div data-color-scheme="#ff9800"></div>
+                </div>
+
+                <div class="toolbar-option header-type d-flex flex-column">
+                    <h6 class="toolbar-title">Header Animation</h6>
+                    <div class="d-flex justify-content-between">
+                        <a class="option_btn option_btn_active" data-header-type='navbar-fill'>Fill</a>
+                        <a class="option_btn option_btn_off" data-header-type='navbar-fade'>Fade</a>
+                        <a class="option_btn option_btn_off" data-header-type='navbar-small'>Resize</a>
+                    </div>
+                </div>
+                <div class="toolbar-option logo-position d-flex flex-column">
+                    <h6 class="toolbar-title">Logo Position</h6>
+                    <div class="d-flex justify-content-between">
+                        <a class="option_btn option_btn_active" data-logo-position='logo-left'>Left</a>
+                        <a class="option_btn option_btn_off" data-logo-position='logo-right'>Right</a>
+                    </div>
+                </div>
+
+                <div class="toolbar-option footer__type d-flex flex-column">
+                    <h6 class="toolbar-title">Footer Type</h6>
+                    <div class="d-flex justify-content-between">
+                        <a class="option_btn option_btn_active" data-footer-type='footer-light'>Light</a>
+                        <a class="option_btn option_btn_off" data-footer-type='footer-dark'>Dark</a>
+                    </div>
+                </div>
+
+                <div class="toolbar-option hamburger__type d-flex flex-column">
+                    <h6 class="toolbar-title">Hamburger Button</h6>
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <a class="option_btn_small option_btn_small_active" data-hamburger="hamburger--3dx">3dx</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--3dy">3dy</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--3dxy">3dxy</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--3dxy-r">3dxy-r</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--boring">boring</a>
+                        <a class="option_btn_small option_btn_small_off"
+                           data-hamburger="hamburger--collapse">collapse</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--elastic">elastic</a>
+                        <a class="option_btn_small option_btn_small_off"
+                           data-hamburger="hamburger--emphatic">emphatic</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--minus">minus</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--slider">slider</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--squeeze">squeeze</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--spin">spin</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--spring">spring</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--stand">stand</a>
+                        <a class="option_btn_small option_btn_small_off" data-hamburger="hamburger--vortex">vortex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [2] Navigation-Menu -->
+    <nav class="navbar navbar-default desktop-menu logo-left">
+        <div class="container-fluid navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html" class="logo-link d-flex align-items-center" data-aos="zoom-in" data-aos-delay="1000" data-aos-easing="ease-in-out" data-aos-duration="700">
+                    <img src="img/logo/logo-light.png" alt="" class="logo-img logo-light">
+                    <img src="img/logo/logo-dark.png" alt="" class="logo-img logo-dark">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <ul class="navbar-menu-list">
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle primary-mobile-menu-toggle">Home</a>
+                        <ul class="sub-menu primary_sub-menus">
+                            <li>
+                                <a class="mobile-menu-toggle" href="index.html">Home Default</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Home Slider <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children"><a href="home-slider-default.html">Slider
+                                        Default</a></li>
+                                    <li class="menu-item-has-children"><a href="home-slider-fade.html">Slider Fade</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="home-slider-vertical.html">Slider
+                                        Vertical</a></li>
+                                    <li class="menu-item-has-children"><a href="home-slider-cube.html">Slider 3D
+                                        Cube</a></li>
+                                    <li class="menu-item-has-children"><a href="home-slider-coverflow.html">Slider
+                                        Coverflow</a></li>
+                                    <li class="menu-item-has-children"><a href="home-slider-flip.html">Slider Flip</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="home-slider-parallax.html">Slider
+                                        Parallax</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Home Video <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children"><a href="home-html-video.html">HTML Video</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="home-youtube-video.html">Youtube
+                                        Video</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">
+                                    Home Canvas<i class="fa fa-angle-right"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children"><a href="home-canvas-default-particles.html">Default
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-color-particles.html">Color
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-circles-particles.html">Circle
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-gravity-particles.html">Gravity
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-3d-particles.html">Particles
+                                        Net</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-connect-particles.html">Connect
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-moving-stars.html">Moving
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-confetti-particles.html">Confetti
+                                        Particles</a></li>
+                                    <li class="menu-item-has-children"><a href="home-canvas-wave-particles.html">Wave
+                                        Particles</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle primary-mobile-menu-toggle">Pages</a>
+                        <ul class="sub-menu primary_sub-menus">
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">About<i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="about-modern.html">About Us Modern</a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="about-creative.html">About Us Creative</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="404.html">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle primary-mobile-menu-toggle">Blog</a>
+                        <ul class="sub-menu primary_sub-menus">
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Blog Standard <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-standard-default-layout.html">Default Layout</a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-standard-sidebar-layout.html">Sidebar Layout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Blog Grid <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-grid-default-layout.html">Default Layout</a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-grid-sidebar-layout.html">Sidebar Layout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Single Post <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-single-post-default-layout.html">Default Post</a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="blog-single-post-sidebar-layout.html">Sidebar Post</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-megamenu">
+                        <a class="mobile-menu-toggle primary-mobile-menu-toggle">Portfolio</a>
+                        <div class="megamenu">
+                            <ul class="megamenu-side">
+                                <li><p class="megamenu-title">Grid</p></li>
+                                <li><a href="portfolio-grid-two-columns.html">Two Columns</a></li>
+                                <li><a href="portfolio-grid-three-columns.html">Three Columns</a></li>
+                                <li><a href="portfolio-grid-four-columns.html">Four Columns</a></li>
+                            </ul>
+                            <ul class="megamenu-side">
+                                <li><p class="megamenu-title">Masonry</p></li>
+                                <li><a href="portfolio-masonry-two-columns.html">Two Columns</a></li>
+                                <li><a href="portfolio-masonry-three-columns.html">Three Columns</a></li>
+                                <li><a href="portfolio-masonry-four-columns.html">Four Columns</a></li>
+                            </ul>
+                            <ul class="megamenu-side">
+                                <li><p class="megamenu-title">Additional</p></li>
+                                <li><a href="portfolio-carousel.html">Carousel</a></li>
+                                <li><a href="portfolio-parallax.html">Parallax</a></li>
+                                <li><a href="portfolio-image-gallery.html">Image Gallery</a></li>
+                            </ul>
+                            <ul class="megamenu-side">
+                                <li><p class="megamenu-title">Single Project</p></li>
+                                <li><a href="portfolio-single-page-type-1.html">Single Project 1</a></li>
+                                <li><a href="portfolio-single-page-type-2.html">Single Project 2</a></li>
+                                <li><a href="portfolio-single-page-type-3.html">Single Project 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle primary-mobile-menu-toggle">Elements</a>
+                        <ul class="sub-menu primary_sub-menus">
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">General <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-buttons.html"><span><i
+                                                class="far fa-circle icon-description"></i>Buttons</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-tabs.html"><span><i
+                                                class="fa fa-window-maximize icon-description"></i>Tabs</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-accordions.html"><span><i
+                                                class="fa fa-list-alt icon-description"></i>Accordions</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-icon-boxes.html"><span><i
+                                                class="fa fa-briefcase icon-description"></i>Icon Boxes</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-pricing-tables.html"><span><i
+                                                class="fas fa-money-bill-alt icon-description"></i>Pricing Tables</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-forms.html"><span><i
+                                                class="fa fa-paper-plane icon-description"></i>Contact Forms</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a class="mobile-menu-toggle">Additional<i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-headings.html"><span><i
+                                                class="fa fa-font icon-description"></i>Headings</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-tables.html"><span><i
+                                                class="fa fa-table icon-description"></i>Tables</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-lists.html"><span><i
+                                                class="fa fa-list-ul icon-description"></i>Lists</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-blockquotes.html"><span><i
+                                                class="fa fa-quote-left icon-description"></i>Blockquotes</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-social.html"><span><i
+                                                class="fab fa-twitter icon-description"></i>Social Icons</span></a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="elements-columns.html"><span><i
+                                                class="fa fa-columns icon-description"></i>Columns</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-additional align-items-center">
+                    <div class="social-box">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="social-box">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="social-box">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-search align-items-center justify-content-center">
+                    <div class="search-input d-flex align-items-center justify-content-center">
+                        <div class="search-icon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="search-times">
+                            <i class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <form class="search-form">
+                        <input type="text" placeholder="Input text end hit enter">
+                    </form>
+                </div>
+            </div>
+            <button class="hamburger justify-content-center align-items-center hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+    <!-- [3] Page-Header -->
+    <header class="page-header parallax-window bg_img default_overlay"
+            data-src="img/breadcrumbs/elements-additional.jpg">
+        <div class="container breadcrumbs-wrapper">
+            <div class="breadcrumbs d-flex flex-column justify-content-center">
+                <h3>Elements</h3>
+                <div>
+                    <ul class="breadcrumbs-list d-flex">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Elements</a>
+                        </li>
+                        <li>
+                            <a href="#">Additional</a>
+                        </li>
+                        <li>
+                            <a href="#">Blockquotes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- [4] Elements -->
+    <section class="element-section white-section">
+        <div class="container">
+            <h6 class="black-element-title element-title">Blockquote type 1</h6>
+            <blockquote class="blockquote-type-1">
+                <p>Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per
+                    conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt
+                    mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis nulla facilisi.</p>
+            </blockquote>
+        </div>
+    </section>
+    <section class="simple-background blockquote-section-type-1 parallax-window default_overlay"
+             data-src="img/assets/main-simple-bg.jpg" data-speed="0.4">
+        <div class="container blockquote-wrapper d-flex align-items-center justify-content-center">
+            <div class="row">
+                <div class="col blockquote-col d-flex justify-content-center">
+                    <blockquote>
+                        <h4>Create Awesome & Functionality Website With Lester Best Solution for Startup</h4>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="element-section gray-section">
+        <div class="container">
+            <h6 class="black-element-title element-title">Blockquote type 2</h6>
+            <blockquote class="blockquote-type-2">
+                <p>Sed dignissim lacinia nunc curabitur tortor. Pellentesque nibh aenean quam in scelerisque sem at
+                    dolor maecenas mattis sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.
+                    Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa aenean quam. </p>
+            </blockquote>
+        </div>
+    </section>
+    <section class="element-section black-section">
+        <div class="container">
+            <h6 class="white-element-title element-title">Blockquote type 3</h6>
+            <blockquote class="blockquote-type-3">
+                <p>Sed dignissim lacinia nunc curabitur tortor. Pellentesque nibh aenean quam in scelerisque sem at
+                    dolor maecenas mattis sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.
+                    Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa aenean quam. </p>
+            </blockquote>
+        </div>
+    </section>
+    <section class="element-section white-section">
+        <div class="container">
+            <h6 class="black-element-title element-title">Blockquote type 4</h6>
+            <blockquote class="blockquote-type-4">
+                <p>Sed dignissim lacinia nunc curabitur tortor. Pellentesque nibh aenean quam in scelerisque sem at
+                    dolor maecenas mattis sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.
+                    Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa aenean quam. </p>
+            </blockquote>
+        </div>
+    </section>
+    <!-- [5] Footer -->
+    <footer>
+        <div class="container-fluid footer-inner d-flex align-items-center">
+            <div class="footer-social d-flex">
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2018 Lester. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- js-files -->
+<!-- JQuery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- AOS -->
+<script src="js/aos.js"></script>
+<!-- Parallax -->
+<script src="js/parallax.js"></script>
+<!-- Progress Bars -->
+<script src="js/progressbar.min.js"></script>
+<!-- Magnific -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- Three -->
+<script src="js/three.min.js"></script>
+<!-- Projector -->
+<script src="js/projector.js"></script>
+<!-- Renderer -->
+<script src="js/canvas-renderer.js"></script>
+<!-- ImageLoaded -->
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<!-- Anime -->
+<script src="js/anime.min.js"></script>
+<!-- Isotope -->
+<script src="js/isotope.pkgd.min.js"></script>
+<!-- TweenLite -->
+<script src="js/TweenLite.min.js"></script>
+<!-- Hover3D -->
+<script src="js/jquery.hover3d.min.js"></script>
+<!-- EasePack -->
+<script src="js/EasePack.min.js"></script>
+<!-- Particles -->
+<script src="js/particles.min.js"></script>
+<!-- YoutubeBackground -->
+<script src="js/jquery.youtubebackground.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Swiper -->
+<script src="js/swiper.min.js"></script>
+<!-- Main JS-file -->
+<script src="js/main.js"></script>
+</body>
+</html>
