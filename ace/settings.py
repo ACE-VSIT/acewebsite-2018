@@ -19,26 +19,18 @@ ALLOWED_HOSTS = ['.vipsace.org', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-    
-=======
     'website',
     's3direct',
     'portalapp',
     'raven.contrib.django.raven_compat',
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'website',
-=======
     'social_django',
     'admin_email_sender',
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
 ]
 
 MIDDLEWARE = [
@@ -54,7 +46,7 @@ MIDDLEWARE = [
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
-ROOT_URLCONF = 'website.urls'
+ROOT_URLCONF = 'ace.urls'
 
 TEMPLATES = [
     {
