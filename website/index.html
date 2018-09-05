@@ -1,0 +1,1448 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ee3158"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ee3158"/>
+    <meta name=msapplication-TileColor content=#FFFFFF>
+    <meta name=msapplication-TileImage content=favicon.ico>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transcluent"/>
+    <title>ACE</title>
+    <!-- IE-Support -->
+    <script src="js/ie-support.js" defer></script>
+    <!-- css-files -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<!--
+[Home Page]
+[1] Page Loader
+[2] Navigation-Menu
+[3] Hero-Header
+[4] About Section
+[5] Digital Services
+[6] Counter Section
+[7] Team Section
+[8] Blockquote Section
+[9] Content Section
+[10] Recent Projects
+[11] Testimonials
+[12] Recent Posts
+[13] Footer
+-->
+<body>
+<!-- [1] Page Loader -->
+<div class="loader">
+    <div class="loading-center">
+        <div class="loading-center-absolute">
+            <div class="object object_one"></div>
+            <div class="object object_two"></div>
+            <div class="object object_three"></div>
+            <div class="object object_four"></div>
+            <div class="object object_five"></div>
+            <div class="object object_six"></div>
+            <div class="object object_seven"></div>
+            <div class="object object_eight"></div>
+            <div class="object object_nine"></div>
+        </div>
+    </div>
+</div>
+<div id="main-wrapper" class="wrapper-hidden z-index-100">
+    <!-- [2] Navigation-Menu -->
+    <nav class="navbar navbar-default desktop-menu logo-left">
+        <div class="container-fluid navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html" class="logo-link d-flex align-items-center" data-aos="zoom-in"
+                   data-aos-delay="1000" data-aos-easing="ease-in-out" data-aos-duration="700">
+                    <img src="img/logo/logo-light.png" alt="" class="logo-img logo-light">
+                    <img src="img/logo/logo-dark.png" alt="" class="logo-img logo-dark" style="filter: brightness(0);">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <ul class="navbar-menu-list">
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle">Home</a>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle">Home</a>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle">Home</a>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle">Home</a>
+                    </li>
+                </ul>
+                <div class="navbar-additional align-items-center">
+                    <div class="social-box">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                    <div class="social-box">                        </a>
+                    </div>
+
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="social-box">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger justify-content-center align-items-center hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+    <!-- [3] Hero-Header -->
+    <section class="hero-header hero-default dark_overlay" 
+            style="background-image:url('img/home/home_bg.jpg');background-attachment:fixed;"
+            data-section-type="canvas_circles">
+        <div id="canvas-parent" class="canvas-wrapper">
+            <canvas id="canvas-hero"></canvas>
+        </div>
+        <div class="container hero-content hero-center d-flex align-items-center">
+            <div class="content-default">
+                <h1 class="display-3 content-heading bold-heading z-index-100"
+                    data-aos="fade-down"
+                    data-aos-delay="900"
+                    data-aos-easing="ease-in-out"
+                    data-aos-duration="700">Hi, Stranger!<br>We Are ACE<span class="highlight">.</span>
+                </h1>
+                <p class="text-default z-index-100"
+                   data-aos="fade-down"
+                   data-aos-delay="1100"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="700">The Technical Society of VSIT, Vivekananda Institute of Professional Studies</p>
+                <br><br>
+                <a href="#" class="button-submit z-index-100" 
+                   data-aos="fade-down"
+                   data-aos-delay="1300"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="700">ACE Magazine</a>
+                <a href="#" class="button-submit z-index-100" 
+                   data-aos="fade-down"
+                   data-aos-delay="1300"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="700">ACE Portal</a>
+            </div>
+            <div class="angle-down"
+                 data-aos="zoom-in"
+                 data-aos-delay="1500"
+                 data-aos-anchor=".hero-header"
+                 data-aos-easing="ease-in-out"
+                 data-aos-duration="700">
+                <p>scroll down</p>
+                <i class="fa fa-angle-double-down"></i>
+            </div>
+        </div>
+    </section>
+    <!-- [4] About Section -->
+    <section class="about-creative-section large-section">
+        <div class="container">
+            <p class="subtitle"
+               data-aos="fade"
+               data-aos-delay="300"
+               data-aos-anchor-placement="top-bottom"
+               data-aos-easing="ease-in-out"
+               data-aos-duration="600">Creativity is intelligence having fun</p>
+            <h2 class="title"
+                data-aos="fade"
+                data-aos-delay="200"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="600">We build awesome-cool stuffs.</h2>
+            <div class="row images-wrapper">
+                <div class="col-lg-8 col-12 d-flex align-items-center">
+                    <div class="img-wrapper"
+                         data-aos="fade-up"
+                         data-aos-delay="200"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="600">
+                        <img src="img/about/about-creative-1.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 two-side align-items-center">
+                    <div class="img-wrapper"
+                         data-aos="fade-up"
+                         data-aos-delay="350"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="700">
+                        <img src="img/about/about-creative-2.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="row steps-wrapper">
+                <div class="col-md-4 step-wrapper d-flex"
+                     data-aos="fade-up"
+                     data-aos-delay="300"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in-out"
+                     data-aos-duration="600">
+                    <div>
+                        <h1 class="num display-4">01.</h1>
+                    </div>
+                    <div class="step-body">
+                        <h6>Live Projects.</h6>
+                        <p>Our members were involved in multiple live projects throughout the year. We take pride in building applications that help to make the world a better place to live in.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 step-wrapper d-flex"
+                     data-aos="fade-up"
+                     data-aos-delay="350"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in-out"
+                     data-aos-duration="600">
+                    <div>
+                        <h1 class="num display-4">02.</h1>
+                    </div>
+                    <div class="step-body">
+                        <h6>Research Opportunities.</h6>
+                        <p>We collaborate with our professors to transform our ideas and code into fully furnished research papers. We have published lots of research paper in international journals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 step-wrapper d-flex"
+                     data-aos="fade-up"
+                     data-aos-delay="400"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in-out"
+                     data-aos-duration="600">
+                    <div>
+                        <h1 class="num display-4">03.</h1>
+                    </div>
+                    <div class="step-body">
+                        <h6>Work as a team.</h6>
+                        <p>Ask the next person you see, what their passion is and share your inspiring dream with them. Collaborate and build cool and awesome stuff.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [5] Digital Services -->
+    <section class="digital-services">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-12 content light-gray-section" style="background-image: url('img/assets/lol.jpg')">
+                    <div class="content-wrapper">
+                        <h1 class="section-title"
+                            data-aos="fade-up"
+                            data-aos-delay="250"
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos-easing="ease-in-out"
+                            data-aos-duration="700">What We Do</h1>
+                        <p class="subtitle"
+                           data-aos="fade-up"
+                           data-aos-delay="300"
+                           data-aos-anchor-placement="top-bottom"
+                           data-aos-easing="ease-in-out"
+                           data-aos-duration="700">What We Conduct</p>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-12 col-xl-6"
+                                 data-aos="fade-up"
+                                 data-aos-delay="250"
+                                 data-aos-anchor-placement="top-bottom"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-duration="700">
+                                <div class="d-flex service-wrapper">
+                                    <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-wrench"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="title-service">ACE Hours</h6>
+                                        <p class="service-text">Lorem ipsum dolor sit amet, cotetur in iste adicing
+                                            elite minima nam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6"
+                                 data-aos="fade-up"
+                                 data-aos-delay="300"
+                                 data-aos-anchor-placement="top-bottom"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-duration="700">
+                                <div class="d-flex service-wrapper">
+                                    <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-paint-brush"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="title-service">Hackathon</h6>
+                                        <p class="service-text">Lorem ipsum dolor sit amet, cotetur in iste adicing
+                                            elite minima nam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6"
+                                 data-aos="fade-up"
+                                 data-aos-delay="350"
+                                 data-aos-anchor-placement="top-bottom"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-duration="700">
+                                <div class="d-flex service-wrapper">
+                                    <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-bookmark"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="title-service">Workshops</h6>
+                                        <p class="service-text">Lorem ipsum dolor sit amet, cotetur in iste adicing
+                                            elite minima nam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xl-6"
+                                 data-aos="fade-up"
+                                 data-aos-delay="400"
+                                 data-aos-anchor-placement="top-bottom"
+                                 data-aos-easing="ease-in-out"
+                                 data-aos-duration="700">
+                                <div class="d-flex service-wrapper">
+                                    <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="title-service">Technical Fest</h6>
+                                        <p class="service-text">Lorem ipsum dolor sit amet, cotetur in iste adicing
+                                            elite minima nam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 image parallax-window" data-src="img/assets/bg-right.jpg">
+                </div>
+                <div class="col-lg-6 col-12 image bg_img parallax-window last-image"
+                     data-src="img/about/lol.jpg">
+                </div>
+                <div class="col-lg-6 col-12 content-about light-gray-section" style="background-image: url('img/assets/absurdity.png')">
+                    <div class="content-wrapper"
+                         data-aos="fade-up"
+                         data-aos-delay="100"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="700">
+                        <h1 class="section-title">Who we are</h1>
+                        <p class="about-text">ACE - Association of Computer Enthusiasts is the CSI Student Branch of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing. </p><br>
+                        <p class="about-text">We take part in and organize workshops, seminars, hackathons, learnathons, ideathons, B-Plan competitions, programming competitions, meetups and much more. Since we are a members-first organization, one of our main objectives is to make sure that no one ever gets left behind.</p>
+                        <div class="btn-wrapper d-flex">
+                            <a href="#" class="button-default-black">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [6] Counter Section -->
+    <section class="counters-section-type-2">
+        <div class="container-fluid">
+            <div class="row counters-wrapper justify-content-center">
+                <div class="col-sm-3 col-6 counter-box first-side d-flex flex-column align-items-center"
+                     data-aos="fade-up"
+                     data-aos-delay="100"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in"
+                     data-aos-duration="700">
+                    <p class="title-counter">Project Done</p>
+                    <span class="prop-obj prop-obj1" data-count="40">0</span>
+                    <span class="prop-ob"> +</span>
+                </div>
+                <div class="col-sm-3 col-6 counter-box second-side d-flex flex-column align-items-center"
+                     data-aos="fade-up"
+                     data-aos-delay="200"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in"
+                     data-aos-duration="700">
+                    <p class="title-counter">Lines of Code</p>
+                    <span class="prop-obj prop-obj2" data-count="5">0</span>
+                    <span class="prop-ob"> M+</span>
+                </div>
+                <div class="col-sm-3 col-6 counter-box third-side d-flex flex-column align-items-center"
+                     data-aos="fade-up"
+                     data-aos-delay="300"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in"
+                     data-aos-duration="700">
+                    <p class="title-counter">Events Won</p>
+                    <span class="prop-obj prop-obj3" data-count="100">0</span>
+                    <span class="prop-ob"> +</span>
+                </div>
+                <div class="col-sm-3 col-6 counter-box third-side d-flex flex-column align-items-center"
+                     data-aos="fade-up"
+                     data-aos-delay="300"
+                     data-aos-anchor-placement="top-bottom"
+                     data-aos-easing="ease-in"
+                     data-aos-duration="700">
+                    <p class="title-counter">Active Members</p>
+                    <span class="prop-obj prop-obj4" data-count="30">0</span>
+                    <span class="prop-ob"> +</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [7] Team Section -->
+    <section class="team-section large-section" style="background-image: url('img/assets/inspiration-geometry.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h2 class="section-title text-center title-divider"
+                        data-bigletter="O" data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-aos-anchor-placement="top-bottom"
+                        data-aos-easing="ease-in-out"
+                        data-aos-duration="700">Our Team</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container" align="center">
+            <div class="row team-main">
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/srijit.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/sameer.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/chirag.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/khushi.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/anukriti.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/aayush.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/jai.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/prateek.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/shreyans.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/lakshay.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/tejus.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/pranav.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/sahil.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/mehak.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/manik.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/mohak.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="/img/team/divakar.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">Sameer Kumare</h6>
+                                            <p class="position">Executive Vice President</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- [8] Blockquote Section -->
+    <section class="simple-background blockquote-section-type-1 parallax-window default_overlay"
+             data-src="img/services/services-2.jpg"
+             data-speed="0.4">
+        <div class="container blockquote-wrapper d-flex align-items-center justify-content-center">
+            <div class="row">
+                <div class="col blockquote-col d-flex justify-content-center">
+                    <blockquote data-aos="zoom-in"
+                                data-aos-delay="100"
+                                data-aos-anchor-placement="top-bottom"
+                                data-aos-easing="ease-in-out"
+                                data-aos-duration="800">
+                        <h4>By the student, for the student, to the student.</h4>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [9] Content Section -->
+    <section class="content-section-type-2 flip-section large-section gray-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="flip-container"
+                         data-aos="zoom-in"
+                         data-aos-delay="100"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="800">
+                        <div class="img-wrapper">
+                            <div class="front side">
+                                <img src="img/assets/two-side-img-2.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="back side">
+                                <div class="content-wrapper d-flex flex-column justify-content-center align-items-center">
+                                    <h4>Lorem Ipsum</h4>
+                                    <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque
+                                        volutpat condimentum velit class aptent taciti sociosqu ad litora torquent per
+                                        conubia nostra. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row services-wrapper">
+                        <div class="col-12 service-wrapper d-flex align-items-center"
+                             data-aos="fade-up"
+                             data-aos-delay="100"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in"
+                             data-aos-duration="600">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                <i class="fa fa-th"></i>
+                            </div>
+                            <div class="content-wrapper d-flex flex-column">
+                                <h5>Lorem Ipsum</h5>
+                                <p>Maenas aliquet mollis lectus. Vivamus conctetuer risus et tortor lorem in, nibh ipsum
+                                    aptent taciti sociosqu ad.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 service-wrapper d-flex align-items-center"
+                             data-aos="fade-up"
+                             data-aos-delay="200"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in"
+                             data-aos-duration="600">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="content-wrapper d-flex flex-column">
+                                <h5>Lorem Ipsum</h5>
+                                <p>Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor lorem in, nibh
+                                    ipsum aptent taciti sociosqu ad.</p>
+                            </div>
+
+                        </div>
+                        <div class="col-12 service-wrapper d-flex align-items-center"
+                             data-aos="fade-up"
+                             data-aos-delay="300"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in"
+                             data-aos-duration="600">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                                <i class="fa fas fa-phone-volume"></i>
+                            </div>
+                            <div class="content-wrapper d-flex flex-column">
+                                <h5>Lorem Ipsum</h5>
+                                <p>Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor lorem in, nibh
+                                    ipsum aptent taciti sociosqu ad.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- [10] Recent Projects -->
+    <section class="projects-section light-gray-section">
+        <div class="container"
+             data-aos="fade-up"
+             data-aos-delay="100"
+             data-aos-anchor-placement="top-bottom"
+             data-aos-easing="ease-in-out"
+             data-aos-duration="600">
+            <div class="button-group button-group-default d-flex justify-content-center">
+                <button data-filter="*" class="active-button">Show All</button>
+                <button data-filter=".branding">Web Dev</button>
+                <button data-filter=".design">App Dev</button>
+                <button data-filter=".packaging">Designs</button>
+                <button data-filter=".advertising">Programming</button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="grid row"
+                 data-aos="fade-up"
+                 data-aos-delay="250"
+                 data-aos-anchor-placement="top-bottom"
+                 data-aos-easing="ease-in-out"
+                 data-aos-duration="600">
+                <div class="grid-item design advertising">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup5.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#5"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Cup of coffee</h6>
+                                    <p class="info">
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item design">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup1.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Notebook Mockup</h6>
+                                    <p class="info">
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item branding packaging advertising">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup3.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-betw
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item advertising">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup4.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Paper Bag</h6>
+                                    <p class="info">
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item advertising">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup11.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Book Mockup</h6>
+                                    <p class="info">
+                                        <span>12<i class="fa fa-comments"></i></span>
+                                        <span>23<i class="far fa-heart"></i></span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item packaging advertising">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup2.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Cards Mockup</h6>
+                                    <p class="info">
+                                        <span>24<i class="fa fa-comments"></i></span>
+                                        <span>15<i class="far fa-heart"></i></span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item branding">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup6.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Branding Mockup</h6>
+                                    <p class="info">
+                                        <span>15<i class="fa fa-comments"></i></span>
+                                        <span>11<i class="far fa-heart"></i></span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item branding packaging">
+                    <div class="img-wrapper">
+                        <img src="img/assets/mockup12.jpg" alt="" class="img-fluid">
+                        <div class="description-box hover3d-wrapper">
+                            <a href="#"
+                               class="content d-flex align-items-end hover3d-child">
+                                <div class="content-wrapper d-flex justify-content-between">
+                                    <h6>Branding Mockup</h6>
+                                    <p class="info">
+                                        <span>8<i class="fa fa-comments"></i></span>
+                                        <span>14<i class="far fa-heart"></i></span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [11] Testimonials -->
+    <section class="testimonials large-section black_overlay"
+             style="background-image: url('img/assets/testimonials.jpg')">
+        <div class="container-fluid testimonials-wrapper"
+             data-aos="fade-up"
+             data-aos-delay="100"
+             data-aos-anchor-placement="top-bottom"
+             data-aos-easing="ease-in-quad"
+             data-aos-duration="800">
+            <div class="swiper-container swiper-testimonials">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-wrapper">
+                            <div class="img-wrapper">
+                                <img src="/img/team/sameer.jpg" alt="">
+                            </div>
+                            <h5 class="client">Sameer Kumar</h5>
+                            <p class="position">CEO, Google</p>
+                            <p class="review">
+                                Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra
+                                auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum
+                                primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie
+                                dui. Praesent blandit dolor sed non quam.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-wrapper">
+                            <div class="img-wrapper">
+                                <img src="/img/team/sameer.jpg" alt="">
+                            </div>
+                            <h5 class="client">Sameer Kumarr</h5>
+                            <p class="position">CEO, Yahoo</p>
+                            <p class="review">
+                                Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper nulla facilisi.
+                                Integer lacinia sollicitudin massa. Cras metus sed aliquet risus a tortor. Integer id
+                                quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit
+                                amet, augue proin sodales libero augue eget diam.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-wrapper">
+                            <div class="img-wrapper">
+                                <img src="/img/team/sameer.jpg" alt="">
+                            </div>
+                            <h5 class="client">Sameer Kumar</h5>
+                            <p class="position">Designer, Envato</p>
+                            <p class="review">
+                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing
+                                diam, a cursus ipsum ante quis turpis nulla facilisi ut fringilla suspendisse
+                                potenti. Nunc feugiat mi a tellus consequat imperdiet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-wrapper">
+                            <div class="img-wrapper">
+                                <img src="/img/team/sameer.jpg" alt="">
+                            </div>
+                            <h5 class="client">Sameer Kumar</h5>
+                            <p class="position">Founder & CEO, Facebook</p>
+                            <p class="review">
+                                Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi.
+                                Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id
+                                quam. Morbi mi quisque nisl felis, venenatis tristique, dignissim in, ultrices sit
+                                amet, augue proin sodales libero eget ante.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-wrapper">
+                            <div class="img-wrapper">
+                                <img src="/img/team/sameer.jpg" alt="">
+                            </div>
+                            <h5 class="client">Sameer Kumar</h5>
+                            <p class="position">Developer, Envato</p>
+                            <p class="review">
+                                Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra
+                                auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum
+                                primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie
+                                dui. Praesent blandit dolor sed non quam.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination-bullets-default"></div>
+                <div class="nav justify-content-between">
+                    <div class="swiper-button-prev-testimonials"><i class="fa fa-angle-left"></i></div>
+                    <div class="swiper-button-next-testimonials"><i class="fa fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [12] Recent Posts -->
+    <section class="recent-posts gray-section large-section" style="background-image: url('img/assets/absurdity.png')">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h2 class="section-title text-center title-divider" data-bigletter="R" data-aos="fade-up"
+                            data-aos-delay="100" data-aos-anchor-placement="top-bottom"
+                            data-aos-easing="ease-in-out" data-aos-duration="700">Recent Events</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row blog-wrapper">
+                <div class="col-lg-4">
+                    <div class="blog-card-wrapper hover3d-wrapper" data-aos="fade-right" data-aos-delay="100"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out" data-aos-duration="600">
+                        <div class="card-content hover3d-child">
+                            <div class="card-blog-header">
+                                <div class="img-wrapper d-flex align-items-center justify-content-center">
+                                    <a href="#">
+                                        <img src="img/assets/img-blog-1.jpg" alt="" class="img-fluid img">
+                                        <div class="tag bg-color-purple">ACE Hours</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-blog-body">
+                                <h5><a href="#">Lorem Ipsum Dolor</a></h5>
+                                <p class="content">Lorem ipsum dolor sit amet, conctetur ping elit. A archcto codi
+                                    cumque
+                                    dissimos dobus, dolorum eos expbo id iusto lorum. Beatae, dicta, doloremque, ping
+                                    elit fugit in nisl felis laboram<a href="#">[...]</a></p>
+                                <div class="card-blog-footer d-flex justify-content-between align-items-end">
+                                    <p class="date d-flex align-items-end">
+                                       <i class="fas fa-calendar-alt"></i>
+                                        April 25, 2018
+                                    </p>
+                                    <p class="info d-flex align-items-end">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-card-wrapper hover3d-wrapper" data-aos="fade-up" data-aos-delay="200"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out" data-aos-duration="600">
+                        <div class="card-content hover3d-child">
+                            <div class="card-blog-header">
+                                <div class="img-wrapper d-flex align-items-center justify-content-center">
+                                    <a href="#">
+                                        <img src="img/assets/img-blog-2.jpg" alt="" class="img-fluid img">
+                                        <div class="tag bg-color-blue">Seminar</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-blog-body">
+                                <h5><a href="#">Lorem Ipsum Dolor</a></h5>
+                                <p class="content">Lorem ipsum dolor sit amet, conctetur ping elit. A archcto codi
+                                    cumque
+                                    dissimos dobus, dolorum eos expbo id iusto lorum. Beatae, dicta, doloremque, ping
+                                    elit fugit in nisl felis laboram<a href="#">[...]</a></p>
+                                <div class="card-blog-footer d-flex justify-content-between align-items-end">
+                                    <p class="date d-flex align-items-end">
+                                       <i class="fas fa-calendar-alt"></i>
+                                        April 25, 2018
+                                    </p>
+                                    <p class="info d-flex align-items-end">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-card-wrapper hover3d-wrapper" data-aos="fade-left" data-aos-delay="300"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out" data-aos-duration="600">
+                        <div class="card-content hover3d-child">
+                            <div class="card-blog-header">
+                                <div class="img-wrapper d-flex align-items-center justify-content-center">
+                                    <a href="#">
+                                        <img src="img/assets/img-blog-3.jpg" alt="" class="img-fluid img">
+                                        <div class="tag bg-color-yellow">Fest</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-blog-body">
+                                <h5><a href="#">Lorem Ipsum Dolor</a></h5>
+                                <p class="content">Lorem ipsum dolor sit amet, conctetur ping elit. A archcto codi
+                                    cumque
+                                    dissimos dobus, dolorum eos expbo id iusto lorum. Beatae, dicta, doloremque, ping
+                                    elit fugit in nisl felis laboram<a href="#">[...]</a></p>
+                                <div class="card-blog-footer d-flex justify-content-between align-items-end">
+                                    <p class="date d-flex align-items-center">
+                                       <i class="fas fa-calendar-alt"></i>
+                                        April 25, 2018
+                                    </p>
+                                    <p class="info d-flex align-content-center">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [8] Newsletter Section -->
+    <section class="newsletter-section dark_overlay dark_overlay_gradient bg_img"
+             style="background-image: url('img/services/newsletter.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex align-items-center">
+                    <div class="content-wrapper"
+                         data-aos="fade-right"
+                         data-aos-delay="100"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="700">
+                        <h1>Subscribe newsletter</h1>
+                        <p>Integer euismod lacus luctus magna quisque cursus, metus vitae pharetra auctor, sem massa
+                            mattis
+                            sem, at interdum magna augue eget diam</p>
+                    </div>
+                    <div class="newsletter-wrapper"
+                         data-aos="fade-left"
+                         data-aos-delay="100"
+                         data-aos-anchor-placement="top-bottom"
+                         data-aos-easing="ease-in-out"
+                         data-aos-duration="700">
+                        <form id="form-newsletter" class="d-flex">
+                            <input type="email" placeholder="E-mail">
+                            <button>Send <i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [13] Footer -->
+    <footer>
+        <div class="container-fluid footer-inner d-flex align-items-center">
+            <div class="footer-social d-flex">
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="#">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2018 VIPSACE. Made with ❤️ by ACE.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- js-files -->
+<!-- JQuery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- AOS -->
+<script src="js/aos.js"></script>
+<!-- Parallax -->
+<script src="js/parallax.js"></script>
+<!-- Progress Bars -->
+<script src="js/progressbar.min.js"></script>
+<!-- Magnific -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- Three -->
+<script src="js/three.min.js"></script>
+<!-- Projector -->
+<script src="js/projector.js"></script>
+<!-- Renderer -->
+<script src="js/canvas-renderer.js"></script>
+<!-- ImageLoaded -->
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<!-- Anime -->
+<script src="js/anime.min.js"></script>
+<!-- Isotope -->
+<script src="js/isotope.pkgd.min.js"></script>
+<!-- TweenLite -->
+<script src="js/TweenLite.min.js"></script>
+<!-- Hover3D -->
+<script src="js/jquery.hover3d.min.js"></script>
+<!-- EasePack -->
+<script src="js/EasePack.min.js"></script>
+<!-- Particles -->
+<script src="js/particles.min.js"></script>
+<!-- YoutubeBackground -->
+<script src="js/jquery.youtubebackground.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Swiper -->
+<script src="js/swiper.min.js"></script>
+<!-- Main JS-file -->
+<script src="js/main.js"></script>
+</body>
+</html>
