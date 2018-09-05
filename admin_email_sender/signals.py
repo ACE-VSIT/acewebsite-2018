@@ -19,6 +19,7 @@ def send_email_signal(sender, instance, **kwargs):
                         recipient_list=[user.email],
                         fail_silently=True,
                         html_message=replace_text(html_text, user)).start()
+            print(user.email)
         instance.status = True
 
     instance.save()
