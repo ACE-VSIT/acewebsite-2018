@@ -443,6 +443,20 @@
                         </div>
                     </div>
                 {% endfor %}
+
+                <div class="col-lg-5 col-centered" align="center">
+                        <a href="#" class="button-submit z-index-100" 
+                   data-aos="fade-down"
+                   data-aos-delay="1300"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="700">Mentros</a>
+                        <a href="#" class="button-submit z-index-100" 
+                           data-aos="fade-down"
+                           data-aos-delay="1300"
+                           data-aos-easing="ease-in-out"
+                           data-aos-duration="700">Alumni</a>
+                    </div>
+
             </div>
         </div>
     </section>
@@ -470,237 +484,213 @@
             </div>
         </div>
     </section>
-    <!-- [9] Content Section -->
-    <section class="content-section-type-2 flip-section large-section gray-section">
+    <!-- Our Projects -->
+    <section class="blog-section large-section gray-section">
+
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="flip-container"
-                         data-aos="zoom-in"
-                         data-aos-delay="100"
-                         data-aos-anchor-placement="top-bottom"
-                         data-aos-easing="ease-in-out"
-                         data-aos-duration="800">
-                        <div class="img-wrapper">
-                            <div class="front side">
-                                <img src="{% static 'website/img/assets/two-side-img-2.jpg'%}" alt="" class="img-fluid">
-                            </div>
-                            <div class="back side">
-                                <div class="content-wrapper d-flex flex-column justify-content-center align-items-center">
-                                    <h4>Lorem Ipsum</h4>
-                                    <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque
-                                        volutpat condimentum velit class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col d-flex justify-content-center">
+                    <h2 class="section-title text-center title-divider" data-bigletter="R" data-aos="fade-up"
+                        data-aos-delay="100" data-aos-anchor-placement="top-bottom"
+                        data-aos-easing="ease-in-out" data-aos-duration="700">Our Projects</h2>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row blog-grid-row">
                 <div class="col-lg-6">
-                    <div class="row services-wrapper">
-                        <div class="col-12 service-wrapper d-flex align-items-center"
+                    <article class="post-grid white-section"
                              data-aos="fade-up"
                              data-aos-delay="100"
                              data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in"
-                             data-aos-duration="600">
-                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
-                                <i class="fa fa-th"></i>
-                            </div>
-                            <div class="content-wrapper d-flex flex-column">
-                                <h5>Lorem Ipsum</h5>
-                                <p>Maenas aliquet mollis lectus. Vivamus conctetuer risus et tortor lorem in, nibh ipsum
-                                    aptent taciti sociosqu ad.</p>
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <a href="#" class="img-wrapper">
+                                <img src="img/blog/blog-img-1.jpg" alt="" class="img-fluid">
+                            </a>
+                            <a href="#" class="tag bg-color-purple">
+                                Design
+                            </a>
+                        </div>
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">Good design is obvious</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 25, 2018 by <a href="#">Jonathan Doe</a></p>
                             </div>
                         </div>
-                        <div class="col-12 service-wrapper d-flex align-items-center"
+                    </article>
+                </div>
+                <div class="col-lg-6">
+                    <article class="post-grid white-section"
                              data-aos="fade-up"
-                             data-aos-delay="200"
+                             data-aos-delay="100"
                              data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in"
-                             data-aos-duration="600">
-                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
-                                <i class="fas fa-terminal"></i>
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <div class="swiper-container swiper-post">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="img/assets/img-blog-2.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/about/about-card-2.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/about/about-card-1.jpg" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination-bullets-default"></div>
                             </div>
-                            <div class="content-wrapper d-flex flex-column">
-                                <h5>Lorem Ipsum</h5>
-                                <p>Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor lorem in, nibh
-                                    ipsum aptent taciti sociosqu ad.</p>
-                            </div>
-
+                            <a href="#" class="tag bg-color-pink">
+                                Modern
+                            </a>
                         </div>
-                        <div class="col-12 service-wrapper d-flex align-items-center"
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">Guide to UX prototyping</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 24, 2018 by <a href="#">Frank Horrigan</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6">
+                    <article class="post-grid white-section"
                              data-aos="fade-up"
-                             data-aos-delay="300"
+                             data-aos-delay="100"
                              data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in"
-                             data-aos-duration="600">
-                            <div class="icon-wrapper d-flex align-items-center justify-content-center">
-                                <i class="fa fas fa-phone-volume"></i>
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <a class="popup-modal video-popup d-flex align-items-center justify-content-center"
+                               href="#video-post-1">
+                                <img src="img/blog/blog-img-3.jpg" alt="" class="img-fluid">
+                                <div class="play-btn-scale">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                            </a>
+                            <div id="video-post-1" class="white-popup-block mfp-hide mfp-fade">
+                                <div class="modal-video-box">
+                                    <iframe src="https://www.youtube.com/embed/KyKgBzFypzc"
+                                            allowfullscreen></iframe>
+                                    <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+                                </div>
                             </div>
-                            <div class="content-wrapper d-flex flex-column">
-                                <h5>Lorem Ipsum</h5>
-                                <p>Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor lorem in, nibh
-                                    ipsum aptent taciti sociosqu ad.</p>
+                            <a href="#" class="tag bg-color-red">
+                                Smart
+                            </a>
+                        </div>
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">Visual hierarchy in web design</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 24, 2018 by <a href="#">Jonathan Doe</a></p>
                             </div>
-
                         </div>
-                    </div>
+                    </article>
                 </div>
+                <div class="col-lg-6">
+                    <article class="post-grid white-section"
+                             data-aos="fade-up"
+                             data-aos-delay="100"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <a href="#" class="img-wrapper">
+                                <img src="img/blog/blog-img-4.jpg" alt="" class="img-fluid">
+                            </a>
+                            <a href="#" class="tag bg-color-blue">
+                                Development
+                            </a>
+                        </div>
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">Social Media Today</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 24, 2018 by <a href="#">Alex Gray</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6">
+                    <article class="post-grid white-section"
+                             data-aos="fade-up"
+                             data-aos-delay="100"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <a href="#" class="img-wrapper">
+                                <img src="img/blog/blog-img-5.jpg" alt="" class="img-fluid">
+                            </a>
+                            <a href="#" class="tag bg-color-green">
+                                Code
+                            </a>
+                        </div>
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">How to learn Angular</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 24, 2018 by <a href="#">Richard Miller</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6">
+                    <article class="post-grid white-section"
+                             data-aos="fade-up"
+                             data-aos-delay="100"
+                             data-aos-anchor-placement="top-bottom"
+                             data-aos-easing="ease-in-out"
+                             data-aos-duration="800">
+                        <div class="post-image-side">
+                            <a href="#" class="img-wrapper">
+                                <img src="img/blog/blog-img-6.jpg" alt="" class="img-fluid">
+                            </a>
+                            <a href="#" class="tag bg-color-yellow">
+                                Lifestyle
+                            </a>
+                        </div>
+                        <div class="post-content-side right-side">
+                            <a class="post-title" href="#">This is the secret of success</a>
+                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
+                                torquent...</p>
+                            <div class="description-box d-flex align-items-center right-side">
+                                <i class="far fa-clock"></i>
+                                <p>Posted on April 24, 2018 by <a href="#">David Spencer</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="col-lg-5 col-centered" align="center">
+                    <a href="#" class="button-submit z-index-100" 
+               data-aos="fade-down"
+               data-aos-delay="1300"
+               data-aos-easing="ease-in-out"
+               data-aos-duration="700">More Projects</a>
             </div>
 
-        </div>
-    </section>
-    <!-- [10] Recent Projects -->
-    <section class="projects-section light-gray-section">
-        <div class="container"
-             data-aos="fade-up"
-             data-aos-delay="100"
-             data-aos-anchor-placement="top-bottom"
-             data-aos-easing="ease-in-out"
-             data-aos-duration="600">
-            <div class="button-group button-group-default d-flex justify-content-center">
-                <button data-filter="*" class="active-button">Show All</button>
-                <button data-filter=".branding">Web Dev</button>
-                <button data-filter=".design">App Dev</button>
-                <button data-filter=".packaging">Designs</button>
-                <button data-filter=".advertising">Programming</button>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="grid row"
-                 data-aos="fade-up"
-                 data-aos-delay="250"
-                 data-aos-anchor-placement="top-bottom"
-                 data-aos-easing="ease-in-out"
-                 data-aos-duration="600">
-                <div class="grid-item design advertising">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup5.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#5"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Cup of coffee</h6>
-                                    <p class="info">
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item design">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup1.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Notebook Mockup</h6>
-                                    <p class="info">
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item branding packaging advertising">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup3.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-betw
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item advertising">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup4.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Paper Bag</h6>
-                                    <p class="info">
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item advertising">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup11.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Book Mockup</h6>
-                                    <p class="info">
-                                        <span>12<i class="fa fa-comments"></i></span>
-                                        <span>23<i class="far fa-heart"></i></span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item packaging advertising">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup2.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Cards Mockup</h6>
-                                    <p class="info">
-                                        <span>24<i class="fa fa-comments"></i></span>
-                                        <span>15<i class="far fa-heart"></i></span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item branding">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup6.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Branding Mockup</h6>
-                                    <p class="info">
-                                        <span>15<i class="fa fa-comments"></i></span>
-                                        <span>11<i class="far fa-heart"></i></span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item branding packaging">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/assets/mockup12.jpg'%}" alt="" class="img-fluid">
-                        <div class="description-box hover3d-wrapper">
-                            <a href="#"
-                               class="content d-flex align-items-end hover3d-child">
-                                <div class="content-wrapper d-flex justify-content-between">
-                                    <h6>Branding Mockup</h6>
-                                    <p class="info">
-                                        <span>8<i class="fa fa-comments"></i></span>
-                                        <span>14<i class="far fa-heart"></i></span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- [11] Testimonials -->
@@ -799,7 +789,7 @@
             </div>
         </div>
     </section>
-    <!-- [12] Recent Posts -->
+    <!-- [12] Recent Events -->
     <section class="recent-posts gray-section large-section" style="background-image: url('{% static 'website/img/assets/absurdity.png'%}')">
         <div class="container">
             <div class="container">
