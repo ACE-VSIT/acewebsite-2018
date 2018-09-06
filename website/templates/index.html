@@ -72,16 +72,22 @@
             <div class="navbar-menu">
                 <ul class="navbar-menu-list">
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle">Home</a>
+                        <a class="mobile-menu-toggle" href="#">Home</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle">Home</a>
+                        <a class="mobile-menu-toggle" href="/members">Members</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle">Home</a>
+                        <a class="mobile-menu-toggle" href="/projects">Projects</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle">Home</a>
+                        <a class="mobile-menu-toggle" href="/events">Events</a>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle" href="/calendar">Calendar</a>
+                    </li>
+                    <li class="menu-primary-item menu-item-has-children">
+                        <a class="mobile-menu-toggle" href="/achievements">Achievements</a>
                     </li>
                 </ul>
                 <div class="navbar-additional align-items-center">
@@ -412,6 +418,7 @@
         </div>
         <div class="container" align="center">
             <div class="row team-main">
+                {% for member in members %}
                     <div class="col-lg-4 col-centered" align="center">
                         <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
                             <div class="member-wrapper">
@@ -421,13 +428,13 @@
                                 <div class="member-description">
                                     <div class="content-wrapper d-flex justify-content-center align-items-end">
                                         <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
+                                            <h6 class="name">{{ member.name }}</h6>
+                                            <p class="position">{{ member.position }}</p>
                                             <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                <a class="social-box" href="{{ member.github }}"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="{{ member.behance }}"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="{{ member.website }}"><i class="fab fa-website"></i></a> <!--check-->
+                                                <a class="social-box" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -435,436 +442,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/sameer.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/chirag.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/khushi.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/anukriti.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/aayush.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/jai.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/prateek.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/shreyans.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/lakshay.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/tejus.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/pranav.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/sahil.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/mehak.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/manik.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/mohak.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-4 col-centered" align="center">
-                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
-                            <div class="member-wrapper">
-                                <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/divakar.jpg'%}" alt="" class="img-fluid">
-                                </div>
-                                <div class="member-description">
-                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
-                                        <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">Sameer Kumare</h6>
-                                            <p class="position">Executive Vice President</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                <a class="social-box" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
