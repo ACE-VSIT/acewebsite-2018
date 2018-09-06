@@ -10,6 +10,7 @@ class ACEUserProfile(models.Model):
     phone_number = models.CharField(max_length=10)  # validators should be a list
     is_member = models.BooleanField(default=False)
     is_core = models.BooleanField(default=False)
+    is_council = models.BooleanField(default=False)
     section = models.CharField(max_length=3, blank=True, null=True)
 
     github = models.URLField(null=True, blank=True)
