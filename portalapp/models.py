@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from s3direct.fields import S3DirectField
+from filer.fields.image import FilerImageField, FilerFileField
+
 
 class ACEUserProfile(models.Model):
     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -18,6 +21,7 @@ class ACEUserProfile(models.Model):
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
+    picture = FilerFileField(null=True, blank=True, related_name="profile_picture", on_delete=models.CASCADE)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)

@@ -31,6 +31,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'admin_email_sender',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    'django_imgur',
+
 ]
 
 MIDDLEWARE = [
@@ -115,6 +120,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # FB Login
 
@@ -272,3 +279,44 @@ if 'sendgrid' in os.environ.get('EMAIL_CLIENT'):
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
+
+# DjangoFiler
+THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+FILER_DEBUG = True
+FILER_ENABLE_LOGGING = True
+FILER_IS_PUBLIC_DEFAULT = True
+FILER_STATICMEDIA_PREFIX = MEDIA_URL+'filer/'
+FILER_STORAGES = {
+    'public': {
+        'main': {
+            'ENGINE': 'django_imgur.storage.ImgurStorage',
+            'OPTIONS': {
+                'location': '/path/to/media/filer',
+                # 'base_url': '/smedia/filer/',
+            },
+            'UPLOAD_TO': 'filer.utils.generate_filename.by_date',
+        },
+        'thumbnails': {
+            'ENGINE': 'django_imgur.storage.ImgurStorage',
+            'OPTIONS': {
+                'location': '/path/to/media/filer_thumbnails',
+                'base_url': '/smedia/filer_thumbnails/',
+            },
+        },
+    }
+}
+
+
+# Imgur
+IMGUR_CONSUMER_ID = os.environ.get('IMGUR_CONSUMER_ID')
+IMGUR_CONSUMER_SECRET = os.environ.get('IMGUR_CONSUMER_SECRET')
+# IMGUR_USERNAME = os.environ.get('IMGUR_USERNAME')
+# IMGUR_ACCESS_TOKEN = os.environ.get('IMGUR_ACCESS_TOKEN')
+# IMGUR_ACCESS_TOKEN_REFRESH = os.environ.get('IMGUR_ACCESS_TOKEN_REFRESH')

@@ -2,12 +2,6 @@ from django.contrib import admin
 from .models import *
 
 
-@admin.register(Member)
-class MembersAdmin(admin.ModelAdmin):
-    # list_display = ('name', 'enrollment_number', 'position', 'email',)
-    pass
-
-
 @admin.register(Project)
 class ProjectsAdmin(admin.ModelAdmin):
     # list_display = ('name', 'desc', 'created_by', 'tools',)

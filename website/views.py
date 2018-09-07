@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from website.models import Achievement, Calendar, Event, Gallery, Member, Project
+from website.models import Achievement, Calendar, Event, Gallery, Project
 from portalapp.models import ACEUserProfile
 
 
