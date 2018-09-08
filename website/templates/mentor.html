@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ee3158"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ee3158"/>
+    <meta name=msapplication-TileColor content=#FFFFFF>
+    <meta name=msapplication-TileImage content=favicon.ico>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-transcluent"/>
+    <title>ACE Mentors</title>
+    <!-- IE-Support -->
+    <script src="{% static 'website/js/ie-support.js'%}" defer></script>
+    <!-- css-files -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'website/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'website/css/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'website/css/main.css'%}">
+</head>
+<body>
+<div class="loader">
+    <div class="loading-center">
+        <div class="loading-center-absolute">
+            <div class="object object_one"></div>
+            <div class="object object_two"></div>
+            <div class="object object_three"></div>
+            <div class="object object_four"></div>
+            <div class="object object_five"></div>
+            <div class="object object_six"></div>
+            <div class="object object_seven"></div>
+            <div class="object object_eight"></div>
+            <div class="object object_nine"></div>
+        </div>
+    </div>
+</div>
+<div id="main-wrapper" class="wrapper-hidden z-index-100">
+
+    <!-- header here -->
+
+    <section class="team-section large-section" style="background-image: url('{% static 'website/img/assets/inspiration-geometry.png'%}')">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h2 class="section-title text-center title-divider"
+                        data-bigletter="O" data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-aos-anchor-placement="top-bottom"
+                        data-aos-easing="ease-in-out"
+                        data-aos-duration="700">Our Mentors</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container" align="center">
+            <div class="row team-main">
+                {% for member in members %}
+                    <div class="col-lg-4 col-centered" align="center">
+                        <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
+                            <div class="member-wrapper">
+                                <div class="img-wrapper">
+                                    <img src="{% static 'website//img/team/srijit.jpg'%}" alt="" class="img-fluid">
+                                </div>
+                                <div class="member-description">
+                                    <div class="content-wrapper d-flex justify-content-center align-items-end">
+                                        <div class="content d-flex flex-column align-items-center justify-content-end">
+                                            <h6 class="name">{{ member.name }}</h6>
+                                            <p class="position">{{ member.position }}</p>
+                                            <div class="social-wrapper d-flex">
+                                                <a class="social-box" href="{{ member.github }}"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="{{ member.behance }}"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="{{ member.website }}"><i class="fab fa-website"></i></a> <!--check-->
+                                                <a class="social-box" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="col-lg-5 col-centered" align="center">
+                        <a href="#" class="button-submit z-index-100" 
+                   data-aos="fade-down"
+                   data-aos-delay="1300"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="700">Mentros</a>
+                        <a href="#" class="button-submit z-index-100" 
+                           data-aos="fade-down"
+                           data-aos-delay="1300"
+                           data-aos-easing="ease-in-out"
+                           data-aos-duration="700">Alumni</a>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- footer here -->
+
+</div>
+
+
+<!-- js-files -->
+<!-- JQuery -->
+<script src="{% static 'website/js/jquery-3.3.1.min.js'%}"></script>
+<!-- AOS -->
+<script src="{% static 'website/js/aos.js'%}"></script>
+<!-- Parallax -->
+<script src="{% static 'website/js/parallax.js'%}"></script>
+<!-- Progress Bars -->
+<script src="{% static 'website/js/progressbar.min.js'%}"></script>
+<!-- Magnific -->
+<script src="{% static 'website/js/jquery.magnific-popup.min.js'%}"></script>
+<!-- Three -->
+<script src="{% static 'website/js/three.min.js'%}"></script>
+<!-- Projector -->
+<script src="{% static 'website/js/projector.js'%}"></script>
+<!-- Renderer -->
+<script src="{% static 'website/js/canvas-renderer.js'%}"></script>
+<!-- ImageLoaded -->
+<script src="{% static 'website/js/imagesloaded.pkgd.min.js'%}"></script>
+<!-- Anime -->
+<script src="{% static 'website/js/anime.min.js'%}"></script>
+<!-- Isotope -->
+<script src="{% static 'website/js/isotope.pkgd.min.js'%}"></script>
+<!-- TweenLite -->
+<script src="{% static 'website/js/TweenLite.min.js'%}"></script>
+<!-- Hover3D -->
+<script src="{% static 'website/js/jquery.hover3d.min.js'%}"></script>
+<!-- EasePack -->
+<script src="{% static 'website/js/EasePack.min.js'%}"></script>
+<!-- Particles -->
+<script src="{% static 'website/js/particles.min.js'%}"></script>
+<!-- YoutubeBackground -->
+<script src="{% static 'website/js/jquery.youtubebackground.js'%}"></script>
+<!-- Waypoints -->
+<script src="{% static 'website/js/jquery.waypoints.min.js'%}"></script>
+<!-- Swiper -->
+<script src="{% static 'website/js/swiper.min.js'%}"></script>
+<!-- Main JS-file -->
+<script src="{% static 'website/js/main.js'%}"></script>
+</body>
+</html>
