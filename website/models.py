@@ -1,6 +1,16 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 from portalapp.models import ACEUserProfile
-from filer.fields.image import FilerImageField, FilerFileField
+
+
+class Image(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=150, blank=True, null=True)
+    picture = CloudinaryField('image', null=True, blank=True)
+
+    def __str__(self):
+        return '{0}'.format(self.name)
 
 
 class Project(models.Model):
@@ -8,12 +18,13 @@ class Project(models.Model):
 
     name = models.CharField(max_length=150, null=True)
     developed = models.BooleanField(default=True)
-    desc = models.TextField(max_length=500, null=True)
+    description = models.TextField(max_length=500, null=True)
     created_by = models.ManyToManyField(ACEUserProfile, null=True, blank=True)
     tools = models.CharField(max_length=100)
-    screenshot = FilerImageField(related_name='project_screenshot', null=True, blank=True, on_delete=models.CASCADE)
+    picture = CloudinaryField('image', null=True, blank=True)
     source_code = models.URLField(null=True, blank=True)
     live_url = models.URLField(null=True, blank=True)
+    when = models.DateField()
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
@@ -30,12 +41,12 @@ class Event(models.Model):
     id = models.BigAutoField(primary_key=True)
 
     name = models.CharField(max_length=150)
-    desc = models.TextField(max_length=500)
+    description = models.TextField(max_length=500)
     event_type = models.CharField(max_length=10)
-    event_date = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
 
-    pictures = models.ManyToManyField(ACEUserProfile, null=True, blank=True)
-    photos = FilerImageField(related_name='events_pictures', on_delete=models.CASCADE)
+    images = models.ManyToManyField(Image)
     registration_url = models.URLField(null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
@@ -65,8 +76,8 @@ class Achievement(models.Model):
 class Gallery(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=150, blank=True, null=True)
-    desc = models.TextField(max_length=500)
-    image = FilerImageField(related_name='gallery_pictures', on_delete=models.CASCADE)
+    description = models.TextField(max_length=500, blank=True, null=True)
+    image = models.ManyToManyField(Image)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
@@ -75,13 +86,15 @@ class Gallery(models.Model):
         return '{0}'.format(self.name)
 
 
-class Calendar(models.Model):
+class Agenda(models.Model):
     id = models.BigAutoField(primary_key=True)
 
     name = models.CharField(max_length=150)
-    desc = models.TextField(max_length=500)
-    event_type = models.CharField(max_length=10)
-    event_month = models.CharField(max_length=15)
+    description = models.TextField(max_length=500)
+    agenda_type = models.CharField(max_length=50)  # TODO[Sameer] - Add choices like 'ACEHOURS'
+    start_date = models.DateField()
+    end_date = models.DateField()
+    time = models.TimeField(null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)

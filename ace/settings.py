@@ -20,8 +20,8 @@ ALLOWED_HOSTS = ['.vipsace.org', 'localhost']
 
 INSTALLED_APPS = [
     'website',
-    's3direct',
     'portalapp',
+    'cloudinary',
     'raven.contrib.django.raven_compat',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,12 +31,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'admin_email_sender',
-    'easy_thumbnails',
-    'filer',
-    'mptt',
-    'django_imgur',
 
 ]
+# 'django_imgur',
+#     'easy_thumbnails',
+#     'filer',
+#     'mptt',
+#     's3direct',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'ace.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -123,8 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# FB Login
 
+# Social Auth ------------->
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/portal'
@@ -150,30 +151,33 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-# AWS S3
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.social_auth.associate_by_email',  # <--- enable this one
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id,name,email',
+}
+# <------------- Social Auth
+
+# AWS S3 ------
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 S3DIRECT_REGION = os.environ.get('S3DIRECT_REGION')
 AWS_QUERYSTRING_AUTH = False
-
-# print(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, S3DIRECT_REGION)
-
-# Destinations, with the following keys:
-#
-# key [required] Where to upload the file to, can be either:
-#     1. '/' = Upload to root with the original filename.
-#     2. 'some/path' = Upload to some/path with the original filename.
-#     3. functionName = Pass a function and create your own path/filename.
-# key_args [optional] Arguments to be passed to 'key' if it's a function.
-# auth [optional] An ACL function to whether the current Django user can perform this action.
-# allowed [optional] List of allowed MIME types.
-# acl [optional] Give the object another ACL rather than 'public-read'.
-# cache_control [optional] Cache control headers, eg 'max-age=2592000'.
-# content_disposition [optional] Useful for sending files as attachments.
-# bucket [optional] Specify a different bucket for this particular object.
-# server_side_encryption [optional] Encryption headers for buckets that require it.
 
 S3DIRECT_DESTINATIONS = {
     'members': {
@@ -223,51 +227,36 @@ S3DIRECT_DESTINATIONS = {
     },
 
 }
-# SECURE_SSL_REDIRECT = True
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SOCIAL_AUTH_PIPELINE = (
-    'social_core.pipeline.social_auth.social_details',
-    'social_core.pipeline.social_auth.social_uid',
-    'social_core.pipeline.social_auth.auth_allowed',
-    'social_core.pipeline.social_auth.social_user',
-    'social_core.pipeline.user.get_username',
-    'social_core.pipeline.social_auth.associate_by_email',  # <--- enable this one
-    'social_core.pipeline.user.create_user',
-    'social_core.pipeline.social_auth.associate_user',
-    'social_core.pipeline.social_auth.load_extra_data',
-    'social_core.pipeline.user.user_details',
-)
+# ------ End AWS S3
 
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
-SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
-    'fields': 'id,name,email',
-}
-
-if not DEBUG:
-    import dj_database_url
-
-    DATABASES['default'] = dj_database_url.config()
-    SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-
-# Portal Start Date
+# ACE Portal ---------->
 from django.utils.timezone import get_current_timezone
 
 tz = get_current_timezone()
 SELECTION_START_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y"))
 SELECTION_END_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y"))
+# <---------- End ACE Portal
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-# Sentry
+
 if not DEBUG:
+    # Sentry
     RAVEN_CONFIG = {
         'dsn': 'https://16419383ac1243679009b0087c4eb652:c8cb0ea06f3f42e8848bc6908b313964@sentry.io/1259354',
         # If you are using git, you can also automatically configure the
         # release based on the git info.
         # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
     }
+    # SECURE_SSL_REDIRECT = True
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Email
+    # Heroku
+    import dj_database_url
 
+    DATABASES['default'] = dj_database_url.config()
+    SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+
+# Email -------->
 EMAIL_USE_TLS = True
 EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
@@ -279,44 +268,53 @@ if 'sendgrid' in os.environ.get('EMAIL_CLIENT'):
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
+# <-------- End Email
 
-# DjangoFiler
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    #'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
-FILER_DEBUG = True
-FILER_ENABLE_LOGGING = True
-FILER_IS_PUBLIC_DEFAULT = True
-FILER_STATICMEDIA_PREFIX = MEDIA_URL+'filer/'
+# DjangoFiler -------->
 FILER_STORAGES = {
     'public': {
         'main': {
             'ENGINE': 'django_imgur.storage.ImgurStorage',
-            'OPTIONS': {
-                'location': '/path/to/media/filer',
-                # 'base_url': '/smedia/filer/',
-            },
-            'UPLOAD_TO': 'filer.utils.generate_filename.by_date',
+            # 'OPTIONS': {
+            #     'location': '/path/to/media/filer',
+            #     'base_url': '/media/filer/',
+            # },
+            'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
+            # 'UPLOAD_TO_PREFIX': 'filer_public',
         },
         'thumbnails': {
             'ENGINE': 'django_imgur.storage.ImgurStorage',
-            'OPTIONS': {
-                'location': '/path/to/media/filer_thumbnails',
-                'base_url': '/smedia/filer_thumbnails/',
-            },
+            # 'OPTIONS': {
+            #     'location': '/path/to/media/filer_thumbnails',
+            #     'base_url': '/media/filer_thumbnails/',
+            # },
         },
-    }
+    },
+    'private': {
+        'main': {
+            'ENGINE': 'django_imgur.storage.ImgurStorage',
+            # 'OPTIONS': {
+            #     'location': '/path/to/smedia/filer',
+            #     'base_url': '/smedia/filer/',
+            # },
+            'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
+            'UPLOAD_TO_PREFIX': 'filer_public',
+        },
+        'thumbnails': {
+            'ENGINE': 'django_imgur.storage.ImgurStorage',
+            # 'OPTIONS': {
+            #     'location': '/path/to/smedia/filer_thumbnails',
+            #     'base_url': '/smedia/filer_thumbnails/',
+            # },
+        },
+    },
 }
+# <-------- End DjangoFiler
 
-
-# Imgur
+# Imgur ------->
 IMGUR_CONSUMER_ID = os.environ.get('IMGUR_CONSUMER_ID')
 IMGUR_CONSUMER_SECRET = os.environ.get('IMGUR_CONSUMER_SECRET')
-# IMGUR_USERNAME = os.environ.get('IMGUR_USERNAME')
-# IMGUR_ACCESS_TOKEN = os.environ.get('IMGUR_ACCESS_TOKEN')
-# IMGUR_ACCESS_TOKEN_REFRESH = os.environ.get('IMGUR_ACCESS_TOKEN_REFRESH')
+IMGUR_USERNAME = os.environ.get('IMGUR_USERNAME')
+IMGUR_ACCESS_TOKEN = os.environ.get('IMGUR_ACCESS_TOKEN')
+IMGUR_ACCESS_TOKEN_REFRESH = os.environ.get('IMGUR_ACCESS_TOKEN_REFRESH')
+# <------- End Imgur
