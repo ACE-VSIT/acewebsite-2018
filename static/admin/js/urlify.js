@@ -164,15 +164,6 @@
         if (!allowUnicode) {
             s = downcode(s);
         }
-<<<<<<< HEAD
-        var removelist = [
-            "a", "an", "as", "at", "before", "but", "by", "for", "from", "is",
-            "in", "into", "like", "of", "off", "on", "onto", "per", "since",
-            "than", "the", "this", "that", "to", "up", "via", "with"
-        ];
-        var r = new RegExp('\\b(' + removelist.join('|') + ')\\b', 'gi');
-        s = s.replace(r, '');
-=======
         var hasUnicodeChars = /[^\u0000-\u007f]/.test(s);
         // Remove English words only if the string contains ASCII (English)
         // characters.
@@ -186,7 +177,6 @@
             var r = new RegExp('\\b(' + removeList.join('|') + ')\\b', 'gi');
             s = s.replace(r, '');
         }
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
         // if downcode doesn't hit, the char will be stripped here
         if (allowUnicode) {
             // Keep Unicode letters including both lowercase and uppercase

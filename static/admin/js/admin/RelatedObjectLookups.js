@@ -58,11 +58,7 @@
 
     function updateRelatedObjectLinks(triggeringLink) {
         var $this = $(triggeringLink);
-<<<<<<< HEAD
-        var siblings = $this.nextAll('.change-related, .delete-related');
-=======
         var siblings = $this.nextAll('.view-related, .change-related, .delete-related');
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
         if (!siblings.length) {
             return;
         }
@@ -150,11 +146,7 @@
     window.dismissAddAnotherPopup = dismissAddRelatedObjectPopup;
 
     $(document).ready(function() {
-<<<<<<< HEAD
-        $("a[data-popup-opener]").click(function(event) {
-=======
         $("a[data-popup-opener]").on('click', function(event) {
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
             event.preventDefault();
             opener.dismissRelatedLookupPopup(window, $(this).data("popup-opener"));
         });
