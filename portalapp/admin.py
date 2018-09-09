@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import ACEUserProfile, Tasks, Submissions
-from django_imgur.storage import ImgurStorage
+#from django_imgur.storage import ImgurStorage
 
 admin.site.site_title = 'ACE - Selection Portal'
 admin.site.site_header = 'ACE - Selection Portal'

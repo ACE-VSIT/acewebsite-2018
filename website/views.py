@@ -7,12 +7,13 @@ def index(request):
     events = Event.objects.all()[:3]
     members = ACEUserProfile.objects.filter(is_council=True)
     calendar = Agenda.objects.all()[:3]
+    projects = Project.objects.all()[:3]
     return render(request, template_name='index.html',
-                  context={'members': members, 'events': events, 'calendar': calendar})
+                  context={'members': members, 'events': events, 'calendar': calendar,'projects':projects})
 
 
 def members(request):
-    members = ACEUserProfile.objects.all()
+    members = ACEUserProfile.objects.filter(is_member=True) 
     return render(request, template_name='members.html', context={'members': members})
 
 

@@ -228,7 +228,7 @@ S3DIRECT_DESTINATIONS = {
 
 }
 
-<<<<<<< HEAD
+
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -254,9 +254,6 @@ if not DEBUG:
 
     DATABASES['default'] = dj_database_url.config()
     SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-=======
-# ------ End AWS S3
->>>>>>> 5afb6369ff7003b5066a482ebf32f15cea4bb829
 
 # ACE Portal ---------->
 from django.utils.timezone import get_current_timezone

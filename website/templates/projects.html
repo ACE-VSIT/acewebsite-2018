@@ -56,6 +56,7 @@
         </div>
         <div class="container">
             <div class="row blog-grid-row">
+                {% for project in projects %}
                 <div class="col-lg-6">
                     <article class="post-grid white-section"
                              data-aos="fade-up"
@@ -68,178 +69,21 @@
                                 <img src="img/blog/blog-img-1.jpg" alt="" class="img-fluid">
                             </a>
                             <a href="#" class="tag bg-color-purple">
-                                Design
+                                {{project.tools}}
                             </a>
                         </div>
                         <div class="post-content-side right-side">
-                            <a class="post-title" href="#">Good design is obvious</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
+                            <a class="post-title" href="#">{{project.name}}</a>
+                            <p class="post-content">{{project.desciption}}</p>
                             <div class="description-box d-flex align-items-center right-side">
                                 <i class="far fa-clock"></i>
-                                <p>Posted on April 25, 2018 by <a href="#">Jonathan Doe</a></p>
+                                <p>Posted on {{project.when}} by <a href="#">{{project.created_by}}</a></p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <div class="swiper-container swiper-post">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="img/assets/img-blog-2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="img/about/about-card-2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="img/about/about-card-1.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination-bullets-default"></div>
-                            </div>
-                            <a href="#" class="tag bg-color-pink">
-                                Modern
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">Guide to UX prototyping</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Posted on April 24, 2018 by <a href="#">Frank Horrigan</a></p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <a class="popup-modal video-popup d-flex align-items-center justify-content-center"
-                               href="#video-post-1">
-                                <img src="img/blog/blog-img-3.jpg" alt="" class="img-fluid">
-                                <div class="play-btn-scale">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                            </a>
-                            <div id="video-post-1" class="white-popup-block mfp-hide mfp-fade">
-                                <div class="modal-video-box">
-                                    <iframe src="https://www.youtube.com/embed/KyKgBzFypzc"
-                                            allowfullscreen></iframe>
-                                    <button title="Close (Esc)" type="button" class="mfp-close">×</button>
-                                </div>
-                            </div>
-                            <a href="#" class="tag bg-color-red">
-                                Smart
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">Visual hierarchy in web design</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Posted on April 24, 2018 by <a href="#">Jonathan Doe</a></p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <a href="#" class="img-wrapper">
-                                <img src="img/blog/blog-img-4.jpg" alt="" class="img-fluid">
-                            </a>
-                            <a href="#" class="tag bg-color-blue">
-                                Development
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">Social Media Today</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Posted on April 24, 2018 by <a href="#">Alex Gray</a></p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <a href="#" class="img-wrapper">
-                                <img src="img/blog/blog-img-5.jpg" alt="" class="img-fluid">
-                            </a>
-                            <a href="#" class="tag bg-color-green">
-                                Code
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">How to learn Angular</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Posted on April 24, 2018 by <a href="#">Richard Miller</a></p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <a href="#" class="img-wrapper">
-                                <img src="img/blog/blog-img-6.jpg" alt="" class="img-fluid">
-                            </a>
-                            <a href="#" class="tag bg-color-yellow">
-                                Lifestyle
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">This is the secret of success</a>
-                            <p class="post-content">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
-                                Quisque volutpat condimentum velit. Class aptent taciti metus sociosqu ad litora
-                                torquent...</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Posted on April 24, 2018 by <a href="#">David Spencer</a></p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                {% endfor %}
+
             </div>
             <div class="d-flex justify-content-center"
                  data-aos="fade-up"
