@@ -1,12 +1,9 @@
 from django.contrib import admin
-from .models import *
+from .models import (Image, Project, Event, Achievement, Gallery, Agenda)
 
-
-@admin.register(Member)
-class MembersAdmin(admin.ModelAdmin):
-    # list_display = ('name', 'enrollment_number', 'position', 'email',)
+@admin.register(Image)
+class ImagesAdmin(admin.ModelAdmin):
     pass
-
 
 @admin.register(Project)
 class ProjectsAdmin(admin.ModelAdmin):
@@ -32,7 +29,7 @@ class GalleryAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Calendar)
-class CalendarAdmin(admin.ModelAdmin):
+@admin.register(Agenda)
+class AgendaAdmin(admin.ModelAdmin):
     # list_display = ('name', 'ev_date',)
     pass

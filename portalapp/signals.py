@@ -1,7 +1,11 @@
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_delete
 
 from django.dispatch import receiver
 from django.contrib.auth.models import User
+
+import cloudinary
+
+from portalapp.models import ACEUserProfile
 from scripts.sendgrid import send_sd_email
 
 '''
@@ -37,3 +41,8 @@ Team ACE
 
     except Exception as ex:
         pass
+
+
+@receiver(pre_delete, sender=ACEUserProfile)
+def photo_delete(sender, instance, **kwargs):
+    cloudinary.uploader.destroy(instance.picture.public_id)

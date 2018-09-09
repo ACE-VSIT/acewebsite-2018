@@ -1,18 +1,18 @@
 from django.shortcuts import render, redirect
-from website.models import Achievement, Calendar, Event, Gallery, Member, Project
+from website.models import Achievement, Agenda, Event, Gallery, Project
 from portalapp.models import ACEUserProfile
 
 
 def index(request):
     events = Event.objects.all()[:3]
     members = ACEUserProfile.objects.filter(is_council=True)
-    calendar = Calendar.objects.all()[:3]
+    calendar = Agenda.objects.all()[:3]
     return render(request, template_name='index.html',
                   context={'members': members, 'events': events, 'calendar': calendar})
 
 
 def members(request):
-    members = Member.objects.all()
+    members = ACEUserProfile.objects.all()
     return render(request, template_name='members.html', context={'members': members})
 
 
@@ -37,7 +37,7 @@ def achievements(request):
 
 
 def calendar(request):
-    calendar = Calendar.objects.all()
+    calendar = Agenda.objects.all()
     return render(request, template_name='calendar.html', context={'calendar': calendar})
 
 

@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from cloudinary.models import CloudinaryField
+
 
 class ACEUserProfile(models.Model):
     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -18,6 +20,7 @@ class ACEUserProfile(models.Model):
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
+    picture = CloudinaryField('image', null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
