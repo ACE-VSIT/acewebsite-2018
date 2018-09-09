@@ -345,11 +345,7 @@
                 e.preventDefault();
                 DateTimeShortcuts.dismissCalendar(num);
             });
-<<<<<<< HEAD
-            django.jQuery(document).bind('keyup', function(event) {
-=======
             django.jQuery(document).on('keyup', function(event) {
->>>>>>> b11e8b8b121afc12bdc9fc35b3208d96b477c51c
                 if (event.which === 27) {
                     // ESC key closes popup
                     DateTimeShortcuts.dismissCalendar(num);
