@@ -10,9 +10,6 @@ class ACEUserProfile(models.Model):
     course = models.CharField(max_length=30, default=None, null=True, blank=True)
     email_id = models.EmailField()
     phone_number = models.CharField(max_length=10)  # validators should be a list
-    is_member = models.BooleanField(default=False)
-    is_core = models.BooleanField(default=False)
-    is_council = models.BooleanField(default=False)
     section = models.CharField(max_length=3, blank=True, null=True)
 
     github = models.URLField(null=True, blank=True)
@@ -20,6 +17,11 @@ class ACEUserProfile(models.Model):
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
+
+    is_member = models.BooleanField(default=False)
+    is_core = models.BooleanField(default=False)
+    is_council = models.BooleanField(default=False)
+    position = models.TextField(null=True, blank=True)
     picture = CloudinaryField('image', null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
