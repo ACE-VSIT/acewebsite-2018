@@ -5,3 +5,4 @@ django-heroku
 social-auth-app-django
 raven
 sendgrid
+cloudinary

@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from cloudinary.models import CloudinaryField
+
 
 class ACEUserProfile(models.Model):
     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -10,6 +12,7 @@ class ACEUserProfile(models.Model):
     phone_number = models.CharField(max_length=10)  # validators should be a list
     is_member = models.BooleanField(default=False)
     is_core = models.BooleanField(default=False)
+    is_council = models.BooleanField(default=False)
     section = models.CharField(max_length=3, blank=True, null=True)
 
     github = models.URLField(null=True, blank=True)
@@ -17,6 +20,7 @@ class ACEUserProfile(models.Model):
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
+    picture = CloudinaryField('image', null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
