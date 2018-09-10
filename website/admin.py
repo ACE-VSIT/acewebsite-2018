@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Image, Project, Event, Achievement, Gallery, Agenda)
+from .models import (Image, Project, Event, Achievement, Gallery, Agenda,Alumni,Mentor)
 
 @admin.register(Image)
 class ImagesAdmin(admin.ModelAdmin):
@@ -33,3 +33,12 @@ class GalleryAdmin(admin.ModelAdmin):
 class AgendaAdmin(admin.ModelAdmin):
     # list_display = ('name', 'ev_date',)
     pass
+@admin.register(Alumni)
+class AlumniAdmin(admin.ModelAdmin):
+    # list_display = ('name', 'ev_date',)
+    pass
+@admin.register(Mentor)
+class MentorAdmin(admin.ModelAdmin):
+    # list_display = ('name', 'ev_date',)
+    pass
+
