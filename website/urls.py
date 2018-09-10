@@ -9,7 +9,6 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('achievements/', views.achievement, name='achievements'),
     path('calendar/', views.agenda, name='calendar'),
-    path('magazine/', views.magazine, name='magazine'),
     path('mentor/', views.mentor, name='mentor'),
     path('alumni/', views.alumni, name='alumni'),
 ]
