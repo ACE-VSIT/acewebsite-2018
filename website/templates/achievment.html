@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -58,60 +59,33 @@
     <section class="element-section white-section">
 
         <div class="container">
-            <h6 class="black-element-title element-title">Year 2016-17</h6>
+            <h6 class="black-element-title element-title">Past Achievements</h6>
             <table class="table-type-1 table-element">
                 <tr>
                     <td>Position</td>
                     <td>Winner Name</td>
                     <td>Event Name</td>
+                    <td>College Name</td>
+                    <td>Year</td>
+
+
                 </tr>
+                {% for achievement in achievements%}
                 <tr>
-                    <td>1</td>
-                    <td>Aditya Dhawan</td>
-                    <td>Bread Omelette Competition</td>
+                    <td>{{ achievement.position }}</td>
+                    <td>{{ achievement.team }}</td>
+                    <td>{{ achievement.event_name }}</td>
+                    <td>{{ achievement.college_name }}</td>
+                    <td>{{ achievement.event_month  }}</td>
+
+
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Ashish Pahwa</td>
-                    <td>DR Competition</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Sameer Kumar</td>
-                    <td>Sleeping Competition</td>
-                </tr>
+                {% endfor %}
             </table>
         </div>
     </section>
 
-    <section class="element-section white-section">
-
-        <div class="container">
-            <h6 class="black-element-title element-title">Year 2017-18</h6>
-            <table class="table-type-1 table-element">
-                <tr>
-                    <td>Position</td>
-                    <td>Winner Name</td>
-                    <td>Event Name</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Aditya Dhawan</td>
-                    <td>Bread Omelette Competition</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Ashish Pahwa</td>
-                    <td>DR Competition</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Sameer Kumar</td>
-                    <td>Sleeping Competition</td>
-                </tr>
-            </table>
-        </div>
-    </section>
+    
     <!-- footer here -->
 
 </div>

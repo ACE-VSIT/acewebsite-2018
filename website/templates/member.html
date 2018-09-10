@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -65,16 +66,14 @@
                     <td>Member Name</td>
                     <td>Course</td>
                 </tr>
+                {% for member in members%}
                 <tr>
-                    <td>1</td>
-                    <td>Mayank Anand</td>
-                    <td>MCA</td>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.course }}</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jayesh</td>
-                    <td>BCA</td>
-                </tr>
+                {% endfor %}
+
             </table>
         </div>
     </section>

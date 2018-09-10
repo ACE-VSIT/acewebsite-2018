@@ -15,7 +15,7 @@ def index(request):
 
 def member(request):
     members = ACEUserProfile.objects.filter(is_member=True)
-    return render(request, template_name='members.html', context={'members': members})
+    return render(request, template_name='member.html', context={'members': members})
 
 
 def mentor(request):
@@ -45,12 +45,19 @@ def project(request):
 
 def achievement(request):
     achievements = Achievement.objects.all()
-    return render(request, template_name='achievements.html', context={'achievements': achievements})
+    return render(request, template_name='achievment.html', context={'achievements': achievements})
 
 
-def agenda(request):
-    agendas = Agenda.objects.all()
-    return render(request, template_name='calendar.html', context={'calendar': agendas})
+def calender(request):
+    return render(request, template_name='calender.html')
+
+def codeofconduct(request):
+    return render(request, template_name='codeofconduct.html')
+
+
+def selection(request):
+    return render(request, template_name='selection.html')
+
 
 
 # other stuff

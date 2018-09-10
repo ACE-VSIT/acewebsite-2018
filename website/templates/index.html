@@ -75,7 +75,7 @@
                         <a class="mobile-menu-toggle" href="#">Home</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="#">Members</a> 
+                        <a class="mobile-menu-toggle" href="/members">Members</a> 
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
                         <a class="mobile-menu-toggle" href="/projects">Projects</a>
@@ -84,26 +84,26 @@
                         <a class="mobile-menu-toggle" href="/events">Events</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="#">Calendar</a>
+                        <a class="mobile-menu-toggle" href="/calender">Calendar</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="#">Achievements</a>
+                        <a class="mobile-menu-toggle" href="/achievments">Achievements</a>
                     </li>
                 </ul>
                 <div class="navbar-additional align-items-center">
                     <div class="social-box">
-                        <a href="#">
+                        <a href="https://www.facebook.com/vipsace">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
                     <div class="social-box">                        
-                        <a href="#">
+                        <a href="https://twitter.com/VIPS_ACE">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                     <div class="social-box">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.instagram.com/acevips/">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -345,8 +345,12 @@
                         <p class="about-text">ACE - Association of Computer Enthusiasts is the CSI Student Branch of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing. </p><br>
                         <p class="about-text">We take part in and organize workshops, seminars, hackathons, learnathons, ideathons, B-Plan competitions, programming competitions, meetups and much more. Since we are a members-first organization, one of our main objectives is to make sure that no one ever gets left behind.</p>
                         <div class="btn-wrapper d-flex">
-                            <a href="#" class="button-default-black">Read more</a>
+                            <a href="/codeofconduct" class="button-default-black">Code of Conduct</a>
+                            
+                            <a href="/selection" class="button-default-black">Selection Process</a>
+                        
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -516,7 +520,11 @@
                             <p class="post-content">{{ project.desciption }}</p>
                             <div class="description-box d-flex align-items-center right-side">
                                 <i class="far fa-clock"></i>
-                                <p>Posted on {{ project.when }}  by <a href="#">{{ project.created_by }}</a></p>
+                                <p>Developed  by <a href="#">
+                                {% for creator in project.created_by %}
+                                {{ project.created_by.creator }}  ,
+                                {% endfor %}
+                            </a></p>
                             </div>
                         </div>
                     </article>

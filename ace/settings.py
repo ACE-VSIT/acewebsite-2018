@@ -1,6 +1,14 @@
 import os
 import datetime
 import raven
+from os.path import join, dirname
+from dotenv import load_dotenv
+ 
+# Create .env file path.
+dotenv_path = join(dirname(__file__), '.env')
+ 
+# Load file from the path.
+load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -133,11 +141,11 @@ LOGIN_REDIRECT_URL = '/portal'
 # SOCIAL_AUTH_FACEBOOK_KEY = '331164980660704'
 # SOCIAL_AUTH_FACEBOOK_SECRET = '5ab463efe87199548fe9dbb53ddb3ccf'
 
-SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['username', 'first_name', 'last_name', 'email']
 
@@ -173,10 +181,10 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 
 # AWS S3 ------
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-S3DIRECT_REGION = os.environ.get('S3DIRECT_REGION')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+S3DIRECT_REGION = os.getenv('S3DIRECT_REGION')
 AWS_QUERYSTRING_AUTH = False
 
 S3DIRECT_DESTINATIONS = {
@@ -239,8 +247,8 @@ if not DEBUG:
 from django.utils.timezone import get_current_timezone
 
 tz = get_current_timezone()
-SELECTION_START_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_START_DATE'), "%d/%m/%Y"))
-SELECTION_END_DATE = tz.localize(datetime.datetime.strptime(os.environ.get('SELECTION_END_DATE'), "%d/%m/%Y"))
+SELECTION_START_DATE = tz.localize(datetime.datetime.strptime(os.getenv('SELECTION_START_DATE'), "%d/%m/%Y"))
+SELECTION_END_DATE = tz.localize(datetime.datetime.strptime(os.getenv('SELECTION_END_DATE'), "%d/%m/%Y"))
 # <---------- End ACE Portal
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
@@ -263,9 +271,9 @@ if not DEBUG:
 
 # Email -------->
 EMAIL_USE_TLS = True
-EMAIL_DEFAULT_SENDER = os.environ.get('EMAIL_DEFAULT_SENDER')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_DEFAULT_SENDER = os.getenv('EMAIL_DEFAULT_SENDER')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 
 if 'sendgrid' in os.environ.get('EMAIL_CLIENT'):
@@ -317,9 +325,9 @@ FILER_STORAGES = {
 # <-------- End DjangoFiler
 
 # Imgur ------->
-IMGUR_CONSUMER_ID = os.environ.get('IMGUR_CONSUMER_ID')
-IMGUR_CONSUMER_SECRET = os.environ.get('IMGUR_CONSUMER_SECRET')
-IMGUR_USERNAME = os.environ.get('IMGUR_USERNAME')
-IMGUR_ACCESS_TOKEN = os.environ.get('IMGUR_ACCESS_TOKEN')
-IMGUR_ACCESS_TOKEN_REFRESH = os.environ.get('IMGUR_ACCESS_TOKEN_REFRESH')
+IMGUR_CONSUMER_ID = os.getenv('IMGUR_CONSUMER_ID')
+IMGUR_CONSUMER_SECRET = os.getenv('IMGUR_CONSUMER_SECRET')
+IMGUR_USERNAME = os.getenv('IMGUR_USERNAME')
+IMGUR_ACCESS_TOKEN = os.getenv('IMGUR_ACCESS_TOKEN')
+IMGUR_ACCESS_TOKEN_REFRESH = os.getenv('IMGUR_ACCESS_TOKEN_REFRESH')
 # <------- End Imgur
