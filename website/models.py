@@ -101,3 +101,42 @@ class Agenda(models.Model):
 
     def __str__(self):
         return '{0}'.format(self.name)
+
+
+class Mentor(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=150)
+    designation = models.CharField(max_length=150, blank=True, null=True)
+    about = models.TextField(max_length=500, blank=True, null=True)
+    picture = CloudinaryField('image', null=True, blank=True)
+    github = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    website = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    behance = models.URLField(null=True, blank=True)
+
+
+    dateCreated = models.DateTimeField(auto_now_add=True)
+    dateUpdated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '{0}'.format(self.name)
+
+class Alumni(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=150)
+    about = models.TextField(max_length=500, blank=True, null=True)
+    acd_year = models.CharField(max_length=50)
+    picture = CloudinaryField('image', null=True, blank=True)
+    github = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    website = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    behance = models.URLField(null=True, blank=True)
+
+
+    dateCreated = models.DateTimeField(auto_now_add=True)
+    dateUpdated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '{0}'.format(self.name)

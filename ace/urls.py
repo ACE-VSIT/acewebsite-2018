@@ -1,18 +1,20 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-
 from django.conf import settings
-
-from website.views import index, magazine
+from website.views import index, magazine,projects
 
 urlpatterns = [
     path('', index),
-    path('magazine/', magazine),
+    
     path('admin/', admin.site.urls),
+    path('magazine/', name= 'magazine'),
+
     #path('s3direct/', include('s3direct.urls')),
     path('portal/', include('portalapp.urls')),
+    path(r'', include('website.urls')),
     path('', include('social_django.urls', namespace='social'))
+
 
 ]
 
