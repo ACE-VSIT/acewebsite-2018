@@ -115,12 +115,12 @@ class Mentor(models.Model):
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
 
-
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return '{0}'.format(self.name)
+
 
 class Alumni(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -133,7 +133,6 @@ class Alumni(models.Model):
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     behance = models.URLField(null=True, blank=True)
-
 
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from website.models import Achievement, Agenda, Event, Gallery, Project,Alumni,Mentor
+
+from website.models import Achievement, Agenda, Event, Gallery, Project, Alumni, Mentor
 from portalapp.models import ACEUserProfile
 
 
@@ -9,24 +10,25 @@ def index(request):
     calendar = Agenda.objects.all()[:3]
     projects = Project.objects.all()[:3]
     return render(request, template_name='index.html',
-                  context={'members': members, 'events': events, 'calendar': calendar,'projects':projects})
+                  context={'members': members, 'events': events, 'calendar': calendar, 'projects': projects})
 
 
-def members(request):
-    members = ACEUserProfile.objects.filter(is_member=True) 
+def member(request):
+    members = ACEUserProfile.objects.filter(is_member=True)
     return render(request, template_name='members.html', context={'members': members})
 
 
 def mentor(request):
-    mentors = Mentor.objects.all() 
-    return render(request, template_name='mentor.html', context={'mentor': mentor})
+    mentors = Mentor.objects.all()
+    return render(request, template_name='mentor.html', context={'mentor': mentors})
+
+
 def alumni(request):
-    alumni = Alumni.objects.all() 
-    return render(request, template_name='alumni.html', context={'alumnis': alumni})
+    alumnis = Alumni.objects.all()
+    return render(request, template_name='alumni.html', context={'alumnis': alumnis})
 
 
-
-def events(request):
+def event(request):
     events = Event.objects.all()
     return render(request, template_name='events.html', context={'events': events})
 
@@ -36,19 +38,19 @@ def gallery(request):
     return render(request, template_name='gallery.html', context={'gallery': gallery})
 
 
-def projects(request):
+def project(request):
     projects = Project.objects.all()
     return render(request, template_name='projects.html', context={'projects': projects})
 
 
-def achievements(request):
+def achievement(request):
     achievements = Achievement.objects.all()
     return render(request, template_name='achievements.html', context={'achievements': achievements})
 
 
-def calendar(request):
-    calendar = Agenda.objects.all()
-    return render(request, template_name='calendar.html', context={'calendar': calendar})
+def agenda(request):
+    agendas = Agenda.objects.all()
+    return render(request, template_name='calendar.html', context={'calendar': agendas})
 
 
 # other stuff
