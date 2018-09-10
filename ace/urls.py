@@ -8,6 +8,8 @@ urlpatterns = [
     path('', index),
     
     path('admin/', admin.site.urls),
+    path('magazine/', name= 'magazine'),
+
     #path('s3direct/', include('s3direct.urls')),
     path('portal/', include('portalapp.urls')),
     path(r'', include('website.urls')),
