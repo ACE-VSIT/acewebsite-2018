@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -63,7 +64,7 @@
                             <div class="card-blog-header">
                                 <div class="img-wrapper d-flex align-items-center justify-content-center">
                                     <a href="#">
-                                        <img src="{% static 'website/img/assets/img-blog-1.jpg'%}" alt="" class="img-fluid img">
+                                        <img src="{{ event.image.url }}" alt="" class="img-fluid img">
                                         <div class="tag bg-color-purple">{{event.event_type}}</div>
                                     </a>
                                 </div>
@@ -84,6 +85,7 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
             
 
                 <div class="d-flex justify-content-center"

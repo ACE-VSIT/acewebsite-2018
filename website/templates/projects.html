@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -66,7 +68,7 @@
                              data-aos-duration="800">
                         <div class="post-image-side">
                             <a href="#" class="img-wrapper">
-                                <img src="img/blog/blog-img-1.jpg" alt="" class="img-fluid">
+                                <img src="{{ project.picture.url }}" alt="" class="img-fluid">
                             </a>
                             <a href="#" class="tag bg-color-purple">
                                 {{project.tools}}

@@ -75,7 +75,7 @@
                         <a class="mobile-menu-toggle" href="#">Home</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/members">Members</a>
+                        <a class="mobile-menu-toggle" href="#">Members</a> 
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
                         <a class="mobile-menu-toggle" href="/projects">Projects</a>
@@ -84,19 +84,19 @@
                         <a class="mobile-menu-toggle" href="/events">Events</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/calendar">Calendar</a>
+                        <a class="mobile-menu-toggle" href="#">Calendar</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/achievements">Achievements</a>
+                        <a class="mobile-menu-toggle" href="#">Achievements</a>
                     </li>
                 </ul>
                 <div class="navbar-additional align-items-center">
                     <div class="social-box">
                         <a href="#">
                             <i class="fab fa-facebook-f"></i>
-                    <div class="social-box">                        </a>
+                        </a>
                     </div>
-
+                    <div class="social-box">                        
                         <a href="#">
                             <i class="fab fa-twitter"></i>
                         </a>
@@ -136,12 +136,12 @@
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">The Technical Society of VSIT, Vivekananda Institute of Professional Studies</p>
                 <br><br>
-                <a href="#" class="button-submit z-index-100"
+                <a href="/magazine" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">ACE Magazine</a>
-                <a href="#" class="button-submit z-index-100"
+                <a href="/portal" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
@@ -425,7 +425,7 @@
                         <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
                             <div class="member-wrapper">
                                 <div class="img-wrapper">
-                                    <img src="{% static 'website/img/team/srijit.jpg'%}" alt="" class="img-fluid">
+                                    <img src="{{ member.picture.url }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="member-description">
                                     <div class="content-wrapper d-flex justify-content-center align-items-end">
@@ -447,12 +447,12 @@
                 {% endfor %}
 
                 <div class="col-lg-5 col-centered" align="center">
-                        <a href="#" class="button-submit z-index-100" 
+                        <a href="/mentor" class="button-submit z-index-100" 
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
-                   data-aos-duration="700">Mentros</a>
-                        <a href="#" class="button-submit z-index-100" 
+                   data-aos-duration="700">Mentors</a>
+                        <a href="/alumni" class="button-submit z-index-100" 
                            data-aos="fade-down"
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"
@@ -509,7 +509,7 @@
                              data-aos-duration="800">
                         <div class="post-image-side">
                             <a href="#" class="img-wrapper">
-                                <img src="img/blog/blog-img-1.jpg" alt="" class="img-fluid">
+                                <img src="{{ project.picture.url }}" alt="" class="img-fluid">
                             </a>
                             <a href="#" class="tag bg-color-purple">
                                 {{ project.tools }}
@@ -528,7 +528,7 @@
             {% endfor %}
                 
             <div class="col-lg-5 col-centered" align="center">
-                    <a href="#" class="button-submit z-index-100" 
+                    <a href="/projects" class="button-submit z-index-100" 
                data-aos="fade-down"
                data-aos-delay="1300"
                data-aos-easing="ease-in-out"
@@ -560,7 +560,7 @@
                             <div class="card-blog-header">
                                 <div class="img-wrapper d-flex align-items-center justify-content-center">
                                     <a href="#">
-                                        <img src="{% static 'website/img/assets/img-blog-1.jpg'%}" alt="" class="img-fluid img">
+                                        <img src="{{ event.images.url }}" alt="" class="img-fluid img">
                                         <div class="tag bg-color-purple">{{event.event_type}}</div>
                                     </a>
                                 </div>
@@ -625,7 +625,7 @@
         <div class="container-fluid footer-inner d-flex align-items-center">
             <div class="footer-social d-flex">
                 <div class="social-box">
-                    <a href="#">
+                    <a href="">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>

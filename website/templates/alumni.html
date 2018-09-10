@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -58,23 +59,23 @@
         </div>
         <div class="container" align="center">
             <div class="row team-main">
-                {% for member in members %}
+                {% for alumni in alumnis %}
                     <div class="col-lg-4 col-centered" align="center">
                         <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
                             <div class="member-wrapper">
                                 <div class="img-wrapper">
-                                    <img src="{% static 'website//img/team/srijit.jpg'%}" alt="" class="img-fluid">
+                                    <img src="{% static '{{alumni.picture.url}}'%}" alt="" class="img-fluid">
                                 </div>
                                 <div class="member-description">
                                     <div class="content-wrapper d-flex justify-content-center align-items-end">
                                         <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">{{ member.name }}</h6>
-                                            <p class="position">{{ member.position }}</p>
+                                            <h6 class="name">{{ alumni.name }}</h6>
+                                            <p class="position">{{ alumni.acd_year }}</p>
                                             <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="{{ member.github }}"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="social-box" href="{{ member.behance }}"><i class="fab fa-twitter"></i></a>
-                                                <a class="social-box" href="{{ member.website }}"><i class="fab fa-website"></i></a> <!--check-->
-                                                <a class="social-box" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                                <a class="social-box" href="{{ alumni.github }}"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="social-box" href="{{ alumni.behance }}"><i class="fab fa-twitter"></i></a>
+                                                <a class="social-box" href="{{ alumni.website }}"><i class="fab fa-website"></i></a> <!--check-->
+                                                <a class="social-box" href="{{ alumni.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -85,7 +86,7 @@
                 {% endfor %}
 
                 <div class="col-lg-5 col-centered" align="center">
-                        <a href="#" class="button-submit z-index-100" 
+                        <a href="/mentor" class="button-submit z-index-100" 
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
@@ -94,7 +95,7 @@
                            data-aos="fade-down"
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"
-                           data-aos-duration="700">Alumni</a>
+                           data-aos-duration="700">MEMBERS</a>
                     </div>
 
             </div>

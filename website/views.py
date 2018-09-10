@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from website.models import Achievement, Agenda, Event, Gallery, Project
+from website.models import Achievement, Agenda, Event, Gallery, Project,Alumni,Mentor
 from portalapp.models import ACEUserProfile
 
 
@@ -15,6 +15,15 @@ def index(request):
 def members(request):
     members = ACEUserProfile.objects.filter(is_member=True) 
     return render(request, template_name='members.html', context={'members': members})
+
+
+def mentor(request):
+    mentors = Mentor.objects.all() 
+    return render(request, template_name='mentor.html', context={'mentor': mentor})
+def alumni(request):
+    alumni = Alumni.objects.all() 
+    return render(request, template_name='alumni.html', context={'alumnis': alumni})
+
 
 
 def events(request):
