@@ -11,6 +11,7 @@ class ACEUserAdmin(admin.ModelAdmin):
     # form = PhotoUnsignedDirectForm
     list_display = ('name', 'enroll_number', 'course', 'email_id', 'is_core', 'is_member', 'dateUpdated')
     search_fields = ['name__username', 'enroll_number', 'course']
+    list_filter = ('is_core', 'is_member', 'is_council',)
 
 
 @admin.register(Tasks)
