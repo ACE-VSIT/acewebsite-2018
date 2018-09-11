@@ -6,3 +6,4 @@ social-auth-app-django
 raven
 sendgrid
 cloudinary
+django-multiselectfield==0.1.4
