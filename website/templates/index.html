@@ -24,6 +24,17 @@
     <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/aos.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/main.css'%}">
+
+    <link rel="manifest" href="{% static 'manifest.json'%}" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "f9077ca3-56c9-4bcd-beb7-f371b98a21f3",
+        });
+      });
+    </script> 
 </head>
 <!--
 [Home Page]
