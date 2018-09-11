@@ -69,7 +69,7 @@
                 {% for member in members%}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td>{{ member.name }}</td>
+                    <td>{{ member.name.first_name}} {{ member.name.last_name}}</td>
                     <td>{{ member.course }}</td>
                 </tr>
                 {% endfor %}

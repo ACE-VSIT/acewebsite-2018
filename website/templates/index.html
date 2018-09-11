@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/aos.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/main.css'%}">
+
+    <link rel="manifest" href="{% static 'manifest.json'%}" />
 </head>
 <!--
 [Home Page]
@@ -436,7 +438,7 @@
                                 <div class="member-description">
                                     <div class="content-wrapper d-flex justify-content-center align-items-end">
                                         <div class="content d-flex flex-column align-items-center justify-content-end">
-                                            <h6 class="name">{{ member.name }}</h6>
+                                            <h6 class="name">{{ member.name.first_name}} {{ member.name.last_name}}</h6>
                                             <p class="position">{{ member.position }}</p>
                                             <div class="social-wrapper d-flex">
                                                 <a class="social-box" href="{{ member.github }}"><i class="fab fa-github"></i></a>
@@ -526,8 +528,9 @@
                             <p class="post-content">{{ project.desciption }}</p>
                             <div class="description-box d-flex align-items-center right-side">
                                 <i class="far fa-clock"></i>
-                                <p>Developed  by <a href="#"> {{ project.created_by }}
-                                
+                                <p>Developed  by <a href="#">  {% for owner in project.created_by.all %}
+                                   {{owner.name.first_name}} {{owner.name.last_name}} |
+                                    {% endfor %}
                             </a></p>
                             </div>
                         </div>
@@ -696,5 +699,16 @@
 <script src="{% static 'website/js/swiper.min.js'%}"></script>
 <!-- Main JS-file -->
 <script src="{% static 'website/js/main.js'%}"></script>
+
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "f9077ca3-56c9-4bcd-beb7-f371b98a21f3",
+    });
+  });
+</script>
 </body>
 </html>
