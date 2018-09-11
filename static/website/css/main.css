@@ -15240,3 +15240,16 @@ canvas {
 .col-centered{
     margin: 0 auto !important;
 }
+
+
+@media (max-width: 991px) {
+  a.button-submit {
+        display: inline-block;
+        margin-top: 30px;
+  }
+}
+
+
+  a.button-submit {
+        margin-top: 30px;
+  }
