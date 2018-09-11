@@ -696,6 +696,10 @@
 
 
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="{% static 'OneSignalSDKWorker.js'%}"></script>
+<script src="{% static 'OneSignalSDKUpdaterWorker.js'%}"></script>
+
+
 <script>
   var OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
