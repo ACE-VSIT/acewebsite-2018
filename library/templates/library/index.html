@@ -1,0 +1,304 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ace Portal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ace Library Portal @ VIPS">
+  <meta property="og:title" content="ACE Library - The Tech Society of VIPS" />
+  <meta property="og:description" content="A portal to find coding and tech stuff built by ACE members at VIPS." />
+  <link rel="icon" href="{% static 'library/img/logo.png' %}"> 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
+    <link rel="stylesheet" href="{% static 'library/css/main.css' %}" />
+
+</head>
+<body>
+
+  <!-- hero bg with flat ui (Desktop Tab) -->
+  <div class="ui stackable padded equal height centered grid grid-full desktop-tab">
+    <div class="ui eight wide lightBlue column">
+      <div class="center-area">
+        <div class="centered">
+          <h1 class="aceHead">
+            the.<br>
+            <span style="color:#105d42;">ACE Library</span>
+          </h1>
+          <hr class="aceLine">
+          <br>
+          <button class="ui blueCol large button login-modal">Start Exploring</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui eight wide rightImg column" style="text-align:center;">
+      <div class="center-area">
+        <div class="centered">
+        <center>
+          <img src="{% static 'library/img/logo.png' %}" class="img-logo-desk">
+          <hr class="aceline">
+          <h1><i class="content icon large burNav" id="navOpen"></i></h1>
+        </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- hero bg with flat ui (Desktop Tab) Ends -->
+
+  <!-- hero bg with flat ui (Mobile View Tab) -->
+  <div class="ui stackable padded equal height centered grid grid-full phone-tab">
+    <div class="ui sixteen wide rightImg column" style="text-align:center;">
+      <div class="center-area">
+        <div class="centered">
+        <center>
+          <img src="{% static 'library/img/logo.png' %}" class="img-logo-phn">
+          <h1 class="aceHead-phn">ACE Library</h1>
+          <button class="ui blueColLight large button login-modal">Start Exploring</button>
+        </center>
+        </div>
+      </div>
+      <h1><i class="content icon large burNav" id="navOpen2"></i></h1>
+    </div>
+  </div>
+  <!-- hero bg with flat ui (Mobile View Tab) Ends -->
+
+  <!-- quote -->
+  <div class="ui container">
+    <div class="ui stackable grid">
+      <div class="ui row" style="padding:100px 0px;">
+        <div class="ui sixteen wide column" style="text-align:center;">
+          <h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+          <h1 class="quote-head">
+            Start Exploring This Town <br>
+            <span>ACE Library</span>
+          </h1><br>
+          <h1 class="quote-main">
+            <i>"Get ready to learn the most exciting and most adventurous things from this portal.<br>
+            So, tie up your laces and start exploring." </i>
+          </h1>
+          <button class="ui blueCol large button login-modal">Start Exploring</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- quote ends -->
+
+  <!-- features -->
+  <div class="ui stackable relaxed grid" style="background:#52c59a;" id="feature">
+    <div class="ui row feature-pad">
+      <div class="ui sixteen wide column features" style="text-align:center;">
+        <h1 class="quote-head">
+          Features You Can Explore <br>
+          <span style="color:#105d42;">ACE Library</span><br><br>
+        </h1>
+      </div>
+      
+      <div class="ui four wide column transition feature-icon" style="text-align:center;cursor:pointer;">
+        <h1><i class="male icon big white"></i></h1>
+        <span>Attendance</span>
+      </div>
+
+      <div class="ui four wide column transition feature-icon" style="text-align:center;cursor:pointer;">
+        <h1><i class="code icon big white"></i></h1>
+        <span>Resources</span>
+      </div>
+
+      <div class="ui four wide column transition feature-icon" style="text-align:center;cursor:pointer;">
+        <h1><i class="trophy icon big white"></i></h1>
+        <span>Assignments</span>
+      </div>
+
+      <div class="ui four wide column transition feature-icon" style="text-align:center;cursor:pointer;">
+        <h1><i class="hashtag icon big white"></i></h1>
+        <span>Feedbacks</span>
+      </div>
+    </div>
+  </div>
+  <!-- features ends -->
+  
+  <!-- blog -->
+  <div>
+  <div class="ui stackable relaxed grid grid-full" id="blog">
+    <div class="ui row blogfull">
+      <div class="ui sixteen wide column blog blog1">
+        <div class="blog-gly"></div>
+        <div class="blogAbs">
+
+          <button class="ui teal inverted tiny button">Tech</button><br><br>
+          <a href="#" class="blog-main">Microsoft announces upgraded Surface Book with <br>16-hour battery life, for $2,399 [..]</a> 
+          <div class="ui feed">
+            <div class="event">
+                  <div class="content">
+                    <div class="summary"> 
+                      <a class="user">
+                        Khushi Jain
+                      </a> 
+                       blogged
+                      <div class="date">
+                        1 Hour Ago
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>    
+          
+        </div>
+      </div>
+
+      <div class="ui eight wide column blog blog2">
+        <div class="blog-gly"></div>
+        <div class="blogAbs">
+
+          <button class="ui orange inverted tiny button">Design</button><br><br>
+          <a href="#" class="blog-main">Useful Tips To Help You Become a Full Processed<br> Designer [..]</a> 
+          <div class="ui feed">
+            <div class="event">
+                  <div class="content">
+                    <div class="summary"> 
+                      <a class="user">
+                        Srijit Madhavan 
+                      </a> 
+                       blogged
+                      <div class="date">
+                        5 Hour Ago
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>    
+          
+        </div>
+      </div>
+
+      <div class="ui eight wide column blog blog3">
+        <div class="blog-gly"></div>
+        <div class="blogAbs">
+
+          <button class="ui pink inverted tiny button">Java</button><br><br>
+          <a href="#" class="blog-main">Oracle takes Java copyright dispute with Google to <br>appeals court [..]</a> 
+          <div class="ui feed">
+            <div class="event">
+                  <div class="content">
+                    <div class="summary"> 
+                      <a class="user">
+                        Sameer Kumar
+                      </a> 
+                       blogged
+                      <div class="date">
+                        7 Hour Ago
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>    
+          
+        </div>
+      </div>
+
+      <div class="ui sixteen wide centered column blogMore" style="text-align:center;padding:100px 0px;">
+        <div class="center-area">
+          <div class="centered nav-segment">
+            <h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+            <h1 class="quote-head">
+              View More Blogs <br>
+              <span>ACE Library</span>
+            </h1><br>
+            <button class="ui blueCol large button">View More</button>
+          </div>
+        </div>      
+      </div>
+
+
+      <div class="ui eight wide column" style="text-align:center;padding:40px 0px;background: rgb(17, 17, 17);">
+        <h3 style="color:#52c59a;">&copy 2016 - Ace - Tech Society of VSIT</h3>
+      </div>
+
+      <div class="ui eight wide column" id="contact" style="text-align:center;padding:40px 0px;background: rgb(17, 17, 17);">
+        <a href="https://www.facebook.com/vipsace" target="_blank"><button class="ui circular facebook icon button"><i class="facebook icon"></i></button></a>
+        <a href="mailto:vips.ace@gmail.com" target="_blank"><button class="ui circular google plus icon button"><i class="send icon"></i></button></a>
+        <a href="http://vipsace.org" target="_blank"><button class="ui circular twitter icon button"><i class="desktop icon"></i></button></a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <!-- blog ends -->
+
+  <!-- navigation -->
+  <nav class="transition hidden">
+    <div class="centered nav">
+      <div class="center-area">
+        <div class="centered nav-segment">
+          <div class="ui stackable relaxed grid">
+            <div class="ui row">
+              <div class="ui sixteen wide column">
+                <a class="active">Home</a><br>
+                <a href="#feature" class="nav-close">Features</a><br>
+                <a href="#blog" class="nav-close">Recent Blog</a><br>
+                <a href="#contact" class="nav-close">Who We Are</a><br>             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+    </div>
+  </nav>
+  <!-- navigation ends--> 
+
+  <!-- login tab -->
+  {% if user and not user.is_anonymous %}
+    <!-- Ashish add a redirection to home.html page when user is not anonymous -->
+
+  {% else %}
+  <!-- login modal -->
+  <div class="ui basic modal">
+    <center>
+      <img src="{% static 'library/img/logo.png' %}" class="img-logo-modal">
+      <div class="image content">
+
+          <a href="{% url 'social:begin' 'facebook' %}?next=/portal">Login with Facebook</a><br><br>
+          <a href="{% url 'social:begin' 'google-oauth2' %}?next=/portal">Login with Google</a>
+          <br><br>
+
+        <br><br>
+        <a href="#" class="close-modal">Close</a>
+      </div>
+    </center>
+  </div>  
+  <!-- login modal ends -->
+  {% endif %}
+  <!-- login tab end -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#navOpen').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    });
+    $(document).ready(function(){
+      $('#navOpen2').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    }); 
+    $(document).ready(function(){
+      $('.nav-close').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    }); 
+    $(document).ready(function(){
+      $('.login-modal').click(function(){
+        $('.ui.basic.modal').modal('show'); 
+      });
+      $('.close-modal').click(function(){
+        $('.ui.basic.modal').modal('hide'); 
+      });
+    }); 
+  </script>
+</body>
+</html>

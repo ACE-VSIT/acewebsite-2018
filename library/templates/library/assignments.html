@@ -1,0 +1,75 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+{% load tag_library %}
+{% block main %}
+
+	<!-- ace assignment menu -->
+	<div class="ui container">
+		<div class="ui stackable grid">
+			<div class="ui row" style="padding:80px 0px;">
+			<div class="ui sixteen wide column" style="text-align:center;">
+				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+				<h1 class="quote-head">Assignments<br><span>ACE Library</span></h1>
+				<br><br><br>
+		{% for assignment in assignments %}
+
+				<div class="ui stackable grid">
+					<div class="ui sixteen wide column task">
+						<div class="ui card">
+						  <div class="card">
+							<div class="abs-Lang">
+								<div class="code-Lang centered"><center>C</center></div>
+							</div>
+						    <div class="content">
+						      <div class="header"><h1>{{assignment.title}}</h1></div>
+						      <div class="meta"><b>Published: {{assignment.published_date}}</b></div>
+						      <br>
+						      
+						      <div class="description">
+						      	{{assignment.text}}
+						      </div><br>
+						      <div class="meta"><b>Difficulty:
+						      
+						      {% for x in assignment.difficulty|to_int %}
+						      <i class="star yellow icon"></i>
+						      {% endfor %}
+						      
+						      {% for x in assignment.difficulty|to_remaining %}
+						     <i class="star icon"></i>
+						      {% endfor %}
+						      
+						      </br></div><br>
+						      <button class="ui blue inverted medium button task-submit">Submit Your Entry</button>
+						      <br><br>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace assignment menu end -->
+				{% endfor %}
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+								{% include "library/menu.html" %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+
+{% endblock %}

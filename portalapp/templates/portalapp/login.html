@@ -1,7 +1,7 @@
 {% if user and not user.is_anonymous %}
   <a>{{ user.get_full_name }}  </a>
   <br>
-  <a href="/portal/logout">Logout</a>
+  <a href="{% url 'logout' %}">Logout</a>
 {% else %}
   <a href="{% url 'social:begin' 'facebook' %}?next=/portal">Login with Facebook</a>
     <a href="{% url 'social:begin' 'google-oauth2' %}?next=/portal">Login with Google</a>

@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ['.vipsace.org', 'localhost']
 INSTALLED_APPS = [
     'website',
     'portalapp',
+    'library',
     'cloudinary',
     'raven.contrib.django.raven_compat',
     'django.contrib.admin',
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'admin_email_sender',
+    'multiselectfield',
 
 ]
 # 'django_imgur',

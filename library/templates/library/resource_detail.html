@@ -1,0 +1,61 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+{% block main %}
+{% load tag_library %}
+
+	<!-- ace resource menu -->
+	<div class="ui container">
+		<div class="ui stackable grid">
+			<div class="ui row" style="padding:80px 0px;">
+			<div class="ui sixteen wide column" style="text-align:center;">
+				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+				<h1 class="quote-head">Resource: {{category.category}}<br><span>ACE Library</span></h1>
+				<br><br><br>
+				{%for resource in resources %}
+
+				<div class="ui stackable grid">
+					 	<div id="dabba">	
+						<span class="image"><img src="{% static 'library/img/av.jpg' %}"></span>
+						<div id="dabba_content">
+						<span class="name"> {{resource.course}} </span>
+						<span class="line"></span>
+						<span class="desc"> {{resource.description}}</span>
+						<span class="type"> <strong>Author:</strong> {{resource.author}} </span>
+						<span class="type"> <strong>Course Type:</strong> {{resource.res_type}} </span>
+						<span class="diff"> <strong>Difficulty:</strong>
+					      {% for x in resource.difficulty|to_int %}
+						      <i class="star yellow icon"></i>
+						      {% endfor %}    
+						      {% for x in resource.difficulty|to_remaining %}
+						     <i class="star icon"></i>
+						      {% endfor %}
+					      <span class="line"></span>
+						<a href={{resource.URL}} target="_blank"><button class="ui blue inverted custom medium button task-submit"> View Resources </button></a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace resource menu end -->
+S
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+								{% include "library/menu.html" %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+	{% endblock %}

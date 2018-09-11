@@ -86,12 +86,12 @@
                 {% endfor %}
 
                 <div class="col-lg-5 col-centered" align="center">
-                        <a href="/member" class="button-submit z-index-100" 
+                        <a href="{% url 'members' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">Members</a>
-                        <a href="/alumni" class="button-submit z-index-100" 
+                        <a href="{% url 'alumnus' %}" class="button-submit z-index-100"
                            data-aos="fade-down"
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"

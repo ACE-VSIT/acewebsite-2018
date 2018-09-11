@@ -1,11 +1,12 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
 class ACEUserProfile(models.Model):
-    name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     enroll_number = models.CharField(max_length=11, blank=False, null=False)
     course = models.CharField(max_length=30, default=None, null=True, blank=True)
     email_id = models.EmailField()
@@ -27,8 +28,16 @@ class ACEUserProfile(models.Model):
     dateCreated = models.DateTimeField(auto_now_add=True)
     dateUpdated = models.DateTimeField(auto_now=True)
 
+    def get_membership(self):
+        if self.is_core:
+            return 'Core Member'
+        elif self.is_member:
+            return 'Member'
+        else:
+            return ''
+
     def __str__(self):
-        return self.name.username
+        return '{0} {1}'.format(self.name.first_name, self.name.last_name)
 
 
 class Tasks(models.Model):

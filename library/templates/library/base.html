@@ -1,0 +1,143 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACE Library : Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ace Library Portal @ VIPS">
+  <meta property="og:title" content="Portal -- VIPS" />
+  <meta property="og:description" content="A portal to find coding and tech stuff built by ACE members at VIPS." />
+  <link rel="icon" href="{% static 'library/img/logo.png' %}"> 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
+  <link rel="stylesheet" href="{% static 'library/css/home.css' %}" />
+
+</head>
+<body>
+
+<style>
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+</style>
+
+  <!-- Hero Bg tab -->
+  <div class="ui stackable grid hero-hg">
+    <div class="ui row">
+    <div class="ui sixteen wide column hero-bg">
+      <img src="{% static 'library/img/logo.png' %}">
+      <h1><i class="content icon large burNav" id="navOpen"></i></h1>
+      <div class="userAbs">
+        <button class="ui teal inverted tiny button memType">{{membership}}</button><br><br>
+        <a href="#" class="user-main">{{ request.user.first_name }} {{request.user.last_name  }}</a>
+        <div class="ui feed">
+        <div class="event">
+            <div class="content">
+            <div class="summary"> 
+                <a class="user">@ {{ request.user.username }}</a>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+{% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}
+{% endif %}
+
+  <!-- Hero Bg tab end -->
+  {% block main %} {% endblock %}
+
+  <footer>
+    Made with <strong>♥</strong> by ACE
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var swiper = new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $('.special.cards .image').dimmer({
+      on: 'hover'
+    });
+    function lol() {
+      $(document).ready(function(){
+        $('.attendance-modal').hide();
+      });
+    }
+    lol();
+    $(document).ready(function(){
+      $('#navOpen').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    });
+    $(document).ready(function(){
+      $('.nav-close').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    }); 
+    $(document).ready(function(){
+      $('.attend').click(function(){
+        $('.attendance-modal').slideDown(100); 
+      });
+      $('.close-attend').click(function(){
+        $('.attendance-modal').slideUp(100); 
+      });
+    });
+    $(document).ready(function(){
+      $('.feed').click(function(){
+        $('.ui.basic.modal.feedback-modal').modal('show'); 
+      });
+      $('.close-modal').click(function(){
+        $('.ui.basic.modal.feedback-modal').modal('hide'); 
+      });
+    });
+  </script>
+
+            <script type="text/javascript">
+$(function() {
+    $(".color").each(function() {
+        var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) +20 ) + ',' + (Math.floor((256-199)*Math.random()) +30) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ')';
+         $(this).css("background-color", hue);
+    });
+});
+
+
+          </script>
+
+</body>
+</html>
