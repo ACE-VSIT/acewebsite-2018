@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout as auth_logout
 
 from website.models import Achievement, Agenda, Event, Gallery, Project, Alumni, Mentor
 from portalapp.models import ACEUserProfile
@@ -24,8 +25,8 @@ def mentor(request):
 
 
 def alumni(request):
-    alumnis = Alumni.objects.all()
-    return render(request, template_name='alumni.html', context={'alumnis': alumnis})
+    alumnus = Alumni.objects.all()
+    return render(request, template_name='alumni.html', context={'alumnus': alumnus})
 
 
 def event(request):
@@ -45,11 +46,13 @@ def project(request):
 
 def achievement(request):
     achievements = Achievement.objects.all()
-    return render(request, template_name='achievment.html', context={'achievements': achievements})
+    return render(request, template_name='achievement.html', context={'achievements': achievements})
 
 
-def calender(request):
-    return render(request, template_name='calender.html')
+def agenda(request):
+    agendas = Agenda.objects.all()
+    return render(request, template_name='calendar.html', context={'agendas': agendas})
+
 
 def codeofconduct(request):
     return render(request, template_name='codeofconduct.html')
@@ -57,7 +60,6 @@ def codeofconduct(request):
 
 def selection(request):
     return render(request, template_name='selection.html')
-
 
 
 # other stuff
@@ -68,3 +70,8 @@ def magazine(request):
 
 def view_404(request, exception):
     return redirect('/')
+
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/library/')

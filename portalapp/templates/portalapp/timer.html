@@ -24,9 +24,9 @@
 
 
     <!-- Style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/timer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portalapp/css/timer.css' %}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <link rel="shortcut icon" href="{% static 'portalapp/img/favicon.png' %}">
     
     <meta name="description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
     <meta name="keywords" content="ACE, Association of Computer Enthusiasts,  Technical society of VIPS, ACE - The Technical society of VIPS, ACE - The Technical Society of VSIT, society, VIPS society, VSIT society, Tech, enterprenuer, bussines, UX/UI, python, php, go, Ashish, Gaurav, Srijit, Sameer, Khushi, Rohan, prateek, anukriti, Mukesh, shreyans, aditya dhawan, ACE Rocks, We love ACE,  Technical society of VSIT, Vivekananda Institute of Professional Studies, Vivekananda school of information technology, hackathon, SSC 2017, hackathon, coding, designing, events, we won, programming, VIPS programmimg, ACE69, ogz, ace vipsi, State Student Convention 2017, SSC, facebook.com/vipsace, vipsace, facebook">
@@ -50,7 +50,7 @@
                 Keep following our WhatsApp group for further updates.
                 </h3>
 
-            <h2>Check out our <a target="_blank" href="/magazine/">Magazine</a> .</h2>
+            <h2>Check out our <a target="_blank" href="{% url 'magazine' %}/">Magazine</a> .</h2>
                 <br>
             </div>
         </main>
@@ -86,6 +86,6 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'portalapp/js/main.js' %}"></script>
 </body>
 </html>

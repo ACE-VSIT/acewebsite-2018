@@ -1,14 +1,12 @@
 from django.utils.timezone import localtime, now
-
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
 from django.db.models import F
-from django.core.exceptions import ObjectDoesNotExist
 
-from .models import Tasks, ACEUserProfile, Submissions
+from portalapp.models import Tasks, ACEUserProfile, Submissions
 from ace.settings import SELECTION_START_DATE, SELECTION_END_DATE
 
 
@@ -18,7 +16,8 @@ def login(request):
         if not ACEUserProfile.objects.filter(name=request.user).exists():
             return redirect('/portal/form')
         else:
-            return redirect('/portal/home')
+            # return redirect('/portal/home')
+            return redirect('/library/')
 
     return render(request, 'portalapp/index.html')
 
@@ -40,7 +39,8 @@ def home(request):
         today = localtime(now())
 
         if (today < SELECTION_START_DATE) or (today > SELECTION_END_DATE):
-            return render(request, template_name='portalapp/timer.html')
+            # return render(request, template_name='portalapp/timer.html')
+            return redirect('/library/')
         else:
             social = request.user.social_auth.filter(provider='facebook')
             if social:

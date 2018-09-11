@@ -59,7 +59,7 @@
         </div>
         <div class="container" align="center">
             <div class="row team-main">
-                {% for alumni in alumnis %}
+                {% for alumni in alumnus %}
                     <div class="col-lg-4 col-centered" align="center">
                         <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
                             <div class="member-wrapper">
@@ -86,12 +86,12 @@
                 {% endfor %}
 
                 <div class="col-lg-5 col-centered" align="center">
-                        <a href="/mentor" class="button-submit z-index-100" 
+                        <a href="{% url 'mentors' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
-                   data-aos-duration="700">Mentros</a>
-                        <a href="/member" class="button-submit z-index-100" 
+                   data-aos-duration="700">Mentors</a>
+                        <a href="{% url 'members' %}" class="button-submit z-index-100"
                            data-aos="fade-down"
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"

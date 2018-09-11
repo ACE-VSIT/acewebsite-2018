@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from website.views import index, magazine
+from website.views import magazine
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,7 +9,9 @@ urlpatterns = [
 
     # path('s3direct/', include('s3direct.urls')),
     path('portal/', include('portalapp.urls')),
+    path('library/', include('library.urls')),
     path('', include('website.urls')),
+
     path('', include('social_django.urls', namespace='social'))
 
 ]

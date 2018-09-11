@@ -1,0 +1,215 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+{% block main %}
+
+	<!-- ace dashboard element -->
+	<div class="ui container">
+		<div class="ui stackable grid">
+			<div class="ui row" style="padding:80px 0px;">
+			<div class="ui sixteen wide column" style="text-align:center;">
+				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+				<h1 class="quote-head">Dashboard <br><span>ACE Library</span></h1>
+				<br><br><br>
+
+				<div class="ui stackable grid">
+				<div class="row">
+				<div class="ui four wide column">
+					<div class="ui special centered cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="{% url 'assignments' %}"><div class="ui inverted teal button">Assignments</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'library/img/task.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="{% url 'assignments' %}" class="header">Assignments</a>
+						        <div class="meta">
+						        	<span class="date">Weekly based problems.</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special centered cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="#" class="attend"><div class="ui inverted teal button">Attendance</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'library/img/attend.jpg' %}">
+						    </div>
+
+
+						    <div class="content left-align"> 
+						    	<a href="#" class="header attend">Attendance</a>
+						        <div class="meta">
+						        	<span class="date">Check your attendance.</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special centered cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="{% url 'resource' %}"><div class="ui inverted teal button">Resources</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'library/img/res.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="{% url 'resource' %}" class="header">Resources</a>
+						        <div class="meta">
+						        	<span class="date">A place where you can challenge yourself to gain multiple knowledge.</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special centered cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="#" class="feed"><div class="ui inverted teal button">Feedbacks</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'library/img/feed.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="#" class="feed header">Feedbacks</a>
+						        <div class="meta">
+						        	<span class="date">Have a question in your mind. Don't be shy. Come forward and ask.</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace dashboard element end -->
+
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+                                {% include "library/menu.html" %}
+								<a href="#" class="attend nav-close">Attendance</a><br>
+								<a href="#" class="feed nav-close">Feedback</a><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+
+  <!-- attendance modal -->
+
+  <div class="attendance-modal attendance">
+	<div class="swiper-container">  
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide" style="background:rgba(0, 0, 0, 0.9);">
+	        	<div class="display">
+				    <img src="{% static 'library/img/logo.png' %}" class="img-logo-modal">
+				    <h1 class="quote-head" style="color:white;">Attendance History<br><span>{{count}}/{{total}} Attendance</span></h1>
+				    <br>
+				    <button class="ui teal inverted medium button memType">swipe or slide to view more</button>
+				    <h1><i class="remove icon large burNav close-attend" style="color:white;"></i></h1> 
+			    </div>   	
+	        </div>
+
+	        <!-- present template -->
+	        {% for event in attended %}
+	        <div class="swiper-slide present">
+	        	<div class="display marg">
+	        		<h1><i class="icon check circle white"></i></h1>
+	        		<h2>{{event.name}}.</h2>
+	        		<p>Date of event : {{event.start_date|date:"d M, Y"}} - {{ event.end_date }} <br>Hope yoy enjoyed it..</p>
+
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        {% endfor %}
+	        <!-- present template end -->
+
+	        <!-- absent template -->
+	        {% for event in not_attended %}
+	        <div class="swiper-slide absent">
+	        	<div class="display marg">
+	        		<h1><i class="icon minus circle white"></i></h1>
+	        		<h2>{{event.name}}</h2>
+	        		<p>Date of event : {{event.date}} <br>You have not attended this event </p>
+
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        {% endfor %}
+	        <!-- absent template end -->
+
+
+	        
+
+	    </div>
+
+	        <!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+  </div>  
+  <!-- attendance modal ends -->
+
+
+  <!-- feedback modal -->
+  <div class="ui basic modal feedback-modal">
+    <center>
+      <img src="{% static 'library/img/logo.png' %}" class="img-logo-modal">
+      <div class="image content"> 
+      	<br>
+      	<form>
+      		<input type="text" class="feedback-user" placeholder="Title" name="title"><br><br>
+      		<textarea class="feedback-user-text" name="feedback" placeholder="Feedback Here"></textarea>
+      		<br><br>
+			<input type="submit" class="feedback-submit" name="submit" value="Submit">
+      	</form><br>
+        <a href="#" class="close-modal">Close</a>
+      </div>
+    </center>
+  </div>  
+  <!-- feedback modal ends -->
+
+{% endblock %}

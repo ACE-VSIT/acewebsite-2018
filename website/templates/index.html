@@ -75,19 +75,19 @@
                         <a class="mobile-menu-toggle" href="#">Home</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/members">Members</a> 
+                        <a class="mobile-menu-toggle" href="{% url 'members' %}">Members</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/projects">Projects</a>
+                        <a class="mobile-menu-toggle" href="{% url 'projects' %}">Projects</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/events">Events</a>
+                        <a class="mobile-menu-toggle" href="{% url 'events' %}">Events</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/calender">Calendar</a>
+                        <a class="mobile-menu-toggle" href="{% url 'calendar' %}">Calendar</a>
                     </li>
                     <li class="menu-primary-item menu-item-has-children">
-                        <a class="mobile-menu-toggle" href="/achievments">Achievements</a>
+                        <a class="mobile-menu-toggle" href="{% url 'achievements' %}">Achievements</a>
                     </li>
                 </ul>
                 <div class="navbar-additional align-items-center">
@@ -128,7 +128,13 @@
                     data-aos="fade-down"
                     data-aos-delay="900"
                     data-aos-easing="ease-in-out"
-                    data-aos-duration="700">Hi, Stranger!<br>We Are ACE<span class="highlight">.</span>
+                    data-aos-duration="700">
+                    {% if user.is_authenticated %}
+                        Hey {{ user.first_name }}!
+                    {% else %}
+                        Hey there!
+                    {% endif %}
+                    <br>We Are ACE<span class="highlight">.</span>
                 </h1>
                 <p class="text-default z-index-100"
                    data-aos="fade-down"
@@ -136,12 +142,12 @@
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">The Technical Society of VSIT, Vivekananda Institute of Professional Studies</p>
                 <br><br>
-                <a href="/magazine" class="button-submit z-index-100"
+                <a href="{% url 'magazine' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">ACE Magazine</a>
-                <a href="/portal" class="button-submit z-index-100"
+                <a href="{% url 'portal' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
@@ -336,7 +342,7 @@
                 </div>
                 <div class="col-lg-6 col-12 content-about light-gray-section" style="background-image: url('{% static 'website/img/assets/absurdity.png'%}')">
                     <div class="content-wrapper"
-                         data-aos="fade-up"s
+                         data-aos="fade-up"
                          data-aos-delay="100"
                          data-aos-anchor-placement="top-bottom"
                          data-aos-easing="ease-in-out"
@@ -345,9 +351,9 @@
                         <p class="about-text">ACE - Association of Computer Enthusiasts is the CSI Student Branch of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing. </p><br>
                         <p class="about-text">We take part in and organize workshops, seminars, hackathons, learnathons, ideathons, B-Plan competitions, programming competitions, meetups and much more. Since we are a members-first organization, one of our main objectives is to make sure that no one ever gets left behind.</p>
                         <div class="btn-wrapper d-flex">
-                            <a href="/codeofconduct" class="button-default-black">Code of Conduct</a>
+                            <a href="{% url 'code_of_conduct' %}" class="button-default-black">Code of Conduct</a>
                             
-                            <a href="/selection" class="button-default-black">Selection Process</a>
+                            <a href="{% url 'selection_procedure' %}" class="button-default-black">Selection Process</a>
                         
                         </div>
 
@@ -447,12 +453,12 @@
                 {% endfor %}
 
                 <div class="col-lg-5 col-centered" align="center">
-                        <a href="/mentor" class="button-submit z-index-100" 
+                        <a href="{% url 'mentors' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">Mentors</a>
-                        <a href="/alumni" class="button-submit z-index-100" 
+                        <a href="{% url 'alumnus' %}" class="button-submit z-index-100"
                            data-aos="fade-down"
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"
@@ -530,7 +536,7 @@
             {% endfor %}
                 
             <div class="col-lg-5 col-centered" align="center">
-                    <a href="/projects" class="button-submit z-index-100" 
+                    <a href="{% url 'projects' %}" class="button-submit z-index-100"
                data-aos="fade-down"
                data-aos-delay="1300"
                data-aos-easing="ease-in-out"

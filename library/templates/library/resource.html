@@ -1,0 +1,49 @@
+
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+{% block main %}
+
+	<!-- ace resource element -->
+	<div class="ui container">
+		<div class="ui stackable grid">
+			<div class="ui row" style="padding:80px 0px;">
+			<div class="ui sixteen wide column" style="text-align:center;">
+				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+				<h1 class="quote-head">Resources<br><span>ACE Library</span></h1>
+				<br><br><br>				        
+					 
+					 {% for cat in categories %}
+					
+					 <div id="language" class="color">
+						<span>{{cat.category}}</span>
+						<a href="{% url 'resource_details' pk=cat.category %}"><p>{{cat.count}} Available Resources </p> </a>
+					 </div>
+					 {% endfor %}
+				</div>
+
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace resource element end -->
+
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+                                {% include "library/menu.html" %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+
+	{% endblock %}
