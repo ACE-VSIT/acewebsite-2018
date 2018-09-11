@@ -79,7 +79,10 @@
                             <p class="post-content">{{project.desciption}}</p>
                             <div class="description-box d-flex align-items-center right-side">
                                 <i class="far fa-clock"></i>
-                                <p>Developed  by <a href="#"> {{ project.created_by }}
+                                <p>Developed  by <a href="#"> 
+                                    {% for creator in project.created_by.all  %}
+                                    {{ project.created_by }}
+                                    {% endfor %}
                                 
                             </a></p>
                             </div>
