@@ -7,3 +7,4 @@ raven
 sendgrid
 cloudinary
 django-multiselectfield==0.1.4
+django-bmemcached
