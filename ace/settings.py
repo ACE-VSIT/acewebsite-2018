@@ -338,7 +338,6 @@ if not DEBUG:
                 'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
             }
         }
-        }
     }
 else:
     CACHES = {
