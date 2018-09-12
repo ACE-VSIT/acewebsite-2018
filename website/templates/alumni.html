@@ -64,7 +64,7 @@
                         <div class="team-content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out" data-aos-duration="700">
                             <div class="member-wrapper">
                                 <div class="img-wrapper">
-                                    <img src="{% static '{{alumni.picture.url}}'%}" alt="" class="img-fluid">
+                                    <img src="{{ alumni.picture.url }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="member-description">
                                     <div class="content-wrapper d-flex justify-content-center align-items-end">
@@ -84,7 +84,6 @@
                         </div>
                     </div>
                 {% endfor %}
-
                 <div class="col-lg-5 col-centered" align="center">
                         <a href="{% url 'mentors' %}" class="button-submit z-index-100"
                    data-aos="fade-down"
@@ -96,7 +95,7 @@
                            data-aos-delay="1300"
                            data-aos-easing="ease-in-out"
                            data-aos-duration="700">MEMBERS</a>
-                    </div>
+                </div>
 
             </div>
         </div>
