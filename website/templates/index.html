@@ -508,33 +508,6 @@
         </div>
         <div class="container">
             <div class="row blog-grid-row">
-<<<<<<< HEAD
-            {% for project in projects %}
-                <div class="col-lg-6">
-                    <article class="post-grid white-section"
-                             data-aos="fade-up"
-                             data-aos-delay="100"
-                             data-aos-anchor-placement="top-bottom"
-                             data-aos-easing="ease-in-out"
-                             data-aos-duration="800">
-                        <div class="post-image-side">
-                            <a href="#" class="img-wrapper">
-                                <img src="{{ project.picture.url }}" alt="" class="img-fluid">
-                            </a>
-                            <a href="#" class="tag bg-color-purple">
-                                {{ project.tools }}
-                            </a>
-                        </div>
-                        <div class="post-content-side right-side">
-                            <a class="post-title" href="#">{{ project.name }}</a>
-                            <p class="post-content">{{ project.description }}</p>
-                            <div class="description-box d-flex align-items-center right-side">
-                                <i class="far fa-clock"></i>
-                                <p>Developed  by <a href="#">  {% for owner in project.created_by.all %}
-                                   {{owner.name.first_name}} {{owner.name.last_name}} |
-                                    {% endfor %}
-                            </a></p>
-=======
                 {% for project in projects %}
                     <div class="col-lg-6">
                         <article class="post-grid white-section"
@@ -550,11 +523,10 @@
                                 <a href="#" class="tag bg-color-purple">
                                     {{ project.tools }}
                                 </a>
->>>>>>> 09eeb5b6b4073b58066ac0dbb83f3d60bdf6af77
                             </div>
                             <div class="post-content-side right-side">
                                 <a class="post-title" href="#">{{ project.name }}</a>
-                                <p class="post-content">{{ project.desciption }}</p>
+                                <p class="post-content">{{ project.description }}</p>
                                 <div class="description-box d-flex align-items-center right-side">
                                     <i class="far fa-clock"></i>
                                     <p>Developed  by <a href="#">  {% for owner in project.created_by.all %}
