@@ -153,7 +153,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -229,7 +228,6 @@ S3DIRECT_DESTINATIONS = {
     },
 
 }
-
 
 if not DEBUG:
     import dj_database_url
@@ -325,3 +323,25 @@ IMGUR_USERNAME = os.environ.get('IMGUR_USERNAME')
 IMGUR_ACCESS_TOKEN = os.environ.get('IMGUR_ACCESS_TOKEN')
 IMGUR_ACCESS_TOKEN_REFRESH = os.environ.get('IMGUR_ACCESS_TOKEN_REFRESH')
 # <------- End Imgur
+
+# Caching
+
+
+if not DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django_bmemcached.memcached.BMemcached',
+            'TIMEOUT': 43200,
+            'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
+            'OPTIONS': {
+                'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
+                'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
+            }
+        }
+    }
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
