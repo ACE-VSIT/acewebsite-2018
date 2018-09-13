@@ -21,7 +21,7 @@ def member(request):
 
 def mentor(request):
     mentors = Mentor.objects.all()
-    return render(request, template_name='mentor.html', context={'mentor': mentors})
+    return render(request, template_name='mentor.html', context={'mentors': mentors})
 
 
 def alumni(request):
