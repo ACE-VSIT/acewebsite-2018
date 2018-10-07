@@ -16,13 +16,13 @@ def login(request):
         if not ACEUserProfile.objects.filter(name=request.user).exists():
             return redirect('/portal/form')
         else:
-            # return redirect('/portal/home')
+            #return redirect('/portal/home')
             return redirect('/library/')
 
     return render(request, 'portalapp/index.html')
 
 
-@login_required(login_url='/')
+# @login_required(login_url='/')
 def home(request):
     if ACEUserProfile.objects.filter(name=request.user).exists():
         if request.user.is_superuser:
@@ -73,7 +73,7 @@ def logout(request):
     return redirect('/portal/')
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
 def submit_task(request):
     submission_url = request.POST['task']
     task_id = request.POST['task_id']
@@ -102,7 +102,7 @@ def submit_task(request):
     return redirect('/portal/home')
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
 def form_data(request):
     if not ACEUserProfile.objects.filter(name=request.user).exists():
         return render(request, 'portalapp/form.html')
@@ -110,7 +110,7 @@ def form_data(request):
         return redirect('/portal/home')
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
 def form_input(request):
     user = User.objects.get(username=request.user)
     if ACEUserProfile.objects.filter(name=user).exists():
@@ -136,7 +136,7 @@ def form_input(request):
     return redirect('/portal/home')
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
 def serve_main_page(request):
     tasks = Tasks.objects.all().count()
 

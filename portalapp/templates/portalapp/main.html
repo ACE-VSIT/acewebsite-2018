@@ -28,11 +28,36 @@
     <link rel="stylesheet" type="text/css" href="{% static 'portalapp/css/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="shortcut icon" href="{% static 'portalapp/img/favicon.png' %}">
-    
+
     <meta name="description" content="ACE - Association of Computer Enthusiasts is the Technical society of Vivekananda Institute of Professional Studies, Pitampura. We are a group of talented and curious technology enthusiasts who are specialised in different fields of technology, namely quizzing, programming, web development, digital imaging, and video editing.">
     <meta name="keywords" content="ACE, Association of Computer Enthusiasts, Technical society of VIPS, ACE - The Technical society of VIPS, ACE - The Technical Society of VSIT, society, VIPS society, VSIT society, Tech, enterprenuer, bussines, UX/UI, python, php, go, Ashish, Gaurav, Srijit, Sameer, Khushi, Rohan, prateek, anukriti, Mukesh, shreyans, aditya dhawan, ACE Rocks, We love ACE,  Technical society of VSIT, Vivekananda Institute of Professional Studies, Vivekananda school of information technology, hackathon, SSC 2017, hackathon, coding, designing, events, we won, programming, VIPS programmimg, ACE69, ogz, ace vipsi, State Student Convention 2017, SSC, facebook.com/vipsace, vipsace, facebook">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#378f89">
+		<script type="text/javascript">
+		function OwO(dead) {
+			//var dead = "{{task.submission_deadline}}";
+		//				console.log(dead);
+			var countDownDate = new Date(dead + ', 2018 13:00:00').getTime();
+
+			var x = setInterval(function() {
+				var now = new Date().getTime();
+				var distance = countDownDate - now;
+
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+				+ minutes + "m " + seconds + "s ";
+
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("countdown").innerHTML = "EXPIRED";
+			 }
+			}, 1000);
+		}
+		</script>
 </head>
 <body>
 	<ul class="nav">
@@ -67,12 +92,16 @@
 				<p>Complete the task(s) that meet your required skills.</p>
 			</div>
 			<br><br>
-			
+
 			<div class="wrap-main">
 				{% for task in tasks %}
+				<script type="text/javascript">
+					OwO("{{task.submission_deadline}}");
+				</script>
 				<div class="wrap" id="{{task.task_id}}">
 					<div class="title">
 						<h1>{{task.task_name}}</h1>
+						<div id="countdown" style="float: right"></div>
                             {% if task.task_id in submissions %}
                                 <span class="comp">Attempted</span>
                             {% else %}
@@ -89,7 +118,7 @@
 							</div>
 						</div>
 					</div>
-						
+
 					<div class="detail-main">
 						<div style="display: flex;">
 							<div class="detail-icon"> <i class="fas fa-users fa-2x"></i> </div>
@@ -162,6 +191,7 @@
 			</div>
 		</div>
 	</div>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
