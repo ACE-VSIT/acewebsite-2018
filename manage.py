@@ -4,7 +4,7 @@ import sys
 
 
 if __name__ == "__main__":
-#    if os.environ.get('DEBUG'):
+#   if os.environ.get('DEBUG'):
     import dotenv
     dotenv.read_dotenv()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ace.settings")

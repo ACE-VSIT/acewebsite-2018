@@ -43,7 +43,7 @@ class ACEUserProfile(models.Model):
 class Tasks(models.Model):
     task_id = models.CharField(max_length=20, primary_key=True)
     task_name = models.CharField(max_length=30)
-    submission_deadline = models.CharField(max_length=25)
+    submission_deadline = models.CharField(max_length=10)
     difficulty_level = models.CharField(max_length=50)
     difficulty_value = models.CharField(max_length=30, default='Easy')
     task_description = models.TextField()

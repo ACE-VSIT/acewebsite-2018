@@ -104,7 +104,7 @@ ENV/
 # Redis RDB
 dump.rdb
 
-secrets.sh
+
 *.dbf
 
 # Ignore the pdf directory
