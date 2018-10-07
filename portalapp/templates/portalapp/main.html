@@ -34,10 +34,10 @@
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#378f89">
 		<script type="text/javascript">
-		function OwO(dead) {
+		function countdown(deadline, id) {
 			//var dead = "{{task.submission_deadline}}";
 		//				console.log(dead);
-			var countDownDate = new Date(dead + ', 2018 13:00:00').getTime();
+			var countDownDate = new Date(deadline + ', 2018 13:00:00').getTime();
 
 			var x = setInterval(function() {
 				var now = new Date().getTime();
@@ -48,12 +48,13 @@
 				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-				document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+				document.getElementById("countdown" + id).innerHTML = days + "d " + hours + "h "
 				+ minutes + "m " + seconds + "s ";
 
 				if (distance < 0) {
 					clearInterval(x);
-					document.getElementById("countdown").innerHTML = "EXPIRED";
+					document.getElementById("countdown" + id).innerHTML = "EXPIRED";
+					document.getElementById("Button" + id).disabled = true;
 			 }
 			}, 1000);
 		}
@@ -96,12 +97,12 @@
 			<div class="wrap-main">
 				{% for task in tasks %}
 				<script type="text/javascript">
-					OwO("{{task.submission_deadline}}");
+					countdown("{{task.submission_deadline}}", "{{task.task_id}}");
 				</script>
 				<div class="wrap" id="{{task.task_id}}">
 					<div class="title">
 						<h1>{{task.task_name}}</h1>
-						<div id="countdown" style="float: right"></div>
+						<div id="countdown{{task.task_id}}" style="float: right"></div>
                             {% if task.task_id in submissions %}
                                 <span class="comp">Attempted</span>
                             {% else %}
@@ -143,7 +144,7 @@
 
 					<div class="button">
 						<button onclick="description('{{task.task_id}}')"><i class="fas fa-list-ul fa-2x"></i></button>
-						<button onclick="submit('{{task.task_id}}')" class="rgt"><i class="fas fa-check-square fa-2x"></i></button>
+						<button id="Button{{task.task_id}}" onclick="submit('{{task.task_id}}')" class="rgt"><i class="fas fa-check-square fa-2x"></i></button>
 					</div>
 
 					<div style="position: relative;">
