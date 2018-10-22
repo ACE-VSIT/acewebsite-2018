@@ -44,7 +44,7 @@
 <div id="main-wrapper" class="wrapper-hidden z-index-100">
 
     <!-- header here -->
-    <nav class="navbar navbar-default desktop-menu logo-left  navbar-fill">
+    <nav class="navbar navbar-default desktop-menu logo-left navbar-fill">
         <div class="container-fluid navbar-inner">
             <div class="navbar-logo">
                 <a href="index.html" class="logo-link d-flex align-items-center" data-aos="zoom-in"
@@ -213,5 +213,11 @@
 <script src="{% static 'website/js/swiper.min.js'%}"></script>
 <!-- Main JS-file -->
 <script src="{% static 'website/js/main.js'%}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('nav').addClass("navbar-fill");
+    });
+</script>
 </body>
 </html>
