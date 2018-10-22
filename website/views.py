@@ -3,7 +3,7 @@ from django.contrib.auth import logout as auth_logout
 
 from website.models import Achievement, Agenda, Event, Gallery, Project, Alumni, Mentor
 from portalapp.models import ACEUserProfile
-from projectjson import projects
+from projectsjson import projects
 
 def index(request):
     events = Event.objects.all()[:3]
