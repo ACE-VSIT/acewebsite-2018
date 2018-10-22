@@ -44,13 +44,13 @@
 <div id="main-wrapper" class="wrapper-hidden z-index-100">
 
     <!-- header here -->
-    <nav class="navbar navbar-default desktop-menu logo-left">
+    <nav class="navbar navbar-default desktop-menu logo-left  navbar-fill">
         <div class="container-fluid navbar-inner">
             <div class="navbar-logo">
                 <a href="index.html" class="logo-link d-flex align-items-center" data-aos="zoom-in"
                    data-aos-delay="1000" data-aos-easing="ease-in-out" data-aos-duration="700">
-                    <img src="{% static 'website/img/logo/logo-light.png'%}" alt="" class="logo-img logo-light">
-                    <img src="{% static 'website/img/logo/logo-dark.png'%}" alt="" class="logo-img logo-dark" style="filter: brightness(0);">
+                    <img src="{% static 'website/img/logo/logo-light.png'%}" alt="" class="logo-img logo-light" style="display: none !important;">
+                    <img src="{% static 'website/img/logo/logo-dark.png'%}" alt="" class="logo-img logo-dark" style="filter: brightness(0);display: block !important;">
                 </a>
             </div>
             <div class="navbar-menu">
