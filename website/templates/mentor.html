@@ -72,10 +72,18 @@
                                             <h6 class="name">{{ mentor.name }}</h6>
                                             <p class="position">{{ mentor.designation }}</p>
                                             <div class="social-wrapper d-flex">
+                                                {% if mentor.github %}
                                                 <a class="social-box" href="{{ mentor.github }}"><i class="fab fa-github"></i></a>
+                                                {% endif %}
+                                                {% if mentor.behance %}
                                                 <a class="social-box" href="{{ mentor.behance }}"><i class="fab fa-behance"></i></a>
+                                                {% endif %}
+                                                {% if mentor.website %}
                                                 <a class="social-box" href="{{ mentor.website }}"><i class="fab fa-user-circle"></i></a>
+                                                {% endif %}
+                                                {% if mentor.linkedin %}
                                                 <a class="social-box" href="{{ mentor.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                                {% endif %}                                                
                                             </div>
                                         </div>
                                     </div>

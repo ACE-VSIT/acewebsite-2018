@@ -7,7 +7,7 @@ from portalapp.models import ACEUserProfile
 
 def index(request):
     events = Event.objects.all()[:3]
-    members = ACEUserProfile.objects.filter(is_council=True)
+    members = ACEUserProfile.objects.filter(is_council=True).order_by('rank')
     calendar = Agenda.objects.all()[:3]
     projects = Project.objects.all()[:3]
     return render(request, template_name='index.html',
