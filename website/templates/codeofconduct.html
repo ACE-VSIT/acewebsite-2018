@@ -43,8 +43,8 @@
 <div id="main-wrapper" class="wrapper-hidden z-index-100">
 
     <!-- header here -->
+
 {% include 'header.html' %}
-    
     
     <section class="white-section blog-section single-post-section">
         <div class="container">
@@ -202,5 +202,11 @@
 <script src="{% static 'website/js/swiper.min.js'%}"></script>
 <!-- Main JS-file -->
 <script src="{% static 'website/js/main.js'%}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('nav').addClass("navbar-fill");
+    });
+</script>
 </body>
 </html>

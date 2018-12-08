@@ -3,15 +3,15 @@ from django.contrib.auth import logout as auth_logout
 
 from website.models import Achievement, Agenda, Event, Gallery, Project, Alumni, Mentor
 from portalapp.models import ACEUserProfile
-
+from website.projectsjson import projects
 
 def index(request):
     events = Event.objects.all()[:3]
     members = ACEUserProfile.objects.filter(is_council=True).order_by('rank')
     calendar = Agenda.objects.all()[:3]
-    projects = Project.objects.all()[:3]
+    #projects = Project.objects.all()[:3]
     return render(request, template_name='index.html',
-                  context={'members': members, 'events': events, 'calendar': calendar, 'projects': projects})
+                  context={'members': members, 'events': events, 'calendar': calendar, 'projects': projects[:3]})
 
 
 def member(request):
@@ -40,7 +40,7 @@ def gallery(request):
 
 
 def project(request):
-    projects = Project.objects.all()
+    #projects = Project.objects.all()
     return render(request, template_name='projects.html', context={'projects': projects})
 
 

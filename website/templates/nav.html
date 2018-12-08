@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default desktop-menu logo-left">
+    <div class="container-fluid navbar-inner">
+        <div class="navbar-logo">
+            <a href="index.html" class="logo-link d-flex align-items-center" data-aos="zoom-in"
+               data-aos-delay="1000" data-aos-easing="ease-in-out" data-aos-duration="700">
+                <img src="{% static 'website/img/logo/logo-light.png'%}" alt="" class="logo-img logo-light">
+                <img src="{% static 'website/img/logo/logo-dark.png'%}" alt="" class="logo-img logo-dark" style="filter: brightness(0);">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <ul class="navbar-menu-list">
+                <li class="menu-primary-item menu-item-has-children">
+                    <a class="mobile-menu-toggle" href="/">Home</a>
+                </li>
+                <li class="menu-primary-item menu-item-has-children">
+                    <a class="mobile-menu-toggle" href="{% url 'members' %}">Members</a>
+                </li>
+                <li class="menu-primary-item menu-item-has-children">
+                    <a class="mobile-menu-toggle" href="{% url 'projects' %}">Projects</a>
+                </li>
+                <li class="menu-primary-item menu-item-has-children">
+                    <a class="mobile-menu-toggle" href="{% url 'calendar' %}">Calendar</a>
+                </li>
+                <li class="menu-primary-item menu-item-has-children">
+                    <a class="mobile-menu-toggle" href="{% url 'achievements' %}">Achievements</a>
+                </li>
+            </ul>
+            <div class="navbar-additional align-items-center">
+                <div class="social-box">
+                    <a href="https://www.facebook.com/vipsace">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-box">                        
+                    <a href="https://twitter.com/VIPS_ACE">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-box">
+                    <a href="https://www.instagram.com/acevips/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="hamburger justify-content-center align-items-center hamburger--spin" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+</nav>
+
