@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/aos.css'%}">
     <link rel="stylesheet" href="{% static 'website/css/main.css'%}">
+    <style type="text/css">
+        .post-image-side a {
+            cursor: default;
+        }
+    </style>
 </head>
 <body>
 <div class="loader">
@@ -45,6 +50,7 @@
 
     <!-- header here -->
 {% include 'header.html' %}
+
     <section class="blog-section large-section gray-section">
 
         <div class="container">
@@ -68,14 +74,14 @@
                              data-aos-duration="800">
                         <div class="post-image-side">
                             <a href="#" class="img-wrapper">
-                                <img src="{{ project.picture.url }}" alt="" class="img-fluid">
+                                <img src="{{ project.picture.url }}" style="width:100% !important;" alt="" class="img-fluid">
                             </a>
                             <a href="#" class="tag bg-color-purple">
                                 {{project.tools}}
                             </a>
                         </div>
                         <div class="post-content-side right-side">
-                            <a class="post-title" href="#">{{project.name}}</a>
+                            <a class="post-title" _href="#">{{project.name}}</a>
                             <p class="post-content">{{project.description}}</p>
                             <div class="description-box d-flex align-items-center right-side">
                                 <i class="far fa-clock"></i>
@@ -91,27 +97,6 @@
                 </div>
                 {% endfor %}
 
-            </div>
-            <div class="d-flex justify-content-center"
-                 data-aos="fade-up"
-                 data-aos-delay="100"
-                 data-aos-anchor-placement="top-bottom"
-                 data-aos-easing="ease-in-out"
-                 data-aos-duration="800">
-                <div class="blog-nav d-flex">
-                    <div class="active">
-                        1
-                    </div>
-                    <div>
-                        2
-                    </div>
-                    <div>
-                        3
-                    </div>
-                    <div>
-                        <i class="fa fa-angle-right"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -160,5 +145,11 @@
 <script src="{% static 'website/js/swiper.min.js'%}"></script>
 <!-- Main JS-file -->
 <script src="{% static 'website/js/main.js'%}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('nav').addClass("navbar-fill");
+    });
+</script>
 </body>
 </html>
