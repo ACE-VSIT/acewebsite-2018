@@ -440,11 +440,19 @@
                                         <div class="content d-flex flex-column align-items-center justify-content-end">
                                             <h6 class="name">{{ member.name.first_name}} {{ member.name.last_name}}</h6>
                                             <p class="position">{{ member.position }}</p>
-                                            <div class="social-wrapper d-flex">
-                                                <a class="social-box" href="{{ member.github }}"><i class="fab fa-github"></i></a>
-                                                <a class="social-box" href="{{ member.behance }}"><i class="fab fa-behance"></i></a>
-                                                <a class="social-box" href="{{ member.website }}"><i class="fab fa-user-circle"></i></a>
-                                                <a class="social-box" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                                <div class="social-wrapper d-flex">
+                                                {% if member.github %}
+                                                    <a class="social-box" href="{{ member.github }}"><i class="fab fa-github"></i></a>
+                                                {% endif %}
+                                                {% if member.behance %}
+                                                    <a class="social-box" href="{{ member.behance }}"><i class="fab fa-behance"></i></a>
+                                                {% endif %}
+                                                {% if member.website %}
+                                                    <a class="social-box" href="{{ member.website }}"><i class="fab fa-user-circle"></i></a>
+                                                {% endif %}
+                                                {% if member.linkedin %}
+                                                    <a class="social-box" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
