@@ -23,6 +23,7 @@ class ACEUserProfile(models.Model):
     is_core = models.BooleanField(default=False)
     is_council = models.BooleanField(default=False)
     position = models.TextField(null=True, blank=True)
+    rank = models.IntegerField(null=True, blank=True)
     picture = CloudinaryField('image', null=True, blank=True)
 
     dateCreated = models.DateTimeField(auto_now_add=True)
