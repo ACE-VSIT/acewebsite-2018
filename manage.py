@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-
+import numpy
 
 if __name__ == "__main__":
     if os.environ.get('DEBUG'):
