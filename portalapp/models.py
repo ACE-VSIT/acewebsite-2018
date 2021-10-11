@@ -6,6 +6,11 @@ from cloudinary.models import CloudinaryField
 
 
 class ACEUserProfile(models.Model):
+    
+    """
+    This model is used to store profiles of users.
+    """
+    
     name = models.ForeignKey(User, on_delete=models.CASCADE)
     enroll_number = models.CharField(max_length=11, blank=False, null=False)
     course = models.CharField(max_length=30, default=None, null=True, blank=True)
@@ -42,6 +47,11 @@ class ACEUserProfile(models.Model):
 
 
 class Tasks(models.Model):
+    
+    """
+    This model is used to store list of available tasks.
+    """
+    
     task_id = models.CharField(max_length=20, primary_key=True)
     task_name = models.CharField(max_length=30)
     submission_deadline = models.CharField(max_length=10)
@@ -55,6 +65,11 @@ class Tasks(models.Model):
 
 
 class Submissions(models.Model):
+    
+    """
+    This model is used to store submissions of users for particular tasks.
+    """
+    
     class Meta:
         unique_together = (('user', 'task'),)
 
