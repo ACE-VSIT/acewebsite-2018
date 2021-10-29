@@ -27,24 +27,7 @@
 
     <link rel="manifest" href="{% static 'manifest.json'%}" />
 </head>
-<!--
-[Home Page]
-[1] Page Loader
-[2] Navigation-Menu
-[3] Hero-Header
-[4] About Section
-[5] Digital Services
-[6] Counter Section
-[7] Team Section
-[8] Blockquote Section
-[9] Content Section
-[10] Recent Projects
-[11] Testimonials
-[12] Recent Posts
-[13] Footer
--->
 <body>
-<!-- [1] Page Loader -->
 <div class="loader">
     <div class="loading-center">
         <div class="loading-center-absolute">
@@ -61,7 +44,6 @@
     </div>
 </div>
 <div id="main-wrapper" class="wrapper-hidden z-index-100">
-    <!-- [2] Navigation-Menu -->
 {% include 'header.html' %}
 
     <!-- [3] Hero-Header -->
@@ -96,11 +78,6 @@
                    data-aos-delay="1300"
                    data-aos-easing="ease-in-out"
                    data-aos-duration="700">ACE Magazine</a>
-<!--                 <a href="{% url 'portal' %}" class="button-submit z-index-100"
-                   data-aos="fade-down"
-                   data-aos-delay="1300"
-                   data-aos-easing="ease-in-out"
-                   data-aos-duration="700">ACE Portal</a> -->
                  <a href="https://hack-vsit.tech" class="button-submit z-index-100"
                    data-aos="fade-down"
                    data-aos-delay="1300"
