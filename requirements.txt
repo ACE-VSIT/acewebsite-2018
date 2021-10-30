@@ -1,4 +1,4 @@
-django==2.1.2
+django==2.2.13
 whitenoise==3.3.1
 gunicorn==19.7.0
 django-heroku
